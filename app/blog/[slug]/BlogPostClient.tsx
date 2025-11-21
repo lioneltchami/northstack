@@ -1,0 +1,268 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { BlogPost } from '@/types';
+import {
+  Calendar,
+  Clock,
+  Tag,
+  Share2,
+  Twitter,
+  Linkedin,
+  Facebook,
+  Mail,
+  ArrowLeft,
+} from 'lucide-react';
+import BlogCard from '@/components/ui/BlogCard';
+import ReactMarkdown from 'react-markdown';
+
+interface BlogPostClientProps {
+  post: BlogPost;
+  relatedPosts: BlogPost[];
+}
+
+export default function BlogPostClient({ post, relatedPosts }: BlogPostClientProps) {
+  const [readingProgress, setReadingProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setReadingProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareTitle = post.title;
+
+  return (
+    <>
+      {/* Reading Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 dark:bg-gray-800 z-50">
+        <div
+          className="h-full bg-primary-600 transition-all duration-150"
+          style={{ width: `${readingProgress}%` }}
+        ></div>
+      </div>
+
+      {/* Back Button */}
+      <div className="section-padding bg-gray-50 dark:bg-gray-800 py-8">
+        <div className="container-custom max-w-4xl">
+          <a
+            href="/blog"
+            className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Blog
+          </a>
+        </div>
+      </div>
+
+      {/* Article Header */}
+      <article className="section-padding bg-white dark:bg-gray-900">
+        <div className="container-custom max-w-4xl">
+          {/* Category Badge */}
+          <div className="mb-4">
+            <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">
+              {post.category}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 text-gray-900 dark:text-white">
+            {post.title}
+          </h1>
+
+          {/* Excerpt */}
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">{post.excerpt}</p>
+
+          {/* Meta Information */}
+          <div className="flex flex-wrap items-center gap-6 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <Calendar className="w-5 h-5" />
+              <span>{post.date}</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <Clock className="w-5 h-5" />
+              <span>{post.readTime}</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <span>By {post.author}</span>
+            </div>
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <Tag className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+            {post.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Share Buttons */}
+          <div className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-200 dark:border-gray-700">
+            <span className="text-gray-600 dark:text-gray-400 font-semibold flex items-center gap-2">
+              <Share2 className="w-5 h-5" />
+              Share:
+            </span>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(shareUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Share on Twitter"
+            >
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Share on LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Share on Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a
+              href={`mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(shareUrl)}`}
+              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
+              aria-label="Share via Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+
+          {/* Article Content */}
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </div>
+
+          {/* Author Info */}
+          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                About {post.author}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                NorthStack Solutions is a Calgary-based DevOps and automation consultancy specializing
+                in helping Canadian small businesses leverage modern technology for growth. With 7+ years
+                of enterprise experience from IBM Canada and major energy companies, we bring
+                enterprise-level expertise at small business prices.
+              </p>
+              <a
+                href="/about"
+                className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold"
+              >
+                Learn More About Us →
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <section className="section-padding bg-gray-50 dark:bg-gray-800">
+          <div className="container-custom">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
+              Related Articles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {relatedPosts.map((relatedPost, index) => (
+                <BlogCard
+                  key={relatedPost.slug}
+                  title={relatedPost.title}
+                  excerpt={relatedPost.excerpt}
+                  slug={relatedPost.slug}
+                  date={relatedPost.date}
+                  readTime={relatedPost.readTime}
+                  category={relatedPost.category}
+                  delay={index * 0.1}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Newsletter CTA */}
+      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Enjoyed This Article?
+            </h2>
+            <p className="text-xl mb-8 text-white/90">
+              Get weekly tech insights, automation tips, and industry news delivered to your inbox every Tuesday.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="flex-grow px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                required
+              />
+              <button
+                type="submit"
+                className="px-8 py-4 bg-white text-primary-600 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap"
+              >
+                Subscribe Free
+              </button>
+            </form>
+            <p className="text-sm text-white/70 mt-4">
+              Join 500+ Canadian business owners. No spam, unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="section-padding bg-white dark:bg-gray-900">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+              Need Help Implementing This?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              We can help you implement the strategies discussed in this article. Book a free consultation
+              to discuss your specific needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300"
+              >
+                Book Free Consultation
+              </a>
+              <a
+                href="/services"
+                className="px-8 py-4 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20 font-semibold rounded-lg transition-all duration-300"
+              >
+                View Our Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
