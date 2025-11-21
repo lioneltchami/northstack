@@ -1,0 +1,41 @@
+{
+  "name": "northstack-solutions",
+  "version": "1.0.0",
+  "description": "NorthStack Solutions - Enterprise-Grade DevOps & Automation for Canadian Businesses",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "devsecops",
+    "cloud",
+    "automation",
+    "devops",
+    "canadian",
+    "calgary"
+  ],
+  "author": "Apoti Tech Inc.",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.554.0",
+    "next": "^16.0.3",
+    "next-themes": "^0.4.6",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.66.1",
+    "react-markdown": "^10.1.0",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "zod": "^4.1.12"
+  }
+}
