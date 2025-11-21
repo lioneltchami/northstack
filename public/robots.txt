@@ -1,0 +1,11 @@
+# robots.txt for NorthStack Solutions
+# https://northstack.solutions
+
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://northstack.solutions/sitemap.xml
