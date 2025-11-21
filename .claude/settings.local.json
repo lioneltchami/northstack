@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "WebFetch(domain:localhost)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "Bash(tasklist:*)",
+      "Bash(npm run dev)",
+      "Bash(cat:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
