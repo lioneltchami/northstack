@@ -1,3 +1,5 @@
+import { RATE_LIMITS } from './constants';
+
 /**
  * Simple in-memory rate limiter for serverless environments
  *
@@ -34,13 +36,13 @@ setInterval(() => {
 export interface RateLimitConfig {
   /**
    * Maximum number of requests allowed within the window
-   * @default 5
+   * @default RATE_LIMITS.CONTACT_FORM_MAX_REQUESTS (5)
    */
   maxRequests?: number;
 
   /**
    * Time window in seconds
-   * @default 3600 (1 hour)
+   * @default RATE_LIMITS.CONTACT_FORM_WINDOW_SECONDS (3600 = 1 hour)
    */
   windowSeconds?: number;
 }
@@ -63,8 +65,8 @@ export function rateLimit(
   identifier: string,
   config: RateLimitConfig = {}
 ): RateLimitResult {
-  const maxRequests = config.maxRequests ?? 5;
-  const windowMs = (config.windowSeconds ?? 3600) * 1000;
+  const maxRequests = config.maxRequests ?? RATE_LIMITS.CONTACT_FORM_MAX_REQUESTS;
+  const windowMs = (config.windowSeconds ?? RATE_LIMITS.CONTACT_FORM_WINDOW_SECONDS) * 1000;
   const now = Date.now();
 
   // Get or create entry for this identifier
