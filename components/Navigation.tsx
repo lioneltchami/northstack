@@ -7,8 +7,6 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   {
     label: 'Services',
     href: '/services',
@@ -18,11 +16,11 @@ const navLinks = [
       { label: 'Home Server Setup', href: '/home-server' },
     ],
   },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Resources', href: '/resources' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navigation() {
@@ -141,7 +139,7 @@ export default function Navigation() {
               href="/contact"
               className="hidden md:block btn-primary text-sm"
             >
-              Get Started
+              Free Consultation
             </Link>
 
             {/* Mobile menu button */}
@@ -215,7 +213,7 @@ export default function Navigation() {
                 </div>
               ))}
               <Link href="/contact" className="btn-primary text-center mt-4">
-                Get Started
+                Free Consultation
               </Link>
             </div>
           </div>

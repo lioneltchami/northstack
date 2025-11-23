@@ -51,7 +51,7 @@ export default function BlogPage() {
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                 {featuredPost.excerpt}
               </p>
-              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-300">
                 <span>{featuredPost.date}</span>
                 <span>•</span>
                 <span>{featuredPost.readTime}</span>
@@ -123,7 +123,7 @@ export default function BlogPage() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 No articles found. Try a different search or category.
               </p>
             </div>

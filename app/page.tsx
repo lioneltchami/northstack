@@ -49,11 +49,11 @@ export default function Home() {
         description="Enterprise-grade DevOps expertise meets personalized service. Based in Calgary, serving businesses across Canada with cloud infrastructure, automation, and innovative IT solutions."
         cta={{
           primary: { text: 'Book Free Consultation', href: '/contact' },
-          secondary: { text: 'View Our Services', href: '/services' },
+          secondary: { text: 'View All Services', href: '/services' },
         }}
         variant="gradient"
       >
-        <div className="flex flex-wrap items-center justify-center gap-8 mt-8 text-white/90">
+        <div className="flex flex-wrap items-center justify-center gap-8 mt-8">
           <div className="flex items-center space-x-2">
             <CheckCircle className="w-5 h-5" />
             <span className="font-semibold">7+ Years Experience</span>
@@ -72,63 +72,6 @@ export default function Home() {
       {/* Trust Signals Section */}
       <TrustSignals />
 
-      {/* Client Logos Section */}
-      <ClientLogos />
-
-      {/* Why Choose Us Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
-              Why Choose NorthStack Solutions?
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Enterprise expertise with small business pricing. We bring years of experience
-              from major companies to deliver personalized IT solutions for Canadian businesses.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Award,
-                title: 'Enterprise Experience',
-                description:
-                  'Former IBM Canada contractor with hands-on experience at major energy companies.',
-              },
-              {
-                icon: TrendingUp,
-                title: 'Proven Results',
-                description:
-                  'Reduced client costs by 40-70% while improving performance and reliability.',
-              },
-              {
-                icon: Shield,
-                title: 'Security First',
-                description:
-                  'DevSecOps expertise ensures your infrastructure is secure from day one.',
-              },
-              {
-                icon: Users,
-                title: 'Canadian Focus',
-                description:
-                  'Based in Calgary with deep understanding of Canadian business needs and regulations.',
-              },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex p-4 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-4">
-                  <item.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Overview Section */}
       <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
@@ -136,7 +79,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Our Services
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               From web development to cloud infrastructure, we offer comprehensive IT solutions
               tailored to your business needs.
             </p>
@@ -162,10 +105,64 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/services"
-              className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border border-primary-800"
             >
               View All Services
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="section-padding bg-white dark:bg-gray-900">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
+              Why Choose NorthStack Solutions?
+            </h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+              Enterprise expertise with small business pricing. We bring years of experience
+              from major companies to deliver personalized IT solutions for Canadian businesses.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Award,
+                title: 'Enterprise Experience',
+                description:
+                  'Senior DevOps engineer with IBM Canada and major energy companies. Battle-tested at scale.',
+              },
+              {
+                icon: TrendingUp,
+                title: 'Proven Results',
+                description:
+                  'Consistently reduce operational costs by 50%+ while improving performance and reliability.',
+              },
+              {
+                icon: Shield,
+                title: 'Security First',
+                description:
+                  'DevSecOps expertise ensures your infrastructure is secure from day one.',
+              },
+              {
+                icon: Users,
+                title: 'Canadian Focus',
+                description:
+                  'Based in Calgary with deep understanding of Canadian business needs and regulations.',
+              },
+            ].map((item, index) => (
+              <div key={index} className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-4">
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                  {item.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -177,7 +174,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               How We Work
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               A streamlined process designed to deliver results quickly and efficiently.
             </p>
           </div>
@@ -216,7 +213,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent dark:from-primary-700"></div>
                 )}
@@ -226,6 +223,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Client Logos Section */}
+      <ClientLogos />
+
       {/* Testimonials Section */}
       <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
@@ -233,7 +233,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Real results from real Canadian businesses.
             </p>
           </div>
@@ -265,10 +265,10 @@ export default function Home() {
               { number: '24/7', label: 'Support Available' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold font-heading mb-2">
+                <div className="text-4xl md:text-5xl font-bold font-heading mb-2 text-white drop-shadow-lg">
                   {stat.number}
                 </div>
-                <div className="text-white/90 text-sm md:text-base">{stat.label}</div>
+                <div className="text-white text-sm md:text-base drop-shadow-md">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -282,7 +282,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Latest Insights
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Technical guides, industry insights, and automation strategies.
             </p>
           </div>
@@ -317,7 +317,7 @@ export default function Home() {
       <CTA
         title="Ready to Transform Your IT Infrastructure?"
         description="Let's discuss how we can help your Canadian business scale efficiently with modern DevOps and automation solutions."
-        primaryButton={{ text: 'Schedule Free Consultation', href: '/contact' }}
+        primaryButton={{ text: 'Book Free Consultation', href: '/contact' }}
         secondaryButton={{ text: 'View Pricing', href: '/pricing' }}
         variant="gradient"
       />

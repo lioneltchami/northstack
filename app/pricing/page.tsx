@@ -29,7 +29,7 @@ export default function PricingPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Choose Your Package
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               All packages include setup, implementation, testing, documentation, and post-launch support.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function PricingPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Add-On Services
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
               Enhance any package or purchase standalone services as needed.
             </p>
           </div>
@@ -76,11 +76,11 @@ export default function PricingPage() {
                 </h3>
                 <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                   {service.price}
-                  <span className="text-sm font-normal text-gray-600 dark:text-gray-400 ml-2">
+                  <span className="text-sm font-normal text-gray-600 dark:text-gray-300 ml-2">
                     {service.priceUnit}
                   </span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{service.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">{service.description}</p>
                 <a
                   href="/contact"
                   className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold"
@@ -187,7 +187,7 @@ export default function PricingPage() {
                   <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                     {guarantee.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{guarantee.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{guarantee.description}</p>
                 </div>
               </div>
             ))}
@@ -307,7 +307,7 @@ export default function PricingPage() {
         title="Ready to Get Started?"
         description="Book a free consultation to discuss your project. We'll provide a custom quote with transparent, fixed pricing—no obligation."
         primaryButton={{ text: 'Get Free Quote', href: '/contact' }}
-        secondaryButton={{ text: 'View Services', href: '/services' }}
+        secondaryButton={{ text: 'View All Services', href: '/services' }}
         variant="simple"
       />
     </>

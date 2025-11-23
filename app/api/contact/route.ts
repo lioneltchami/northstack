@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { sendContactNotification, sendAutoResponse } from '@/lib/email';
 
 // Contact form validation schema
 const contactFormSchema = z.object({
@@ -20,54 +21,35 @@ export async function POST(request: NextRequest) {
     // Validate the request body
     const validatedData = contactFormSchema.parse(body);
 
-    // In a production environment, you would:
-    // 1. Send an email notification using a service like SendGrid, AWS SES, or Resend
-    // 2. Store the submission in a database
-    // 3. Send auto-response to the customer
-    // 4. Add to CRM system
-
-    // For now, we'll log it and return success
-    console.log('Contact form submission:', validatedData);
-
-    // Simulate email sending delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    // Example: Send email using a service (commented out)
-    /*
-    await sendEmail({
-      to: 'info@northstack.solutions',
-      subject: `New Contact Form Submission from ${validatedData.name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${validatedData.name}</p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Phone:</strong> ${validatedData.phone || 'Not provided'}</p>
-        <p><strong>Service:</strong> ${validatedData.service}</p>
-        <p><strong>Budget:</strong> ${validatedData.budget}</p>
-        <p><strong>Timeline:</strong> ${validatedData.timeline}</p>
-        <p><strong>Preferred Contact:</strong> ${validatedData.preferredContact}</p>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message}</p>
-      `,
+    // Log the submission for monitoring
+    console.log('Contact form submission received:', {
+      name: validatedData.name,
+      email: validatedData.email,
+      service: validatedData.service,
+      timestamp: new Date().toISOString(),
     });
 
-    // Send auto-response to customer
-    await sendEmail({
-      to: validatedData.email,
-      subject: 'Thank you for contacting NorthStack Solutions',
-      html: `
-        <h2>Thanks for reaching out, ${validatedData.name}!</h2>
-        <p>We've received your inquiry and will get back to you within 24 hours.</p>
-        <p>In the meantime, feel free to check out our <a href="https://northstack.solutions/blog">blog</a> for helpful resources.</p>
-        <p>Best regards,<br/>The NorthStack Solutions Team</p>
-      `,
-    });
-    */
+    // Send notification email to business
+    const notificationResult = await sendContactNotification(validatedData);
+    
+    // Send auto-response to customer (don't fail if this fails)
+    try {
+      await sendAutoResponse(validatedData);
+    } catch (autoResponseError) {
+      console.error('Auto-response failed (continuing):', autoResponseError);
+    }
+
+    // In production, you might also want to:
+    // 1. Store the submission in a database
+    // 2. Add to CRM system (HubSpot, Pipedrive, etc.)
+    // 3. Send Slack notification to team
+    // 4. Track analytics event
 
     return NextResponse.json(
       {
         success: true,
         message: 'Thank you for your message! We\'ll get back to you within 24 hours.',
+        id: notificationResult.id, // For tracking purposes
       },
       { status: 200 }
     );
@@ -77,7 +59,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          message: 'Validation failed',
+          message: 'Please check your form inputs and try again.',
           errors: error.issues.map((err) => ({
             field: err.path.join('.'),
             message: err.message,
@@ -87,12 +69,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Other errors
-    console.error('Contact form error:', error);
+    // Email sending or other errors
+    console.error('Contact form processing error:', error);
+    
+    // Don't expose internal error details to the user
     return NextResponse.json(
       {
         success: false,
-        message: 'An error occurred. Please try again or email us directly at info@northstack.solutions',
+        message: `We're experiencing technical difficulties. Please try again or email us directly at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}`,
       },
       { status: 500 }
     );

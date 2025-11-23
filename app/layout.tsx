@@ -1,37 +1,46 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import StructuredData from '@/components/StructuredData';
 import Analytics from '@/components/Analytics';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import LazyMotionProvider from '@/components/ui/LazyMotion';
+import SafariOptimizations from '@/components/SafariOptimizations';
 
-// Optimized font loading with preload and display swap
+// Optimized font loading with variable fonts and advanced typography
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
   preload: true,
   fallback: ['system-ui', '-apple-system', 'sans-serif'],
+  weight: ['300', '400', '500', '600', '700'],
 });
 
-const poppins = Poppins({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins',
+  variable: '--font-jakarta',
   display: 'swap',
   preload: true,
   fallback: ['Inter', 'system-ui', 'sans-serif'],
+  weight: ['400', '500', '600', '700', '800'],
 });
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://northstack.solutions';
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'NorthStack Solutions';
+const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME || 'Apoti Tech Inc.';
+const businessLocation = process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta';
 
 export const metadata: Metadata = {
   title: {
-    default: 'NorthStack Solutions | Enterprise DevOps & Automation for Canadian Businesses',
-    template: '%s | NorthStack Solutions',
+    default: `${siteName} | Enterprise DevOps & Automation for Canadian Businesses`,
+    template: `%s | ${siteName}`,
   },
   description:
-    'Enterprise-grade DevOps, cloud infrastructure, and IT automation services in Calgary, Alberta. 7+ years of experience with AWS, Docker, Kubernetes, and modern automation tools.',
+    `Enterprise-grade DevOps, cloud infrastructure, and IT automation services in ${businessLocation}. 7+ years of experience with AWS, Docker, Kubernetes, and modern automation tools.`,
   keywords: [
     'DevSecOps',
     'cloud infrastructure',
@@ -45,24 +54,24 @@ export const metadata: Metadata = {
     'home server',
     'DevOps',
   ],
-  authors: [{ name: 'Apoti Tech Inc.' }],
-  creator: 'NorthStack Solutions',
-  publisher: 'Apoti Tech Inc.',
-  metadataBase: new URL('https://northstack.solutions'),
+  authors: [{ name: companyName }],
+  creator: siteName,
+  publisher: companyName,
+  metadataBase: new URL(siteUrl),
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://northstack.solutions',
-    title: 'NorthStack Solutions | Enterprise DevOps & Automation',
+    url: siteUrl,
+    title: `${siteName} | Enterprise DevOps & Automation`,
     description:
-      'Enterprise-grade DevOps, cloud infrastructure, and IT automation services in Calgary, Alberta.',
-    siteName: 'NorthStack Solutions',
+      `Enterprise-grade DevOps, cloud infrastructure, and IT automation services in ${businessLocation}.`,
+    siteName,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NorthStack Solutions | Enterprise DevOps & Automation',
+    title: `${siteName} | Enterprise DevOps & Automation`,
     description:
-      'Enterprise-grade DevOps, cloud infrastructure, and IT automation services in Calgary, Alberta.',
+      `Enterprise-grade DevOps, cloud infrastructure, and IT automation services in ${businessLocation}.`,
   },
   robots: {
     index: true,
@@ -76,7 +85,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
 };
 
@@ -86,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jakarta.variable}`}>
       <head>
         {/* Preconnect to external resources for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -99,11 +108,20 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider>
-          <div className="flex flex-col min-h-screen">
-            <Navigation />
-            <main className="flex-grow pt-20">{children}</main>
-            <Footer />
-          </div>
+          <LazyMotionProvider>
+            <SafariOptimizations />
+            <ErrorBoundary>
+              <div className="flex flex-col min-h-screen">
+                <Navigation />
+                <main className="flex-grow pt-20">
+                  <ErrorBoundary>
+                    {children}
+                  </ErrorBoundary>
+                </main>
+                <Footer />
+              </div>
+            </ErrorBoundary>
+          </LazyMotionProvider>
         </ThemeProvider>
       </body>
     </html>

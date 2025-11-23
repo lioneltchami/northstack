@@ -482,7 +482,7 @@ Let's take back control of your data together.
     slug: 'aws-cost-optimization-strategies-2025',
     title: '5 AWS Cost Optimization Strategies That Saved My Clients $10K+',
     excerpt:
-      'AWS bills spiraling out of control? Learn the exact cost optimization strategies I use to cut cloud spending by 40-70% without sacrificing performance.',
+      'AWS bills spiraling out of control? Learn the exact cost optimization strategies I use to cut cloud spending by 50%+ without sacrificing performance.',
     content: `# 5 AWS Cost Optimization Strategies That Saved My Clients $10K+
 
 (Content continues with detailed AWS cost optimization strategies, real examples, implementation steps, and before/after metrics. For brevity, showing structure only.)

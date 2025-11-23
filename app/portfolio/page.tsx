@@ -61,7 +61,7 @@ export default function PortfolioPage() {
                     <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
                       {project.title}
                     </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-300">{project.description}</p>
+                    <p className="text-xl text-gray-700 dark:text-gray-300">{project.description}</p>
                   </div>
 
                   {/* Challenge */}
@@ -131,7 +131,7 @@ export default function PortfolioPage() {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 No projects found in this category.
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '50+', label: 'Projects Completed' },
-              { number: '40-70%', label: 'Average Cost Reduction' },
+              { number: '50%+', label: 'Average Cost Reduction' },
               { number: '15-20hrs', label: 'Weekly Time Saved' },
               { number: '98%', label: 'Client Satisfaction' },
             ].map((stat, index) => (

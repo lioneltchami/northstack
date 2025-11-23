@@ -1,14 +1,21 @@
 export default function StructuredData() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://northstack.solutions';
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'NorthStack Solutions';
+  const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME || 'Apoti Tech Inc.';
+  const contactEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.solutions';
+  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1-403-123-4567';
+  const businessLocation = process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta';
+
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'NorthStack Solutions',
-    alternateName: 'Apoti Tech Inc.',
+    name: siteName,
+    alternateName: companyName,
     description:
-      'Enterprise-grade DevOps, cloud infrastructure, and IT automation services in Calgary, Alberta',
-    url: 'https://northstack.solutions',
-    telephone: '+1-403-123-4567',
-    email: 'info@northstack.solutions',
+      `Enterprise-grade DevOps, cloud infrastructure, and IT automation services in ${businessLocation}`,
+    url: siteUrl,
+    telephone: contactPhone,
+    email: contactEmail,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Calgary',
@@ -35,7 +42,7 @@ export default function StructuredData() {
     ],
     founder: {
       '@type': 'Person',
-      name: 'NorthStack Solutions Team',
+      name: `${siteName} Team`,
     },
     foundingDate: '2017',
     sameAs: [
@@ -47,11 +54,11 @@ export default function StructuredData() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://northstack.solutions',
-    name: 'NorthStack Solutions',
-    image: 'https://northstack.solutions/logo.png',
+    '@id': siteUrl,
+    name: siteName,
+    image: `${siteUrl}/logo.png`,
     description:
-      'Calgary-based DevOps and IT automation consultancy specializing in cloud infrastructure, automation, and modern web solutions for Canadian businesses.',
+      `${businessLocation.split(',')[0]}-based DevOps and IT automation consultancy specializing in cloud infrastructure, automation, and modern web solutions for Canadian businesses.`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Calgary',
@@ -64,9 +71,9 @@ export default function StructuredData() {
       latitude: 51.0447,
       longitude: -114.0719,
     },
-    url: 'https://northstack.solutions',
-    telephone: '+14031234567',
-    email: 'info@northstack.solutions',
+    url: siteUrl,
+    telephone: contactPhone.replace(/\s/g, ''),
+    email: contactEmail,
     priceRange: '$$-$$$',
     openingHoursSpecification: [
       {

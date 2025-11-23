@@ -138,7 +138,7 @@ export default function ResourcesPage() {
 
           {filteredResources.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 No resources found matching your filters.
               </p>
             </div>

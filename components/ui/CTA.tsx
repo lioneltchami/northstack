@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -30,11 +30,11 @@ export default function CTA({
       className={`section-padding ${
         variant === 'gradient'
           ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white'
-          : 'bg-gray-50 dark:bg-gray-800'
+          : 'bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white'
       }`}
     >
       <div className="container-custom">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -48,7 +48,7 @@ export default function CTA({
             className={`text-lg md:text-xl mb-8 ${
               variant === 'gradient'
                 ? 'text-white/90'
-                : 'text-gray-600 dark:text-gray-300'
+                : 'text-gray-700 dark:text-gray-300'
             }`}
           >
             {description}
@@ -59,7 +59,7 @@ export default function CTA({
               href={primaryButton.href}
               className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
                 variant === 'gradient'
-                  ? 'bg-primary-700 text-white hover:bg-primary-800 border-2 border-primary-700 hover:border-primary-800'
+                  ? 'bg-primary-800 text-white hover:bg-primary-900 border-2 border-white/20 hover:border-white/30'
                   : 'bg-primary-600 text-white hover:bg-primary-700'
               }`}
             >
@@ -72,7 +72,7 @@ export default function CTA({
                 href={secondaryButton.href}
                 className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
                   variant === 'gradient'
-                    ? 'bg-gray-900 hover:bg-gray-800 text-white border-2 border-gray-900 hover:border-gray-800'
+                    ? 'bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 backdrop-blur-sm'
                     : 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20'
                 }`}
               >
@@ -80,7 +80,7 @@ export default function CTA({
               </Link>
             )}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

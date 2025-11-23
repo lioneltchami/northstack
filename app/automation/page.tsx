@@ -44,7 +44,7 @@ export default function AutomationPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Is Your Team Drowning in Manual Tasks?
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               Most small businesses waste 15-20 hours per week on tasks that could be automated.
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function AutomationPage() {
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{item.problem}</p>
+                <p className="text-gray-700 dark:text-gray-300">{item.problem}</p>
               </div>
             ))}
           </div>
@@ -117,7 +117,7 @@ export default function AutomationPage() {
                 },
                 {
                   icon: TrendingUp,
-                  stat: '40-70%',
+                  stat: '50%+',
                   label: 'Cost Reduction',
                 },
                 {
@@ -146,7 +146,7 @@ export default function AutomationPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               What Can Be Automated?
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               Almost anything. Here are the most popular automation workflows we build.
             </p>
           </div>
@@ -239,7 +239,7 @@ export default function AutomationPage() {
                 <h3 className="text-2xl font-bold font-heading mb-3 text-gray-900 dark:text-white">
                   {useCase.title}
                 </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                   {useCase.description}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
@@ -268,7 +268,7 @@ export default function AutomationPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Best-in-Class Automation Tools
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               We use proven automation platforms that integrate with 5,000+ apps and services.
             </p>
           </div>
@@ -312,7 +312,7 @@ export default function AutomationPage() {
                 </h3>
                 <p
                   className={`mb-6 ${
-                    tool.highlighted ? 'text-white/90' : 'text-gray-600 dark:text-gray-300'
+                    tool.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
                   }`}
                 >
                   {tool.description}
@@ -358,7 +358,7 @@ export default function AutomationPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               AI-Powered Automation
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               We integrate Claude, ChatGPT, and other AI tools to make your automations even smarter.
             </p>
           </div>
@@ -487,7 +487,7 @@ export default function AutomationPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               How We Build Your Automation
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               From discovery to deployment, we make automation easy.
             </p>
           </div>
@@ -522,7 +522,7 @@ export default function AutomationPage() {
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
               </div>
             ))}
           </div>

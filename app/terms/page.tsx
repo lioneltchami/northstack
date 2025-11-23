@@ -20,7 +20,7 @@ export default function TermsPage() {
       <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-8">
               <strong>Effective Date:</strong> January 1, 2025
               <br />
               <strong>Last Updated:</strong> January 1, 2025
@@ -292,7 +292,7 @@ export default function TermsPage() {
 
             <hr className="my-8" />
 
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               By using our services, you acknowledge that you have read, understood, and agree to be bound
               by these Terms of Service.
             </p>

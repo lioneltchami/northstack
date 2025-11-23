@@ -40,17 +40,28 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus('loading');
 
-    // Simulate form submission (replace with actual API call)
     try {
-      console.log('Form data:', data);
-      // TODO: Replace with actual form submission endpoint
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to send message');
+      }
+
       setSubmitStatus('success');
       reset();
 
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     }
@@ -84,10 +95,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Email</h3>
                     <a
-                      href="mailto:hello@northstack.ca"
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+                      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}`}
+                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                     >
-                      hello@northstack.ca
+                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}
                     </a>
                   </div>
                 </div>
@@ -100,10 +111,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Phone</h3>
                     <a
-                      href="tel:+14031234567"
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+                      href={`tel:${(process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567').replace(/\s/g, '')}`}
+                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                     >
-                      +1 (403) 123-4567
+                      {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567'}
                     </a>
                   </div>
                 </div>
@@ -115,8 +126,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Location</h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Calgary, Alberta, Canada
+                    <p className="text-gray-600 dark:text-gray-300">
+                      {process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta, Canada'}
                       <br />
                       <span className="text-sm">Serving all of Canada remotely</span>
                     </p>
@@ -130,7 +141,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Business Hours</h3>
-                    <div className="text-gray-600 dark:text-gray-400 text-sm space-y-1">
+                    <div className="text-gray-600 dark:text-gray-300 text-sm space-y-1">
                       <p>Monday - Friday: 9:00 AM - 6:00 PM MST</p>
                       <p>Saturday: 10:00 AM - 2:00 PM MST</p>
                       <p>Sunday: Closed</p>
@@ -170,7 +181,7 @@ export default function ContactPage() {
                 {submitStatus === 'error' && (
                   <div className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-500 rounded-lg">
                     <p className="text-red-800 dark:text-red-200">
-                      Oops! Something went wrong. Please try again or email us directly at hello@northstack.ca
+                      Oops! Something went wrong. Please try again or email us directly at {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}
                     </p>
                   </div>
                 )}
@@ -356,7 +367,7 @@ export default function ContactPage() {
                     )}
                   </button>
 
-                  <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
                     By submitting this form, you agree to our{' '}
                     <a href="/privacy" className="text-primary-600 dark:text-primary-400 hover:underline">
                       Privacy Policy
@@ -423,7 +434,7 @@ export default function ContactPage() {
               Skip the form and schedule a free consultation call directly on our calendar.
             </p>
             <a
-              href="https://calendly.com/northstack"
+              href={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/northstack'}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-white text-primary-600 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-300"

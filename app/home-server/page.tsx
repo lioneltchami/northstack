@@ -229,7 +229,7 @@ export default function HomeServerPage() {
                 <p className="text-gray-700 dark:text-gray-300 mb-4">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
                       <CheckCircle className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
@@ -330,7 +330,7 @@ export default function HomeServerPage() {
                 </p>
                 <div
                   className={`text-sm font-semibold mb-4 ${
-                    pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-400'
+                    pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
                   }`}
                 >
                   {pkg.hardware}
@@ -361,7 +361,7 @@ export default function HomeServerPage() {
                       : 'bg-primary-600 text-white hover:bg-primary-700'
                   }`}
                 >
-                  Get Started
+                  Get Setup Quote
                 </a>
               </div>
             ))}
@@ -421,7 +421,7 @@ export default function HomeServerPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{hw.performance}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{hw.performance}</p>
               </div>
             ))}
           </div>
@@ -491,7 +491,7 @@ export default function HomeServerPage() {
                     <h3 className="text-xl font-bold font-heading text-gray-900 dark:text-white">
                       {step.title}
                     </h3>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">{step.duration}</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-300">{step.duration}</span>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
                 </div>

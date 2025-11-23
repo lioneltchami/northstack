@@ -45,7 +45,7 @@ export default function NotFoundPage() {
         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
           Page Not Found
         </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
           Oops! The page you're looking for seems to have wandered off into the cloud.
           Don't worry, we'll help you find your way back.
         </p>
@@ -110,7 +110,7 @@ export default function NotFoundPage() {
                 <h4 className="text-lg font-bold font-heading mb-2 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   {page.name}
                 </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   {page.description}
                 </p>
               </a>
@@ -135,7 +135,7 @@ export default function NotFoundPage() {
         </div>
 
         {/* Fun Error Code */}
-        <div className="mt-12 text-sm text-gray-500 dark:text-gray-500 space-y-1">
+        <div className="mt-12 text-sm text-gray-700 dark:text-gray-300 space-y-1">
           <p>Error Code: PAGE_NOT_FOUND_404</p>
           <p>Time: {new Date().toLocaleString()}</p>
           <p className="italic">

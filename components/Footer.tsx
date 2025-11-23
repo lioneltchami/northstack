@@ -33,6 +33,10 @@ const footerLinks = {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'NorthStack Solutions';
+  const contactEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.solutions';
+  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '(403) 123-4567';
+  const businessLocation = process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta, Canada';
 
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -52,10 +56,10 @@ export default function Footer() {
                 </div>
               </div>
               <span className="text-white font-extrabold">
-                NorthStack Solutions
+                {siteName}
               </span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-md">
               Enterprise-Grade DevOps & Automation for Canadian Businesses.
               Bringing 7+ years of enterprise experience to personalized service.
             </p>
@@ -64,24 +68,24 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-5 h-5 text-primary-400" />
-                <span>Calgary, Alberta, Canada</span>
+                <span>{businessLocation}</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="w-5 h-5 text-primary-400" />
                 <a
-                  href="mailto:info@northstack.solutions"
+                  href={`mailto:${contactEmail}`}
                   className="hover:text-primary-400 transition-colors"
                 >
-                  info@northstack.solutions
+                  {contactEmail}
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="w-5 h-5 text-primary-400" />
                 <a
-                  href="tel:+14031234567"
+                  href={`tel:${contactPhone.replace(/\s/g, '')}`}
                   className="hover:text-primary-400 transition-colors"
                 >
-                  (403) 123-4567
+                  {contactPhone}
                 </a>
               </div>
             </div>
@@ -126,7 +130,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -144,7 +148,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -162,7 +166,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -174,7 +178,7 @@ export default function Footer() {
             {/* Newsletter Signup */}
             <div className="mt-6">
               <h4 className="text-white font-medium mb-2">Stay Updated</h4>
-              <p className="text-sm text-gray-400 mb-3">
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
                 Get DevOps tips and automation insights.
               </p>
               <form className="flex flex-col space-y-2">
@@ -199,7 +203,7 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400 text-center md:text-left">
+            <p className="text-sm text-gray-700 dark:text-gray-300 text-center md:text-left">
               © {currentYear} NorthStack Solutions. Operated by{' '}
               <span className="text-primary-400">Apoti Tech Inc.</span> All
               rights reserved.
@@ -207,13 +211,13 @@ export default function Footer() {
             <div className="flex items-center space-x-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 Terms
               </Link>

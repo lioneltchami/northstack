@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -25,7 +25,7 @@ export default function ServiceCard({
   delay = 0,
 }: ServiceCardProps) {
   const card = (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function ServiceCard({
         {title}
       </h3>
 
-      <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
         {description}
       </p>
 
@@ -59,7 +59,7 @@ export default function ServiceCard({
           {features.map((feature, index) => (
             <li
               key={index}
-              className="flex items-start space-x-2 text-sm text-gray-600 dark:text-gray-400"
+              className="flex items-start space-x-2 text-sm text-gray-700 dark:text-gray-300"
             >
               <svg
                 className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5"
@@ -86,7 +86,7 @@ export default function ServiceCard({
           </span>
         </div>
       )}
-    </motion.div>
+    </m.div>
   );
 
   if (href) {

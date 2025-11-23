@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 
@@ -28,7 +28,7 @@ export default function PricingCard({
   delay = 0,
 }: PricingCardProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function PricingCard({
         <h3 className="text-2xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
           {name}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300">{description}</p>
+        <p className="text-gray-700 dark:text-gray-300">{description}</p>
       </div>
 
       <div className="mb-6">
@@ -60,7 +60,7 @@ export default function PricingCard({
             {price}
           </span>
           {price !== 'Custom' && (
-            <span className="text-gray-600 dark:text-gray-400 ml-2">
+            <span className="text-gray-700 dark:text-gray-300 ml-2">
               {priceDetail}
             </span>
           )}
@@ -86,6 +86,6 @@ export default function PricingCard({
       >
         {cta}
       </Link>
-    </motion.div>
+    </m.div>
   );
 }

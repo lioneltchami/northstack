@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import Image from 'next/image';
 
@@ -24,7 +24,7 @@ export default function TestimonialCard({
   delay = 0,
 }: TestimonialCardProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -73,11 +73,11 @@ export default function TestimonialCard({
         )}
         <div>
           <p className="font-semibold text-gray-900 dark:text-white">{name}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-gray-700 dark:text-gray-300">
             {role} at {company}
           </p>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

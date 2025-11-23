@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 /**
  * Client Logos Component
@@ -21,24 +21,24 @@ export default function ClientLogos() {
   return (
     <section className="py-12 bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider mb-2">
             Trusted By
           </p>
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 dark:text-white">
             Canadian Businesses We've Helped
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
           {clients.map((client, index) => (
-            <motion.div
+            <m.div
               key={client.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,29 +59,29 @@ export default function ClientLogos() {
                 <p className="text-xs font-semibold text-center text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   {client.name}
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                <p className="text-xs text-gray-700 dark:text-gray-300 mt-1">
                   {client.category}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Note for adding real logos */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-8 text-center"
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+          <p className="text-sm text-gray-700 dark:text-gray-300 italic">
             * Replace with actual client logos in{' '}
             <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs">
               public/images/logos/
             </code>
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

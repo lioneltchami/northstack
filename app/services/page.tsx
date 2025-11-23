@@ -87,7 +87,7 @@ export default function ServicesPage() {
 
           {filteredServices.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-700 dark:text-gray-300">
                 No services found in this category.
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Why Choose NorthStack Solutions?
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               We combine enterprise experience with small business pricing to deliver exceptional value.
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function ServicesPage() {
               },
               {
                 title: 'Proven Results',
-                description: 'Average 40-70% cost reduction and 3x efficiency improvements.',
+                description: 'Average 50%+ cost reduction and 3x efficiency improvements.',
                 stat: '50+ Projects',
               },
               {
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Simple, Transparent Process
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               From initial consultation to ongoing support, we make it easy.
             </p>
           </div>
@@ -193,7 +193,7 @@ export default function ServicesPage() {
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent dark:from-primary-700"></div>
                 )}
@@ -210,7 +210,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Common Service Packages
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               Most clients choose one of these popular packages, but every project is customized to your needs.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function ServicesPage() {
                 </div>
                 <p
                   className={`mb-6 ${
-                    pkg.highlighted ? 'text-white/90' : 'text-gray-600 dark:text-gray-300'
+                    pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
                   }`}
                 >
                   {pkg.description}
@@ -318,7 +318,7 @@ export default function ServicesPage() {
                       : 'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
                   }`}
                 >
-                  Get Started
+                  Get Free Quote
                 </a>
               </div>
             ))}

@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-8">
               <strong>Effective Date:</strong> January 1, 2025
               <br />
               <strong>Last Updated:</strong> January 1, 2025
@@ -244,7 +244,7 @@ export default function PrivacyPage() {
 
             <hr className="my-8" />
 
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               This Privacy Policy is governed by the laws of Alberta, Canada. By using our services, you consent
               to the collection and use of your information as described in this policy.
             </p>

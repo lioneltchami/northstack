@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://northstack.solutions';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://northstack.solutions';
 
   // Static pages
   const staticPages = [

@@ -79,26 +79,26 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </h1>
 
           {/* Excerpt */}
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">{post.excerpt}</p>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{post.excerpt}</p>
 
           {/* Meta Information */}
           <div className="flex flex-wrap items-center gap-6 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
               <Calendar className="w-5 h-5" />
               <span>{post.date}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
               <Clock className="w-5 h-5" />
               <span>{post.readTime}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
               <span>By {post.author}</span>
             </div>
           </div>
 
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-3 mb-8">
-            <Tag className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+            <Tag className="w-5 h-5 text-gray-600 dark:text-gray-300" />
             {post.tags.map((tag, index) => (
               <span
                 key={index}
@@ -111,7 +111,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
 
           {/* Share Buttons */}
           <div className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-200 dark:border-gray-700">
-            <span className="text-gray-600 dark:text-gray-400 font-semibold flex items-center gap-2">
+            <span className="text-gray-600 dark:text-gray-300 font-semibold flex items-center gap-2">
               <Share2 className="w-5 h-5" />
               Share:
             </span>

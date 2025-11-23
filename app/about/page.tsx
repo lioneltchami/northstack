@@ -343,7 +343,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Schedule Free Consultation
+                Book Free Consultation
               </a>
               <a
                 href="/services"

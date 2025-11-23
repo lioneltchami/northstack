@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -27,7 +27,7 @@ export default function BlogCard({
   delay = 0,
 }: BlogCardProps) {
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function BlogCard({
       )}
 
       <div className="p-6 flex flex-col flex-grow">
-        <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
+        <div className="flex items-center space-x-4 text-sm text-gray-700 dark:text-gray-300 mb-3">
           <div className="flex items-center space-x-1">
             <Calendar className="w-4 h-4" />
             <span>{date}</span>
@@ -68,7 +68,7 @@ export default function BlogCard({
           {title}
         </h3>
 
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
+        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
           {excerpt}
         </p>
 
@@ -80,6 +80,6 @@ export default function BlogCard({
           <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
-    </motion.article>
+    </m.article>
   );
 }

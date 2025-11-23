@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 interface HeroProps {
   title: string;
@@ -33,7 +33,7 @@ export default function Hero({
 
   const backgroundClasses = {
     gradient: 'animated-gradient text-white',
-    simple: 'bg-white dark:bg-gray-900',
+    simple: 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white',
     dark: 'bg-gray-900 text-white',
   };
 
@@ -52,10 +52,10 @@ export default function Hero({
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {subtitle && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
               className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
                 variant === 'gradient'
                   ? 'bg-white/20 backdrop-blur-sm'
@@ -63,44 +63,46 @@ export default function Hero({
               }`}
             >
               {subtitle}
-            </motion.div>
+            </m.div>
           )}
 
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading mb-6 leading-tight"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading mb-6 leading-tight ${
+              variant === 'simple' ? 'text-gray-900 dark:text-white' : ''
+            }`}
           >
             {title}
-          </motion.h1>
+          </m.h1>
 
           {description && (
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className={`text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto ${
                 variant === 'gradient'
                   ? 'text-white/90'
-                  : 'text-gray-600 dark:text-gray-400'
+                  : 'text-gray-700 dark:text-gray-300'
               }`}
             >
               {description}
-            </motion.p>
+            </m.p>
           )}
 
           {cta && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               {cta.primary && (
                 <a
                   href={cta.primary.href}
-                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
                     variant === 'gradient'
                       ? 'bg-primary-700 text-white hover:bg-primary-800 border-2 border-primary-700 hover:border-primary-800'
                       : 'bg-primary-600 text-white hover:bg-primary-700'
@@ -112,7 +114,7 @@ export default function Hero({
               {cta.secondary && (
                 <a
                   href={cta.secondary.href}
-                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl ${
                     variant === 'gradient'
                       ? 'bg-gray-900 hover:bg-gray-800 text-white border-2 border-gray-900 hover:border-gray-800'
                       : 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20'
@@ -121,18 +123,20 @@ export default function Hero({
                   {cta.secondary.text}
                 </a>
               )}
-            </motion.div>
+            </m.div>
           )}
 
           {children && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-12"
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className={`mt-12 ${
+                variant === 'simple' ? 'text-gray-900 dark:text-white' : ''
+              }`}
             >
               {children}
-            </motion.div>
+            </m.div>
           )}
         </div>
       </div>

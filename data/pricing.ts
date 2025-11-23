@@ -17,7 +17,7 @@ export const pricingTiers: PricingTier[] = [
       '30 days post-launch support',
       'Hosting guidance',
     ],
-    cta: 'Get Started',
+    cta: 'Choose Starter',
   },
   {
     id: 'professional',
@@ -39,7 +39,7 @@ export const pricingTiers: PricingTier[] = [
       'Monitoring and alerting setup',
     ],
     highlighted: true,
-    cta: 'Most Popular',
+    cta: 'Choose Professional',
   },
   {
     id: 'enterprise',
