@@ -55,10 +55,10 @@ export default function ServicesPage() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
                   selectedCategory === category.id
-                    ? 'bg-primary-600 text-white shadow-lg scale-105'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'bg-primary-700 text-white shadow-lg scale-105'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
                 {category.name}
@@ -87,7 +87,7 @@ export default function ServicesPage() {
 
           {filteredServices.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-700 dark:text-gray-300">
+              <p className="text-xl text-gray-700 dark:text-gray-200">
                 No services found in this category.
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Why Choose NorthStack Solutions?
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-200">
               We combine enterprise experience with small business pricing to deliver exceptional value.
             </p>
           </div>
@@ -134,13 +134,13 @@ export default function ServicesPage() {
                 key={index}
                 className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md text-center"
               >
-                <div className="text-4xl font-bold font-heading text-primary-600 dark:text-primary-400 mb-2">
+                <div className="text-4xl font-bold font-heading text-primary-700 dark:text-primary-300 mb-2">
                   {item.stat}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-gray-700 dark:text-gray-200">{item.description}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Simple, Transparent Process
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-200">
               From initial consultation to ongoing support, we make it easy.
             </p>
           </div>
@@ -187,13 +187,13 @@ export default function ServicesPage() {
               },
             ].map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-6xl font-bold font-heading text-primary-100 dark:text-primary-900/30 mb-4">
+                <div className="text-6xl font-bold font-heading text-primary-100 dark:text-primary-900/30 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700 dark:text-gray-200">{step.description}</p>
                 {index < 3 && (
                   <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent dark:from-primary-700"></div>
                 )}
@@ -210,7 +210,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Common Service Packages
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-200">
               Most clients choose one of these popular packages, but every project is customized to your needs.
             </p>
           </div>
@@ -265,7 +265,7 @@ export default function ServicesPage() {
                 key={index}
                 className={`p-8 rounded-lg ${
                   pkg.highlighted
-                    ? 'bg-primary-600 text-white shadow-2xl scale-105'
+                    ? 'bg-primary-700 text-white shadow-2xl scale-105'
                     : 'bg-white dark:bg-gray-900 shadow-md'
                 }`}
               >
@@ -278,14 +278,14 @@ export default function ServicesPage() {
                 </h3>
                 <div
                   className={`text-4xl font-bold font-heading mb-4 ${
-                    pkg.highlighted ? 'text-white' : 'text-primary-600 dark:text-primary-400'
+                    pkg.highlighted ? 'text-white' : 'text-primary-700 dark:text-primary-300'
                   }`}
                 >
                   {pkg.price}
                 </div>
                 <p
                   className={`mb-6 ${
-                    pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
+                    pkg.highlighted ? 'text-white' : 'text-gray-700 dark:text-gray-200'
                   }`}
                 >
                   {pkg.description}
@@ -295,14 +295,14 @@ export default function ServicesPage() {
                     <li key={idx} className="flex items-start gap-2">
                       <span
                         className={`${
-                          pkg.highlighted ? 'text-white' : 'text-primary-600 dark:text-primary-400'
+                          pkg.highlighted ? 'text-white' : 'text-primary-700 dark:text-primary-300'
                         } mt-1`}
                       >
                         ✓
                       </span>
                       <span
                         className={
-                          pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
+                          pkg.highlighted ? 'text-white' : 'text-gray-700 dark:text-gray-200'
                         }
                       >
                         {feature}
@@ -312,10 +312,10 @@ export default function ServicesPage() {
                 </ul>
                 <a
                   href="/contact"
-                  className={`block text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  className={`block text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                     pkg.highlighted
-                      ? 'bg-white text-primary-600 hover:bg-gray-100'
-                      : 'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
+                      ? 'bg-white text-primary-700 hover:bg-gray-100 focus:ring-white'
+                      : 'bg-primary-700 text-white hover:bg-primary-800 dark:bg-primary-700 dark:hover:bg-primary-800 focus:ring-primary-500'
                   }`}
                 >
                   Get Free Quote
@@ -370,7 +370,7 @@ export default function ServicesPage() {
                   <h3 className="text-xl font-bold font-heading mb-3 text-gray-900 dark:text-white">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-700 dark:text-gray-200">{faq.answer}</p>
                 </div>
               ))}
             </div>

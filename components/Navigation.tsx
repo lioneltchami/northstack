@@ -73,7 +73,7 @@ export default function Navigation() {
             <span className="text-gray-900 dark:text-white font-extrabold">
               NorthStack
             </span>
-            <span className="text-gray-700 dark:text-gray-300 hidden sm:inline">
+            <span className="text-gray-700 dark:text-gray-200 hidden sm:inline">
               Solutions
             </span>
           </Link>
@@ -87,8 +87,8 @@ export default function Navigation() {
                     <button
                       className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-1 ${
                         isActive(link.href)
-                          ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                          : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                       }`}
                       onMouseEnter={() => setOpenSubmenu(link.label)}
                     >
@@ -106,8 +106,8 @@ export default function Navigation() {
                             href={sublink.href}
                             className={`block px-4 py-2 text-sm transition-colors ${
                               isActive(sublink.href)
-                                ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                                : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                                : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                             }`}
                           >
                             {sublink.label}
@@ -121,8 +121,8 @@ export default function Navigation() {
                     href={link.href}
                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       isActive(link.href)
-                        ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                        : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
                   >
                     {link.label}
@@ -145,7 +145,7 @@ export default function Navigation() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-ring"
+              className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-ring"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -169,8 +169,8 @@ export default function Navigation() {
                         }
                         className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-between ${
                           isActive(link.href)
-                            ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                            : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                            ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                            : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                         }`}
                       >
                         <span>{link.label}</span>
@@ -188,8 +188,8 @@ export default function Navigation() {
                               href={sublink.href}
                               className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
                                 isActive(sublink.href)
-                                  ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                                  : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                  ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                                  : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                               }`}
                             >
                               {sublink.label}
@@ -203,8 +203,8 @@ export default function Navigation() {
                       href={link.href}
                       className={`block px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                         isActive(link.href)
-                          ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
+                          : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                       }`}
                     >
                       {link.label}

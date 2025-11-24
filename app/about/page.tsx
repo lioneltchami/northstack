@@ -38,23 +38,23 @@ export default function AboutPage() {
               From Farm to Enterprise Tech
             </h2>
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
                 My journey into technology started in an unlikely place—a farm in rural Canada. Growing up,
                 I learned the value of hard work, problem-solving, and making things work with what you have.
                 Those lessons shaped how I approach technology today: practical, efficient, and always focused on results.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
                 After pursuing computer science and diving deep into enterprise technology, I spent years working
                 as a contractor for <strong>IBM Canada</strong> and major energy companies across Western Canada.
                 I witnessed firsthand how large organizations leverage technology to scale operations, improve security,
                 and drive innovation.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
                 But I also saw a gap: small and medium-sized Canadian businesses struggling to access the same
                 enterprise-level expertise. They needed modern DevOps practices, cloud infrastructure, and intelligent
                 automation—but couldn't afford the enterprise price tag or navigate complex corporate consultancies.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-gray-700 dark:text-gray-200">
                 That's why I founded <strong>NorthStack Solutions</strong> in Calgary. To bring enterprise-grade
                 IT solutions to Canadian businesses in a way that's personal, affordable, and actually useful.
               </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
             ].map((item, index) => (
               <div key={index} className="flex gap-4 p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex-shrink-0">
-                  <div className="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  <div className="p-3 rounded-lg bg-primary-200 dark:bg-primary-800 text-primary-700 dark:text-primary-300">
                     <item.icon className="w-8 h-8" />
                   </div>
                 </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                  <p className="text-gray-600 dark:text-gray-200">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -153,13 +153,13 @@ export default function AboutPage() {
               },
             ].map((section, index) => (
               <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-bold font-heading mb-4 text-primary-600 dark:text-primary-400">
+                <h3 className="text-xl font-bold font-heading mb-4 text-primary-700 dark:text-primary-300">
                   {section.category}
                 </h3>
                 <ul className="space-y-2">
                   {section.skills.map((skill, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
-                      <span className="text-primary-600 dark:text-primary-400 mt-1">✓</span>
+                    <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-200">
+                      <span className="text-primary-700 dark:text-primary-300 mt-1">✓</span>
                       <span>{skill}</span>
                     </li>
                   ))}
@@ -201,15 +201,15 @@ export default function AboutPage() {
                 },
               ].map((milestone, index) => (
                 <div key={index} className="relative">
-                  <div className="absolute -left-10 mt-1.5 w-4 h-4 bg-primary-600 dark:bg-primary-400 rounded-full border-4 border-gray-50 dark:border-gray-800"></div>
+                  <div className="absolute -left-10 mt-1.5 w-4 h-4 bg-primary-700 dark:bg-primary-400 rounded-full border-4 border-gray-50 dark:border-gray-800"></div>
                   <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-                    <div className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-1">
+                    <div className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-1">
                       {milestone.year}
                     </div>
                     <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                       {milestone.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300">{milestone.description}</p>
+                    <p className="text-gray-600 dark:text-gray-200">{milestone.description}</p>
                   </div>
                 </div>
               ))}
@@ -258,13 +258,13 @@ export default function AboutPage() {
               },
             ].map((principle, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex p-4 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-4">
+                <div className="inline-flex p-4 rounded-full bg-primary-200 dark:bg-primary-800 text-primary-700 dark:text-primary-300 mb-4">
                   <principle.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
                   {principle.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{principle.description}</p>
+                <p className="text-gray-600 dark:text-gray-200">{principle.description}</p>
               </div>
             ))}
           </div>
@@ -272,7 +272,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Calgary/Canada Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex p-4 rounded-full bg-white/20 backdrop-blur-sm mb-6">
@@ -308,17 +308,17 @@ export default function AboutPage() {
               Beyond the Code
             </h2>
             <div className="prose prose-lg dark:prose-invert max-w-none text-center">
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
                 When I'm not optimizing AWS bills or setting up automation workflows, you'll find me:
               </p>
-              <ul className="text-lg text-gray-700 dark:text-gray-300 space-y-2 text-left max-w-2xl mx-auto">
+              <ul className="text-lg text-gray-700 dark:text-gray-200 space-y-2 text-left max-w-2xl mx-auto">
                 <li>Exploring the Rocky Mountains (hiking and photography)</li>
                 <li>Tinkering with home lab setups (Proxmox, self-hosted everything)</li>
                 <li>Contributing to open-source projects</li>
                 <li>Reading about emerging technologies and DevOps trends</li>
                 <li>Helping local startups with technical mentorship</li>
               </ul>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mt-6">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mt-6">
                 I believe technology should enhance life, not complicate it. That philosophy guides everything
                 I build for my clients.
               </p>
@@ -334,14 +334,14 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Let's Work Together
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
+            <p className="text-xl text-gray-700 dark:text-gray-200 mb-8">
               Whether you need a complete cloud migration, intelligent automation workflows, or just want
               to chat about your technology challenges, I'm here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="px-8 py-4 bg-primary-700 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Book Free Consultation
               </a>

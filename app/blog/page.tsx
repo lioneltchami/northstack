@@ -42,27 +42,27 @@ export default function BlogPage() {
         <section className="section-padding bg-white dark:bg-gray-900">
           <div className="container-custom">
             <div className="max-w-5xl mx-auto bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg p-8 md:p-12 shadow-lg">
-              <div className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-2">
+              <div className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-2">
                 Featured Article
               </div>
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
                 {featuredPost.title}
               </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
                 {featuredPost.excerpt}
               </p>
-              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-300">
+              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-200">
                 <span>{featuredPost.date}</span>
                 <span>•</span>
                 <span>{featuredPost.readTime}</span>
                 <span>•</span>
-                <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full">
+                <span className="px-3 py-1 bg-primary-200 dark:bg-primary-800 text-primary-700 dark:text-primary-300 rounded-full">
                   {featuredPost.category}
                 </span>
               </div>
               <a
                 href={`/blog/${featuredPost.slug}`}
-                className="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 bg-primary-700 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300"
               >
                 Read Full Article
               </a>
@@ -96,8 +96,8 @@ export default function BlogPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-primary-600 text-white shadow-lg scale-105'
-                    : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    ? 'bg-primary-700 text-white shadow-lg scale-105'
+                    : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
               >
                 {category}
@@ -123,7 +123,7 @@ export default function BlogPage() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-300">
+              <p className="text-xl text-gray-600 dark:text-gray-200">
                 No articles found. Try a different search or category.
               </p>
             </div>
@@ -132,13 +132,13 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
               Get Weekly Tech Insights
             </h2>
-            <p className="text-xl mb-8 text-white/90">
+            <p className="text-xl mb-8 text-white">
               Join 500+ Canadian business owners receiving practical automation tips, cloud strategies,
               and technology updates every Tuesday.
             </p>
@@ -187,7 +187,7 @@ export default function BlogPage() {
               <button
                 key={index}
                 onClick={() => setSearchQuery(tag)}
-                className="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-full transition-all duration-300"
+                className="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-full transition-all duration-300"
               >
                 {tag}
               </button>

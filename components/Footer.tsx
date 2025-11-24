@@ -59,7 +59,7 @@ export default function Footer() {
                 {siteName}
               </span>
             </Link>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-700 dark:text-gray-200 mb-6 max-w-md">
               Enterprise-Grade DevOps & Automation for Canadian Businesses.
               Bringing 7+ years of enterprise experience to personalized service.
             </p>
@@ -136,7 +136,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 transition-colors flex items-center space-x-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -154,7 +154,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 transition-colors flex items-center space-x-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -172,7 +172,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 transition-colors flex items-center space-x-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -184,7 +184,7 @@ export default function Footer() {
             {/* Stay Connected */}
             <div className="mt-6">
               <h4 className="text-white font-medium mb-2">Stay Updated</h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+              <p className="text-sm text-gray-700 dark:text-gray-200 mb-3">
                 Follow our latest insights and automation tips.
               </p>
               <Link
@@ -202,7 +202,7 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-700 dark:text-gray-300 text-center md:text-left">
+            <p className="text-sm text-gray-700 dark:text-gray-200 text-center md:text-left">
               © {currentYear} NorthStack Solutions. Operated by{' '}
               <span className="text-primary-400">Apoti Tech Inc.</span> All
               rights reserved.
@@ -210,13 +210,13 @@ export default function Footer() {
             <div className="flex items-center space-x-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
               >
                 Terms
               </Link>

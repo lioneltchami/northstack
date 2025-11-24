@@ -88,14 +88,14 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-200">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Email</h3>
                     <a
                       href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="text-gray-600 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300"
                     >
                       {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}
                     </a>
@@ -104,14 +104,14 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-200">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Phone</h3>
                     <a
                       href={`tel:${(process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567').replace(/\s/g, '')}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="text-gray-600 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300"
                     >
                       {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567'}
                     </a>
@@ -120,12 +120,12 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-200">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Location</h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-200">
                       {process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta, Canada'}
                       <br />
                       <span className="text-sm">Serving all of Canada remotely</span>
@@ -135,12 +135,12 @@ export default function ContactPage() {
 
                 {/* Business Hours */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-200">
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-1">Business Hours</h3>
-                    <div className="text-gray-600 dark:text-gray-300 text-sm space-y-1">
+                    <div className="text-gray-600 dark:text-gray-200 text-sm space-y-1">
                       <p>Monday - Friday: 9:00 AM - 6:00 PM MST</p>
                       <p>Saturday: 10:00 AM - 2:00 PM MST</p>
                       <p>Sunday: Closed</p>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-primary-900 dark:text-primary-300 mb-2">
                   Response Time Commitment
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-gray-700 dark:text-gray-200">
                   We typically respond to all inquiries within 24 hours during business days.
                   For urgent matters, please call us directly.
                 </p>
@@ -188,14 +188,14 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                       Full Name *
                     </label>
                     <input
                       id="name"
                       type="text"
                       {...register('name')}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                       placeholder="John Doe"
                     />
                     {errors.name && (
@@ -206,14 +206,14 @@ export default function ContactPage() {
                   {/* Email and Phone */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                         Email Address *
                       </label>
                       <input
                         id="email"
                         type="email"
                         {...register('email')}
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                         placeholder="john@company.com"
                       />
                       {errors.email && (
@@ -222,14 +222,14 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                         Phone Number
                       </label>
                       <input
                         id="phone"
                         type="tel"
                         {...register('phone')}
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                         placeholder="(403) 123-4567"
                       />
                     </div>
@@ -237,13 +237,13 @@ export default function ContactPage() {
 
                   {/* Service */}
                   <div>
-                    <label htmlFor="service" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="service" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                       What service are you interested in? *
                     </label>
                     <select
                       id="service"
                       {...register('service')}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                     >
                       <option value="">Select a service...</option>
                       <option value="web-development">Web Development</option>
@@ -262,13 +262,13 @@ export default function ContactPage() {
                   {/* Budget and Timeline */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                         Budget Range *
                       </label>
                       <select
                         id="budget"
                         {...register('budget')}
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                       >
                         <option value="">Select budget...</option>
                         <option value="under-2500">Under $2,500</option>
@@ -283,13 +283,13 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="timeline" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <label htmlFor="timeline" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                         Timeline *
                       </label>
                       <select
                         id="timeline"
                         {...register('timeline')}
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                       >
                         <option value="">Select timeline...</option>
                         <option value="urgent">Urgent (1-2 weeks)</option>
@@ -305,7 +305,7 @@ export default function ContactPage() {
 
                   {/* Preferred Contact Method */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                       Preferred Contact Method *
                     </label>
                     <div className="flex gap-6">
@@ -316,7 +316,7 @@ export default function ContactPage() {
                           {...register('preferredContact')}
                           className="w-4 h-4 text-primary-600 focus:ring-primary-500"
                         />
-                        <span className="text-gray-700 dark:text-gray-300">Email</span>
+                        <span className="text-gray-700 dark:text-gray-200">Email</span>
                       </label>
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -325,21 +325,21 @@ export default function ContactPage() {
                           {...register('preferredContact')}
                           className="w-4 h-4 text-primary-600 focus:ring-primary-500"
                         />
-                        <span className="text-gray-700 dark:text-gray-300">Phone</span>
+                        <span className="text-gray-700 dark:text-gray-200">Phone</span>
                       </label>
                     </div>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
                       Tell us about your project *
                     </label>
                     <textarea
                       id="message"
                       rows={6}
                       {...register('message')}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none resize-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-700 dark:focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 resize-none"
                       placeholder="Tell us about your project, challenges, and goals..."
                     ></textarea>
                     {errors.message && (
@@ -366,7 +366,7 @@ export default function ContactPage() {
                     )}
                   </button>
 
-                  <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
+                  <p className="text-sm text-gray-600 dark:text-gray-200 text-center">
                     By submitting this form, you agree to our{' '}
                     <a href="/privacy" className="text-primary-600 dark:text-primary-400 hover:underline">
                       Privacy Policy
@@ -414,7 +414,7 @@ export default function ContactPage() {
                   <h3 className="text-lg font-bold font-heading mb-2 text-gray-900 dark:text-white">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-600 dark:text-gray-200">{faq.answer}</p>
                 </div>
               ))}
             </div>
