@@ -41,15 +41,16 @@ export default function CTA({
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-heading mb-6" style={{textShadow: variant === 'gradient' ? '0 4px 8px rgba(0,0,0,0.5)' : 'none'}}>
             {title}
           </h2>
           <p
-            className={`text-lg md:text-xl mb-8 ${
+            className={`text-lg md:text-xl mb-8 font-bold ${
               variant === 'gradient'
                 ? 'text-white'
                 : 'text-gray-700'
             }`}
+            style={{textShadow: variant === 'gradient' ? '0 2px 4px rgba(0,0,0,0.4)' : 'none'}}
           >
             {description}
           </p>
