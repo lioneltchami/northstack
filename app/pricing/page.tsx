@@ -2,40 +2,75 @@ import { Metadata } from 'next';
 import Hero from '@/components/ui/Hero';
 import PricingCard from '@/components/ui/PricingCard';
 import CTA from '@/components/ui/CTA';
-import { pricingTiers, addOnServices, guarantees } from '@/data/pricing';
-import { CheckCircle, Shield, DollarSign, Clock, HelpCircle } from 'lucide-react';
+import { businessPricingTiers, addOnServices, guarantees } from '@/data/pricing';
+import { CheckCircle, Shield, DollarSign, Clock, HelpCircle, TrendingUp, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Affordable IT Solutions | NorthStack Solutions',
-  description: 'Transparent, fixed-price IT solutions for Canadian businesses. From $1,500 starter packages to custom enterprise solutions. No hidden fees.',
-  keywords: ['IT Pricing', 'Web Development Cost', 'Automation Pricing', 'DevOps Consulting Rates'],
+  title: 'Business Pricing | Enterprise IT Solutions | NorthStack Solutions',
+  description: 'Transparent, fixed-price IT solutions for Canadian businesses. From $1,500 starter packages to custom enterprise solutions. ROI-focused. No hidden fees.',
+  keywords: ['Business IT Pricing', 'Enterprise Web Development', 'DevOps Consulting', 'Cloud Infrastructure Cost', 'Automation Solutions Pricing'],
 };
 
-export default function PricingPage() {
+export default function BusinessPricingPage() {
   return (
     <>
       <Hero
-        title="Transparent, Fair Pricing"
-        subtitle="Pricing & Packages"
-        description="Enterprise-grade solutions at small business prices. Fixed-price projects with no surprise costs."
+        title="Business Solutions Pricing"
+        subtitle="Enterprise IT for Growing Businesses"
+        description="Scale your business with enterprise-grade infrastructure, automation, and DevOps. Fixed-price projects with clear ROI."
         variant="gradient"
         size="medium"
       />
 
+      {/* ROI Banner */}
+      <section className="section-padding bg-white border-b-2 border-gray-200">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading mb-8 text-gray-900">
+              Invest in Growth, Not Overhead
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-primary-100 mb-4">
+                  <TrendingUp className="w-8 h-8 text-primary-700" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2 text-gray-900">Measurable ROI</h3>
+                <p className="text-gray-700">Every solution is designed to save time, reduce costs, or increase revenue.</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-secondary-100 mb-4">
+                  <Shield className="w-8 h-8 text-secondary-700" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2 text-gray-900">Enterprise-Grade</h3>
+                <p className="text-gray-700">Fortune 500 infrastructure and security at small business prices.</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-green-100 mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-700" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2 text-gray-900">Fixed-Price</h3>
+                <p className="text-gray-700">Budget with confidence. No hourly billing surprises.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Pricing Tiers */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              Choose Your Package
+              Choose Your Business Package
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              All packages include setup, implementation, testing, documentation, and post-launch support.
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              All packages include setup, implementation, testing, training, documentation, and post-launch support.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingTiers.map((tier, index) => (
+            {businessPricingTiers.map((tier, index) => (
               <PricingCard
                 key={tier.id}
                 name={tier.name}
@@ -54,13 +89,13 @@ export default function PricingPage() {
       </section>
 
       {/* Add-On Services */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Add-On Services
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Enhance any package or purchase standalone services as needed.
             </p>
           </div>
@@ -69,21 +104,21 @@ export default function PricingPage() {
             {addOnServices.map((service, index) => (
               <div
                 key={service.id}
-                className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
               >
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {service.name}
                 </h3>
-                <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                <div className="text-3xl font-bold text-primary-700 mb-2">
                   {service.price}
-                  <span className="text-sm font-normal text-gray-600 dark:text-gray-300 ml-2">
+                  <span className="text-sm font-normal text-gray-800 ml-2">
                     {service.priceUnit}
                   </span>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{service.description}</p>
+                <p className="text-gray-700 mb-4">{service.description}</p>
                 <a
                   href="/contact"
-                  className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold"
+                  className="inline-flex items-center text-primary-700 hover:text-primary-700 font-semibold"
                 >
                   Learn More →
                 </a>
@@ -94,22 +129,22 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
-            Package Comparison
+            Business Package Comparison
           </h2>
 
           <div className="max-w-6xl mx-auto overflow-x-auto">
-            <table className="w-full bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg">
+            <table className="w-full bg-white rounded-lg shadow-lg">
               <thead>
-                <tr className="border-b-2 border-gray-200 dark:border-gray-700">
-                  <th className="p-4 text-left text-gray-900 dark:text-white font-bold">Feature</th>
-                  {pricingTiers.map((tier) => (
+                <tr className="border-b-2 border-gray-400">
+                  <th className="p-4 text-left text-gray-900 font-bold">Feature</th>
+                  {businessPricingTiers.map((tier) => (
                     <th
                       key={tier.id}
-                      className={`p-4 text-center text-gray-900 dark:text-white font-bold ${
-                        tier.highlighted ? 'bg-primary-50 dark:bg-primary-900/20' : ''
+                      className={`p-4 text-center text-gray-900 font-bold ${
+                        tier.highlighted ? 'bg-primary-50' : ''
                       }`}
                     >
                       {tier.name}
@@ -148,13 +183,13 @@ export default function PricingPage() {
                     values: ['Basic SSL', 'DevSecOps', 'Enterprise compliance'],
                   },
                 ].map((row, index) => (
-                  <tr key={index} className="border-b border-gray-200 dark:border-gray-700">
-                    <td className="p-4 font-semibold text-gray-900 dark:text-white">{row.feature}</td>
+                  <tr key={index} className="border-b border-gray-400">
+                    <td className="p-4 font-semibold text-gray-900">{row.feature}</td>
                     {row.values.map((value, idx) => (
                       <td
                         key={idx}
-                        className={`p-4 text-center text-gray-700 dark:text-gray-300 ${
-                          pricingTiers[idx].highlighted ? 'bg-primary-50 dark:bg-primary-900/20' : ''
+                        className={`p-4 text-center text-gray-700 ${
+                          businessPricingTiers[idx].highlighted ? 'bg-primary-50' : ''
                         }`}
                       >
                         {value}
@@ -169,7 +204,7 @@ export default function PricingPage() {
       </section>
 
       {/* Guarantees */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
             Our Guarantees
@@ -177,17 +212,17 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {guarantees.map((guarantee, index) => (
-              <div key={index} className="flex gap-4 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+              <div key={index} className="flex gap-4 bg-white p-6 rounded-lg shadow-md">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-green-600 dark:text-green-400" />
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-green-600" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                     {guarantee.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">{guarantee.description}</p>
+                  <p className="text-gray-700">{guarantee.description}</p>
                 </div>
               </div>
             ))}
@@ -196,7 +231,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
@@ -246,14 +281,14 @@ export default function PricingPage() {
                     'If you\'re not satisfied within the first 7 days of starting the project, we\'ll refund your deposit, no questions asked. After that, we work on milestone approvals—you only pay for milestones you approve.',
                 },
               ].map((faq, index) => (
-                <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
                   <div className="flex items-start gap-4">
-                    <HelpCircle className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
+                    <HelpCircle className="w-6 h-6 text-primary-700 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-xl font-bold font-heading mb-3 text-gray-900 dark:text-white">
+                      <h3 className="text-xl font-bold font-heading mb-3 text-gray-900">
                         {faq.question}
                       </h3>
-                      <p className="text-gray-700 dark:text-gray-300">{faq.answer}</p>
+                      <p className="text-gray-700">{faq.answer}</p>
                     </div>
                   </div>
                 </div>
@@ -264,7 +299,7 @@ export default function PricingPage() {
       </section>
 
       {/* Why Our Pricing */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8">
@@ -302,10 +337,31 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Need Personal Website? */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center bg-gray-50 p-8 rounded-lg shadow-md border-2 border-primary-200">
+            <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900">
+              Looking for a Personal Website Instead?
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Need a portfolio, blog, or personal brand site? Check out our personal website packages starting at just $599.
+            </p>
+            <Link
+              href="/pricing/personal"
+              className="inline-flex items-center px-8 py-4 border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white rounded-lg text-lg font-bold transition-colors shadow-lg hover:shadow-xl"
+            >
+              View Personal Pricing
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTA
-        title="Ready to Get Started?"
-        description="Book a free consultation to discuss your project. We'll provide a custom quote with transparent, fixed pricing—no obligation."
+        title="Ready to Scale Your Business?"
+        description="Book a free consultation to discuss your project. We'll provide a custom quote with transparent, fixed pricing and clear ROI projections."
         primaryButton={{ text: 'Get Free Quote', href: '/contact' }}
         secondaryButton={{ text: 'View All Services', href: '/services' }}
         variant="simple"

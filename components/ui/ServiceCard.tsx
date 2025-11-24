@@ -32,25 +32,25 @@ export default function ServiceCard({
       transition={{ duration: 0.5, delay }}
       className={`card card-hover p-6 md:p-8 h-full ${
         variant === 'featured'
-          ? 'border-2 border-primary-500 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800'
+          ? 'border-2 border-primary-500 bg-gradient-to-br from-primary-50 to-white'
           : ''
       }`}
     >
       <div
         className={`inline-flex p-3 rounded-lg mb-4 ${
           variant === 'featured'
-            ? 'bg-gradient-to-br from-primary-600 to-secondary-600 text-white'
-            : 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
+            ? 'bg-gradient-to-br from-primary-700 to-secondary-700 text-white'
+            : 'bg-primary-200 text-primary-800'
         }`}
       >
         <Icon className="w-8 h-8" />
       </div>
 
-      <h3 className="text-xl md:text-2xl font-bold font-heading mb-3 text-gray-900 dark:text-white">
+      <h3 className="text-xl md:text-2xl font-bold font-heading mb-3 text-gray-900">
         {title}
       </h3>
 
-      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+      <p className="text-gray-700 mb-4 leading-relaxed">
         {description}
       </p>
 
@@ -59,10 +59,10 @@ export default function ServiceCard({
           {features.map((feature, index) => (
             <li
               key={index}
-              className="flex items-start space-x-2 text-sm text-gray-700 dark:text-gray-300"
+              className="flex items-start space-x-2 text-sm text-gray-700"
             >
               <svg
-                className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5"
+                className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -80,7 +80,7 @@ export default function ServiceCard({
 
       {href && (
         <div className="mt-auto pt-4">
-          <span className="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold hover:gap-2 transition-all group">
+          <span className="inline-flex items-center text-primary-700 font-semibold hover:gap-2 transition-all group">
             Learn More
             <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </span>

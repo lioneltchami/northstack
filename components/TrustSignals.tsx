@@ -49,7 +49,7 @@ const trustBadges = [
 
 export default function TrustSignals() {
   return (
-    <section className="py-12 bg-white dark:bg-gray-900 border-t border-b border-gray-200 dark:border-gray-800">
+    <section className="py-12 bg-white border-t border-b border-gray-400">
       <div className="container-custom">
         <m.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,10 +58,10 @@ export default function TrustSignals() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <h2 className="text-2xl md:text-3xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+          <h2 className="text-2xl md:text-3xl font-bold font-heading mb-2 text-gray-900">
             Trusted by Canadian Businesses
           </h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-800">
             Enterprise expertise with personalized service
           </p>
         </m.div>
@@ -81,7 +81,7 @@ export default function TrustSignals() {
               }}
               className="group"
             >
-              <div className="relative p-4 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:scale-105">
+              <div className="relative p-4 rounded-xl bg-gray-50 border border-gray-400 transition-all duration-300 hover:shadow-lg hover:scale-105">
                 {/* Gradient overlay on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${badge.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`} />
 
@@ -89,10 +89,10 @@ export default function TrustSignals() {
                   <div className={`inline-flex p-2 rounded-lg bg-gradient-to-br ${badge.color} mb-2`}>
                     <badge.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-1">
+                  <h3 className="font-bold text-sm text-gray-900 mb-1">
                     {badge.title}
                   </h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-300">
+                  <p className="text-xs text-gray-800">
                     {badge.description}
                   </p>
                 </div>

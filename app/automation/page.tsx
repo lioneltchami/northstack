@@ -38,13 +38,13 @@ export default function AutomationPage() {
       />
 
       {/* The Problem Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Is Your Team Drowning in Manual Tasks?
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               Most small businesses waste 15-20 hours per week on tasks that could be automated.
             </p>
           </div>
@@ -82,14 +82,14 @@ export default function AutomationPage() {
                 problem: 'Manually adding leads to CRM, sending welcome emails, and tracking follow-up schedules.',
               },
             ].map((item, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-                <div className="inline-flex p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 mb-4">
+              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                <div className="inline-flex p-3 rounded-lg bg-red-100 text-red-600 mb-4">
                   <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{item.problem}</p>
+                <p className="text-gray-700">{item.problem}</p>
               </div>
             ))}
           </div>
@@ -97,7 +97,7 @@ export default function AutomationPage() {
       </section>
 
       {/* The Solution Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
@@ -140,13 +140,13 @@ export default function AutomationPage() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               What Can Be Automated?
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               Almost anything. Here are the most popular automation workflows we build.
             </p>
           </div>
@@ -234,24 +234,24 @@ export default function AutomationPage() {
             ].map((useCase, index) => (
               <div
                 key={index}
-                className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
               >
-                <h3 className="text-2xl font-bold font-heading mb-3 text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-bold font-heading mb-3 text-gray-900">
                   {useCase.title}
                 </h3>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-lg text-gray-700 mb-6">
                   {useCase.description}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                   {useCase.workflows.map((workflow, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 dark:text-gray-300">{workflow}</span>
+                      <CheckCircle className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{workflow}</span>
                     </div>
                   ))}
                 </div>
-                <div className="bg-primary-50 dark:bg-primary-900/20 p-4 rounded-lg border-l-4 border-primary-600">
-                  <p className="text-sm font-semibold text-primary-900 dark:text-primary-300">
+                <div className="bg-primary-50 p-4 rounded-lg border-l-4 border-primary-600">
+                  <p className="text-sm font-semibold text-primary-900">
                     Real Result: {useCase.example}
                   </p>
                 </div>
@@ -262,13 +262,13 @@ export default function AutomationPage() {
       </section>
 
       {/* Tools We Use */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Best-in-Class Automation Tools
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               We use proven automation platforms that integrate with 5,000+ apps and services.
             </p>
           </div>
@@ -299,20 +299,20 @@ export default function AutomationPage() {
                 key={index}
                 className={`p-6 rounded-lg ${
                   tool.highlighted
-                    ? 'bg-primary-600 text-white shadow-xl scale-105'
-                    : 'bg-white dark:bg-gray-900 shadow-md'
+                    ? 'bg-primary-700 text-white shadow-xl scale-105'
+                    : 'bg-white shadow-md'
                 }`}
               >
                 <h3
                   className={`text-2xl font-bold font-heading mb-3 ${
-                    tool.highlighted ? 'text-white' : 'text-gray-900 dark:text-white'
+                    tool.highlighted ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   {tool.name}
                 </h3>
                 <p
                   className={`mb-6 ${
-                    tool.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
+                    tool.highlighted ? 'text-white/90' : 'text-gray-700'
                   }`}
                 >
                   {tool.description}
@@ -322,12 +322,12 @@ export default function AutomationPage() {
                     <li key={idx} className="flex items-start gap-2">
                       <CheckCircle
                         className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                          tool.highlighted ? 'text-white' : 'text-primary-600 dark:text-primary-400'
+                          tool.highlighted ? 'text-white' : 'text-primary-700'
                         }`}
                       />
                       <span
                         className={
-                          tool.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
+                          tool.highlighted ? 'text-white/90' : 'text-gray-700'
                         }
                       >
                         {benefit}
@@ -337,7 +337,7 @@ export default function AutomationPage() {
                 </ul>
                 <div
                   className={`text-sm font-semibold ${
-                    tool.highlighted ? 'text-white' : 'text-primary-600 dark:text-primary-400'
+                    tool.highlighted ? 'text-white' : 'text-primary-700'
                   }`}
                 >
                   Best for: {tool.bestFor}
@@ -349,16 +349,16 @@ export default function AutomationPage() {
       </section>
 
       {/* AI Integration */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-flex p-4 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-6">
+            <div className="inline-flex p-4 rounded-full bg-primary-100 text-primary-700 mb-6">
               <Bot className="w-12 h-12" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               AI-Powered Automation
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               We integrate Claude, ChatGPT, and other AI tools to make your automations even smarter.
             </p>
           </div>
@@ -402,15 +402,15 @@ export default function AutomationPage() {
                 ],
               },
             ].map((category, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold font-heading mb-4 text-gray-900">
                   {category.title}
                 </h3>
                 <ul className="space-y-2">
                   {category.examples.map((example, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <Zap className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 dark:text-gray-300">{example}</span>
+                      <Zap className="w-5 h-5 text-primary-700 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{example}</span>
                     </li>
                   ))}
                 </ul>
@@ -421,17 +421,17 @@ export default function AutomationPage() {
       </section>
 
       {/* ROI Calculator Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-center">
               Calculate Your Potential Savings
             </h2>
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold mb-3">Typical Time Savings Per Week:</h3>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-2 text-gray-700">
                     <li className="flex justify-between">
                       <span>Email follow-ups and responses:</span>
                       <strong>4-6 hours</strong>
@@ -448,18 +448,18 @@ export default function AutomationPage() {
                       <span>Lead management and CRM updates:</span>
                       <strong>2-4 hours</strong>
                     </li>
-                    <li className="flex justify-between border-t-2 pt-2 mt-2 font-bold text-gray-900 dark:text-white">
+                    <li className="flex justify-between border-t-2 pt-2 mt-2 font-bold text-gray-900">
                       <span>Total Time Saved:</span>
                       <strong>15-20 hours/week</strong>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg">
-                  <h4 className="text-lg font-bold mb-3 text-primary-900 dark:text-primary-300">
+                <div className="bg-primary-50 p-6 rounded-lg">
+                  <h4 className="text-lg font-bold mb-3 text-primary-900">
                     Cost-Benefit Analysis:
                   </h4>
-                  <div className="space-y-2 text-gray-800 dark:text-gray-200">
+                  <div className="space-y-2 text-gray-800">
                     <p>
                       <strong>20 hours/week × $25/hour (staff cost)</strong> = $500/week = $26,000/year wasted
                     </p>
@@ -469,7 +469,7 @@ export default function AutomationPage() {
                     <p>
                       <strong>Monthly tool costs:</strong> $50 - $200/month
                     </p>
-                    <p className="text-xl font-bold text-primary-600 dark:text-primary-400 pt-3 border-t">
+                    <p className="text-xl font-bold text-primary-700 pt-3 border-t">
                       ROI: Automation pays for itself in the first month
                     </p>
                   </div>
@@ -481,13 +481,13 @@ export default function AutomationPage() {
       </section>
 
       {/* Process */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               How We Build Your Automation
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               From discovery to deployment, we make automation easy.
             </p>
           </div>
@@ -516,13 +516,13 @@ export default function AutomationPage() {
               },
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl font-bold font-heading text-primary-100 dark:text-primary-900/30 mb-4">
+                <div className="text-5xl font-bold font-heading text-gray-200 mb-4">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700">{step.description}</p>
               </div>
             ))}
           </div>

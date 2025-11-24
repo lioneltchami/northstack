@@ -33,7 +33,7 @@ export default function Hero({
 
   const backgroundClasses = {
     gradient: 'animated-gradient text-white',
-    simple: 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white',
+    simple: 'bg-white text-gray-900',
     dark: 'bg-gray-900 text-white',
   };
 
@@ -59,7 +59,7 @@ export default function Hero({
               className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
                 variant === 'gradient'
                   ? 'bg-white/20 backdrop-blur-sm'
-                  : 'bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400'
+                  : 'bg-primary-200 text-primary-800'
               }`}
             >
               {subtitle}
@@ -71,7 +71,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading mb-6 leading-tight ${
-              variant === 'simple' ? 'text-gray-900 dark:text-white' : ''
+              variant === 'simple' ? 'text-gray-900' : ''
             }`}
           >
             {title}
@@ -84,8 +84,8 @@ export default function Hero({
               transition={{ duration: 0.6, delay: 0.15 }}
               className={`text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto ${
                 variant === 'gradient'
-                  ? 'text-white/90'
-                  : 'text-gray-700 dark:text-gray-300'
+                  ? 'text-white'
+                  : 'text-gray-700'
               }`}
             >
               {description}
@@ -102,10 +102,10 @@ export default function Hero({
               {cta.primary && (
                 <a
                   href={cta.primary.href}
-                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                     variant === 'gradient'
-                      ? 'bg-primary-700 text-white hover:bg-primary-800 border-2 border-primary-700 hover:border-primary-800'
-                      : 'bg-primary-600 text-white hover:bg-primary-700'
+                      ? 'bg-white text-primary-900 hover:bg-gray-100 border-2 border-white focus:ring-white'
+                      : 'bg-primary-800 text-white hover:bg-primary-900 border-2 border-primary-900'
                   }`}
                 >
                   {cta.primary.text}
@@ -114,10 +114,10 @@ export default function Hero({
               {cta.secondary && (
                 <a
                   href={cta.secondary.href}
-                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl ${
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                     variant === 'gradient'
-                      ? 'bg-gray-900 hover:bg-gray-800 text-white border-2 border-gray-900 hover:border-gray-800'
-                      : 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20'
+                      ? 'bg-white/10 hover:bg-white/20 text-white border-2 border-white/80 hover:border-white backdrop-blur-md focus:ring-white'
+                      : 'border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white'
                   }`}
                 >
                   {cta.secondary.text}
@@ -132,7 +132,7 @@ export default function Hero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
               className={`mt-12 ${
-                variant === 'simple' ? 'text-gray-900 dark:text-white' : ''
+                variant === 'simple' ? 'text-gray-900' : ''
               }`}
             >
               {children}

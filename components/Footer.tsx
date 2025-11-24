@@ -39,7 +39,7 @@ export default function Footer() {
   const businessLocation = process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta, Canada';
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-100 text-gray-900 border-t-4 border-primary-700">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -50,16 +50,15 @@ export default function Footer() {
               className="flex items-center space-x-2 text-2xl font-bold font-heading group mb-4"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                <div className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-3 py-2 rounded-lg shadow-lg">
+                <div className="bg-gradient-to-r from-primary-700 to-secondary-700 text-white px-3 py-2 rounded-lg shadow-lg">
                   NS
                 </div>
               </div>
-              <span className="text-white font-extrabold">
+              <span className="text-gray-900 font-extrabold">
                 {siteName}
               </span>
             </Link>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-800 mb-6 max-w-md font-normal">
               Enterprise-Grade DevOps & Automation for Canadian Businesses.
               Bringing 7+ years of enterprise experience to personalized service.
             </p>
@@ -67,23 +66,23 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
-                <MapPin className="w-5 h-5 text-primary-400" />
-                <span>{businessLocation}</span>
+                <MapPin className="w-5 h-5 text-primary-700" />
+                <span className="text-gray-900 font-medium">{businessLocation}</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
-                <Mail className="w-5 h-5 text-primary-400" />
+                <Mail className="w-5 h-5 text-primary-700" />
                 <a
                   href={`mailto:${contactEmail}`}
-                  className="hover:text-primary-400 transition-colors"
+                  className="text-gray-900 hover:text-primary-900 transition-colors font-medium"
                 >
                   {contactEmail}
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
-                <Phone className="w-5 h-5 text-primary-400" />
+                <Phone className="w-5 h-5 text-primary-700" />
                 <a
                   href={`tel:${contactPhone.replace(/\s/g, '')}`}
-                  className="hover:text-primary-400 transition-colors"
+                  className="text-gray-900 hover:text-primary-900 transition-colors font-medium"
                 >
                   {contactPhone}
                 </a>
@@ -97,7 +96,7 @@ export default function Footer() {
                   href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
+                  className="p-3 bg-white border-2 border-gray-400 rounded-lg hover:border-primary-900 hover:bg-primary-900 hover:text-white transition-all shadow-sm"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -108,7 +107,7 @@ export default function Footer() {
                   href={process.env.NEXT_PUBLIC_GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
+                  className="p-3 bg-white border-2 border-gray-400 rounded-lg hover:border-primary-900 hover:bg-primary-900 hover:text-white transition-all shadow-sm"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -119,7 +118,7 @@ export default function Footer() {
                   href={process.env.NEXT_PUBLIC_TWITTER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
+                  className="p-3 bg-white border-2 border-gray-400 rounded-lg hover:border-primary-900 hover:bg-primary-900 hover:text-white transition-all shadow-sm"
                   aria-label="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
@@ -130,13 +129,13 @@ export default function Footer() {
 
           {/* Services Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Services</h3>
+            <h3 className="text-gray-900 font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-900 hover:text-primary-900 transition-colors flex items-center space-x-1 group font-semibold"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -148,13 +147,13 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Company</h3>
+            <h3 className="text-gray-900 font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-900 hover:text-primary-900 transition-colors flex items-center space-x-1 group font-semibold"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -166,13 +165,13 @@ export default function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-4">Resources</h3>
+            <h3 className="text-gray-900 font-bold text-lg mb-4">Resources</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center space-x-1 group"
+                    className="text-gray-900 hover:text-primary-900 transition-colors flex items-center space-x-1 group font-semibold"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -183,13 +182,13 @@ export default function Footer() {
 
             {/* Stay Connected */}
             <div className="mt-6">
-              <h4 className="text-white font-medium mb-2">Stay Updated</h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+              <h4 className="text-gray-900 font-bold mb-2">Stay Updated</h4>
+              <p className="text-sm text-gray-800 mb-3 font-normal">
                 Follow our latest insights and automation tips.
               </p>
               <Link
                 href="/blog"
-                className="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white rounded-lg text-lg font-bold transition-colors shadow-xl hover:shadow-2xl border-2 border-primary-900"
               >
                 Read Our Blog
               </Link>
@@ -199,28 +198,28 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t-2 border-gray-300 bg-white">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-700 dark:text-gray-300 text-center md:text-left">
+            <p className="text-sm text-gray-900 text-center md:text-left font-medium">
               © {currentYear} NorthStack Solutions. Operated by{' '}
-              <span className="text-primary-400">Apoti Tech Inc.</span> All
+              <span className="text-primary-800 font-bold">Apoti Tech Inc.</span> All
               rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-900 hover:text-primary-900 transition-colors font-semibold"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-900 hover:text-primary-900 transition-colors font-semibold"
               >
                 Terms
               </Link>
-              <span className="text-gray-600">
+              <span className="text-gray-900 font-semibold">
                 Made with care in Calgary 🇨🇦
               </span>
             </div>

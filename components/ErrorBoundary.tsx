@@ -77,30 +77,30 @@ export default class ErrorBoundary extends Component<Props, State> {
 
       // Default fallback UI
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4">
-          <div className="max-w-md w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
             {/* Error Icon */}
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full mb-6">
               <AlertTriangle className="w-8 h-8" />
             </div>
 
             {/* Error Title */}
-            <h2 className="text-2xl font-bold font-heading text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-bold font-heading text-gray-900 mb-4">
               Oops! Something went wrong
             </h2>
 
             {/* Error Description */}
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-gray-800 mb-6">
               We apologize for the inconvenience. An unexpected error occurred while loading this page.
             </p>
 
             {/* Error Details (only in development) */}
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="text-left mb-6 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <summary className="font-semibold text-gray-900 dark:text-white cursor-pointer mb-2">
+              <details className="text-left mb-6 p-4 bg-gray-100 rounded-lg">
+                <summary className="font-semibold text-gray-900 cursor-pointer mb-2">
                   Error Details (Development Only)
                 </summary>
-                <pre className="text-xs text-red-600 dark:text-red-400 overflow-auto">
+                <pre className="text-xs text-red-600 overflow-auto">
                   {this.state.error.name}: {this.state.error.message}
                   {'\n\n'}
                   {this.state.error.stack}
@@ -110,7 +110,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 
             {/* Error ID for support */}
             {this.state.errorId && (
-              <p className="text-xs text-gray-500 dark:text-gray-300 mb-6">
+              <p className="text-xs text-gray-700 mb-6">
                 Error ID: {this.state.errorId}
               </p>
             )}
@@ -119,7 +119,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             <div className="space-y-3 sm:space-y-0 sm:space-x-4 sm:flex">
               <button
                 onClick={this.handleReload}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-primary-700 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors"
               >
                 <RefreshCw className="w-5 h-5" />
                 Try Again
@@ -127,7 +127,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 
               <button
                 onClick={this.handleGoHome}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/20 font-semibold rounded-lg transition-colors"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary-600 text-primary-700 hover:bg-primary-50 font-semibold rounded-lg transition-colors"
               >
                 <Home className="w-5 h-5" />
                 Go Home
@@ -135,12 +135,12 @@ export default class ErrorBoundary extends Component<Props, State> {
             </div>
 
             {/* Support Contact */}
-            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+            <div className="mt-8 pt-6 border-t border-gray-400">
+              <p className="text-sm text-gray-800">
                 If this problem persists, please contact{' '}
                 <a
                   href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'support@northstack.solutions'}?subject=Error Report&body=Error ID: ${this.state.errorId}`}
-                  className="text-primary-600 dark:text-primary-400 hover:underline font-semibold"
+                  className="text-primary-700 hover:underline font-semibold"
                 >
                   our support team
                 </a>

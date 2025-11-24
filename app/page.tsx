@@ -21,7 +21,11 @@ import {
   TrendingUp,
   Users,
   Award,
+  Building2,
+  User,
+  ArrowRight,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // Icon mapping for services
 const iconMap: Record<string, any> = {
@@ -73,13 +77,13 @@ export default function Home() {
       <TrustSignals />
 
       {/* Services Overview Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Our Services
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               From web development to cloud infrastructure, we offer comprehensive IT solutions
               tailored to your business needs.
             </p>
@@ -105,7 +109,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/services"
-              className="inline-flex items-center px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border border-primary-800"
+              className="inline-flex items-center px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white font-bold text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] focus:outline-none focus:ring-4 focus:ring-primary-400 border-2 border-primary-900"
             >
               View All Services
             </a>
@@ -114,13 +118,13 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Why Choose NorthStack Solutions?
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Enterprise expertise with small business pricing. We bring years of experience
               from major companies to deliver personalized IT solutions for Canadian businesses.
             </p>
@@ -154,13 +158,13 @@ export default function Home() {
               },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex p-4 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-4">
+                <div className="inline-flex p-4 rounded-full bg-primary-200 text-primary-800 mb-4">
                   <item.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-gray-700">{item.description}</p>
               </div>
             ))}
           </div>
@@ -168,13 +172,13 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               How We Work
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               A streamlined process designed to deliver results quickly and efficiently.
             </p>
           </div>
@@ -207,15 +211,15 @@ export default function Home() {
               },
             ].map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-6xl font-bold font-heading text-primary-100 dark:text-primary-900/30 mb-4">
+                <div className="text-6xl font-bold font-heading text-gray-200 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700">{step.description}</p>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent dark:from-primary-700"></div>
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent"></div>
                 )}
               </div>
             ))}
@@ -227,13 +231,13 @@ export default function Home() {
       <ClientLogos />
 
       {/* Testimonials Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Real results from real Canadian businesses.
             </p>
           </div>
@@ -255,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-800 to-secondary-800 text-white">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -264,11 +268,11 @@ export default function Home() {
               { number: '98%', label: 'Client Satisfaction' },
               { number: '24/7', label: 'Support Available' },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold font-heading mb-2 text-white drop-shadow-lg">
+              <div key={index} className="text-center p-6 rounded-xl bg-black/20 backdrop-blur-sm border-2 border-white/20">
+                <div className="text-5xl md:text-6xl font-extrabold font-heading mb-3 text-white" style={{textShadow: '0 2px 4px rgba(0,0,0,0.2)'}}>
                   {stat.number}
                 </div>
-                <div className="text-white text-sm md:text-base drop-shadow-md">{stat.label}</div>
+                <div className="text-white text-lg md:text-xl font-semibold" style={{textShadow: '0 2px 4px rgba(0,0,0,0.2)'}}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -276,13 +280,13 @@ export default function Home() {
       </section>
 
       {/* Latest Blog Posts */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Latest Insights
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Technical guides, industry insights, and automation strategies.
             </p>
           </div>
@@ -305,10 +309,118 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/blog"
-              className="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:text-primary-400 dark:border-primary-400 font-semibold rounded-lg transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-primary-400 focus:ring-offset-2"
             >
               Read More Articles
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Selector Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
+              Find the Right Pricing for You
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Whether you're a business or an individual, we have transparent, fixed-price solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Business Pricing Card */}
+            <Link href="/pricing" className="group">
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-gray-200 hover:border-primary-600 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors">
+                    <Building2 className="w-12 h-12 text-primary-700" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-4 text-center text-gray-900">
+                  Business Solutions
+                </h3>
+                <p className="text-gray-700 mb-6 text-center">
+                  Enterprise-grade infrastructure, automation, and DevOps for growing businesses.
+                </p>
+                <div className="mb-6">
+                  <div className="text-center mb-4">
+                    <span className="text-4xl font-bold text-primary-800">$1,500+</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>Cloud infrastructure & automation</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>CI/CD pipelines & DevOps</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>Enterprise security & compliance</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>90 days - 6 months support</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <span className="inline-flex items-center text-primary-800 font-bold text-lg group-hover:text-primary-900">
+                    View Business Pricing
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Personal Pricing Card */}
+            <Link href="/pricing/personal" className="group">
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-gray-200 hover:border-secondary-600 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 bg-secondary-100 rounded-full group-hover:bg-secondary-200 transition-colors">
+                    <User className="w-12 h-12 text-secondary-700" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-4 text-center text-gray-900">
+                  Personal Websites
+                </h3>
+                <p className="text-gray-700 mb-6 text-center">
+                  Beautiful, professional websites for individuals, freelancers, and creators.
+                </p>
+                <div className="mb-6">
+                  <div className="text-center mb-4">
+                    <span className="text-4xl font-bold text-secondary-800">$599+</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>Custom design & development</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>Portfolio, blog, or e-commerce</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>No monthly fees - own forever</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>14-60 days support included</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <span className="inline-flex items-center text-secondary-800 font-bold text-lg group-hover:text-secondary-900">
+                    View Personal Pricing
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -318,7 +430,7 @@ export default function Home() {
         title="Ready to Transform Your IT Infrastructure?"
         description="Let's discuss how we can help your Canadian business scale efficiently with modern DevOps and automation solutions."
         primaryButton={{ text: 'Book Free Consultation', href: '/contact' }}
-        secondaryButton={{ text: 'View Pricing', href: '/pricing' }}
+        secondaryButton={{ text: 'View All Services', href: '/services' }}
         variant="gradient"
       />
     </>

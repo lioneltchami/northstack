@@ -47,7 +47,7 @@ export default function ServicesPage() {
       />
 
       {/* Services Navigation */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
@@ -55,10 +55,10 @@ export default function ServicesPage() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
                   selectedCategory === category.id
-                    ? 'bg-primary-600 text-white shadow-lg scale-105'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'bg-primary-700 text-white shadow-lg scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 {category.name}
@@ -87,7 +87,7 @@ export default function ServicesPage() {
 
           {filteredServices.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-700 dark:text-gray-300">
+              <p className="text-xl text-gray-700">
                 No services found in this category.
               </p>
             </div>
@@ -96,13 +96,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Why Choose NorthStack Solutions?
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               We combine enterprise experience with small business pricing to deliver exceptional value.
             </p>
           </div>
@@ -132,15 +132,15 @@ export default function ServicesPage() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg shadow-md text-center"
               >
-                <div className="text-4xl font-bold font-heading text-primary-600 dark:text-primary-400 mb-2">
+                <div className="text-4xl font-bold font-heading text-primary-700 mb-2">
                   {item.stat}
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-gray-700">{item.description}</p>
               </div>
             ))}
           </div>
@@ -148,13 +148,13 @@ export default function ServicesPage() {
       </section>
 
       {/* How It Works */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Simple, Transparent Process
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               From initial consultation to ongoing support, we make it easy.
             </p>
           </div>
@@ -187,15 +187,15 @@ export default function ServicesPage() {
               },
             ].map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-6xl font-bold font-heading text-primary-100 dark:text-primary-900/30 mb-4">
+                <div className="text-6xl font-bold font-heading text-gray-200 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
+                <p className="text-gray-700">{step.description}</p>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent dark:from-primary-700"></div>
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent"></div>
                 )}
               </div>
             ))}
@@ -204,13 +204,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Packages Comparison */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Common Service Packages
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700">
               Most clients choose one of these popular packages, but every project is customized to your needs.
             </p>
           </div>
@@ -265,27 +265,27 @@ export default function ServicesPage() {
                 key={index}
                 className={`p-8 rounded-lg ${
                   pkg.highlighted
-                    ? 'bg-primary-600 text-white shadow-2xl scale-105'
-                    : 'bg-white dark:bg-gray-900 shadow-md'
+                    ? 'bg-primary-700 text-white shadow-2xl scale-105'
+                    : 'bg-white shadow-md'
                 }`}
               >
                 <h3
                   className={`text-2xl font-bold font-heading mb-2 ${
-                    pkg.highlighted ? 'text-white' : 'text-gray-900 dark:text-white'
+                    pkg.highlighted ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   {pkg.name}
                 </h3>
                 <div
                   className={`text-4xl font-bold font-heading mb-4 ${
-                    pkg.highlighted ? 'text-white' : 'text-primary-600 dark:text-primary-400'
+                    pkg.highlighted ? 'text-white' : 'text-primary-700'
                   }`}
                 >
                   {pkg.price}
                 </div>
                 <p
                   className={`mb-6 ${
-                    pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
+                    pkg.highlighted ? 'text-white' : 'text-gray-700'
                   }`}
                 >
                   {pkg.description}
@@ -295,14 +295,14 @@ export default function ServicesPage() {
                     <li key={idx} className="flex items-start gap-2">
                       <span
                         className={`${
-                          pkg.highlighted ? 'text-white' : 'text-primary-600 dark:text-primary-400'
+                          pkg.highlighted ? 'text-white' : 'text-primary-700'
                         } mt-1`}
                       >
                         ✓
                       </span>
                       <span
                         className={
-                          pkg.highlighted ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'
+                          pkg.highlighted ? 'text-white' : 'text-gray-700'
                         }
                       >
                         {feature}
@@ -312,10 +312,10 @@ export default function ServicesPage() {
                 </ul>
                 <a
                   href="/contact"
-                  className={`block text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  className={`block text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                     pkg.highlighted
-                      ? 'bg-white text-primary-600 hover:bg-gray-100'
-                      : 'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
+                      ? 'bg-white text-primary-700 hover:bg-gray-100 focus:ring-white'
+                      : 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500'
                   }`}
                 >
                   Get Free Quote
@@ -327,7 +327,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQs */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
@@ -366,11 +366,11 @@ export default function ServicesPage() {
                     'Three things: (1) Enterprise experience at small business prices, (2) Fixed-price projects with no surprise costs, and (3) Education-focused approach—we teach you how systems work so you\'re never dependent on us.',
                 },
               ].map((faq, index) => (
-                <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold font-heading mb-3 text-gray-900 dark:text-white">
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-xl font-bold font-heading mb-3 text-gray-900">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               ))}
             </div>

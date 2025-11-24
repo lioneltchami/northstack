@@ -9,7 +9,7 @@
 export function Spinner({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg'; className?: string }) {
   const sizeClasses = {
     sm: 'w-4 h-4 border-2',
-    md: 'w-6 h-6 border-3',
+    md: 'w-6 h-6 border-2',
     lg: 'w-10 h-10 border-4',
   };
 
@@ -97,10 +97,10 @@ export function Pulse({ children, className = '' }: { children: React.ReactNode;
 // Page Loading Component
 export function PageLoading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="text-center">
         <Spinner size="lg" className="mx-auto mb-4" />
-        <p className="text-gray-600 dark:text-gray-300">Loading...</p>
+        <p className="text-gray-800">Loading...</p>
       </div>
     </div>
   );
