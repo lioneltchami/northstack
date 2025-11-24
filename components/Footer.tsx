@@ -92,33 +92,39 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="flex items-center space-x-4 mt-6">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+              {process.env.NEXT_PUBLIC_LINKEDIN_URL && (
+                <a
+                  href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              )}
+              {process.env.NEXT_PUBLIC_GITHUB_URL && (
+                <a
+                  href={process.env.NEXT_PUBLIC_GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+              )}
+              {process.env.NEXT_PUBLIC_TWITTER_URL && (
+                <a
+                  href={process.env.NEXT_PUBLIC_TWITTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-800 rounded-lg hover:bg-primary-600 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -175,25 +181,18 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Newsletter Signup */}
+            {/* Stay Connected */}
             <div className="mt-6">
               <h4 className="text-white font-medium mb-2">Stay Updated</h4>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-                Get DevOps tips and automation insights.
+                Follow our latest insights and automation tips.
               </p>
-              <form className="flex flex-col space-y-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm focus:outline-none focus:border-primary-500 transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <Link
+                href="/blog"
+                className="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors"
+              >
+                Read Our Blog
+              </Link>
             </div>
           </div>
         </div>
