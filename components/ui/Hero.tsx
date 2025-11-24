@@ -104,7 +104,7 @@ export default function Hero({
                   href={cta.primary.href}
                   className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                     variant === 'gradient'
-                      ? 'bg-white text-primary-900 hover:bg-gray-100 border-3 border-white focus:ring-white'
+                      ? 'bg-white text-primary-900 hover:bg-gray-100 border-2 border-white focus:ring-white'
                       : 'bg-primary-800 text-white hover:bg-primary-900 border-2 border-primary-900'
                   }`}
                 >
