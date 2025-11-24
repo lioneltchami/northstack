@@ -1,14 +1,15 @@
 import { PricingTier } from '@/types';
 
-export const pricingTiers: PricingTier[] = [
+// B2B Pricing - For Businesses
+export const businessPricingTiers: PricingTier[] = [
   {
-    id: 'starter',
-    name: 'Starter',
-    description: 'Perfect for individuals and small projects getting started with automation or web presence.',
+    id: 'business-starter',
+    name: 'Business Starter',
+    description: 'Perfect for small businesses and startups getting started with automation or web presence.',
     price: '$1,500',
     priceDetail: 'one-time',
     features: [
-      'Basic website (5 pages) or landing page',
+      'Professional website (5 pages) or landing page',
       'Mobile-responsive design',
       'SSL certificate setup',
       'Basic SEO optimization',
@@ -17,11 +18,11 @@ export const pricingTiers: PricingTier[] = [
       '30 days post-launch support',
       'Hosting guidance',
     ],
-    cta: 'Choose Starter',
+    cta: 'Get Started',
   },
   {
-    id: 'professional',
-    name: 'Professional',
+    id: 'business-professional',
+    name: 'Business Professional',
     description: 'Ideal for growing businesses ready to scale with advanced automation and infrastructure.',
     price: '$3,500',
     priceDetail: 'one-time',
@@ -39,16 +40,16 @@ export const pricingTiers: PricingTier[] = [
       'Monitoring and alerting setup',
     ],
     highlighted: true,
-    cta: 'Choose Professional',
+    cta: 'Most Popular',
   },
   {
-    id: 'enterprise',
-    name: 'Enterprise',
+    id: 'business-enterprise',
+    name: 'Business Enterprise',
     description: 'For businesses requiring comprehensive DevOps solutions, complex automation, and ongoing support.',
     price: 'Custom',
     priceDetail: 'contact for quote',
     features: [
-      'Everything in Professional',
+      'Everything in Business Professional',
       'Complex cloud architecture (multi-region, auto-scaling)',
       'Unlimited automation workflows',
       'Infrastructure as Code (Terraform/CloudFormation)',
@@ -64,6 +65,73 @@ export const pricingTiers: PricingTier[] = [
     cta: 'Contact Sales',
   },
 ];
+
+// B2C Pricing - For Individuals
+export const personalPricingTiers: PricingTier[] = [
+  {
+    id: 'personal-lite',
+    name: 'Personal Lite',
+    description: 'Perfect for personal blogs, family websites, and simple portfolios.',
+    price: '$599',
+    priceDetail: 'one-time',
+    features: [
+      'Beautiful 3-page website',
+      'Mobile-friendly design',
+      'Contact form integration',
+      'Basic SEO setup',
+      'Social media links',
+      'Google Analytics setup',
+      '14 days email support',
+      'Tutorial videos included',
+    ],
+    cta: 'Start Your Site',
+  },
+  {
+    id: 'personal',
+    name: 'Personal',
+    description: 'Ideal for freelancers, creators, and professionals building their personal brand.',
+    price: '$999',
+    priceDetail: 'one-time',
+    features: [
+      'Custom 5-page website',
+      'Modern responsive design',
+      'Photo gallery or portfolio section',
+      'Blog setup with CMS',
+      'Advanced SEO optimization',
+      'Contact form with spam protection',
+      'Google Analytics & Search Console',
+      '30 days email support',
+      'Easy-to-use admin panel',
+      'Tutorial videos & documentation',
+    ],
+    highlighted: true,
+    cta: 'Most Popular',
+  },
+  {
+    id: 'personal-pro',
+    name: 'Personal Pro',
+    description: 'For creators, side hustlers, and entrepreneurs who need advanced features.',
+    price: '$1,499',
+    priceDetail: 'one-time',
+    features: [
+      'Premium 8-page custom website',
+      'Unique custom design',
+      'E-commerce (up to 10 products)',
+      'Booking/scheduling system (optional)',
+      'Email automation setup',
+      'Newsletter integration (Mailchimp/ConvertKit)',
+      'Advanced SEO & speed optimization',
+      'Social media integration',
+      '60 days priority support',
+      'Training session included',
+      'Professional branding consultation',
+    ],
+    cta: 'Go Premium',
+  },
+];
+
+// Legacy export for backwards compatibility (defaults to business pricing)
+export const pricingTiers: PricingTier[] = businessPricingTiers;
 
 export const addOnServices = [
   {

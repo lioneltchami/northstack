@@ -15,7 +15,14 @@ const navLinks = [
       { label: 'Home Server Setup', href: '/home-server' },
     ],
   },
-  { label: 'Pricing', href: '/pricing' },
+  {
+    label: 'Pricing',
+    href: '/pricing',
+    submenu: [
+      { label: 'Business Pricing', href: '/pricing' },
+      { label: 'Personal Pricing', href: '/pricing/personal' },
+    ],
+  },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },

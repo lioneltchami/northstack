@@ -2,40 +2,75 @@ import { Metadata } from 'next';
 import Hero from '@/components/ui/Hero';
 import PricingCard from '@/components/ui/PricingCard';
 import CTA from '@/components/ui/CTA';
-import { pricingTiers, addOnServices, guarantees } from '@/data/pricing';
-import { CheckCircle, Shield, DollarSign, Clock, HelpCircle } from 'lucide-react';
+import { businessPricingTiers, addOnServices, guarantees } from '@/data/pricing';
+import { CheckCircle, Shield, DollarSign, Clock, HelpCircle, TrendingUp, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Affordable IT Solutions | NorthStack Solutions',
-  description: 'Transparent, fixed-price IT solutions for Canadian businesses. From $1,500 starter packages to custom enterprise solutions. No hidden fees.',
-  keywords: ['IT Pricing', 'Web Development Cost', 'Automation Pricing', 'DevOps Consulting Rates'],
+  title: 'Business Pricing | Enterprise IT Solutions | NorthStack Solutions',
+  description: 'Transparent, fixed-price IT solutions for Canadian businesses. From $1,500 starter packages to custom enterprise solutions. ROI-focused. No hidden fees.',
+  keywords: ['Business IT Pricing', 'Enterprise Web Development', 'DevOps Consulting', 'Cloud Infrastructure Cost', 'Automation Solutions Pricing'],
 };
 
-export default function PricingPage() {
+export default function BusinessPricingPage() {
   return (
     <>
       <Hero
-        title="Transparent, Fair Pricing"
-        subtitle="Pricing & Packages"
-        description="Enterprise-grade solutions at small business prices. Fixed-price projects with no surprise costs."
+        title="Business Solutions Pricing"
+        subtitle="Enterprise IT for Growing Businesses"
+        description="Scale your business with enterprise-grade infrastructure, automation, and DevOps. Fixed-price projects with clear ROI."
         variant="gradient"
         size="medium"
       />
 
+      {/* ROI Banner */}
+      <section className="section-padding bg-white border-b-2 border-gray-200">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading mb-8 text-gray-900">
+              Invest in Growth, Not Overhead
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-primary-100 mb-4">
+                  <TrendingUp className="w-8 h-8 text-primary-700" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2 text-gray-900">Measurable ROI</h3>
+                <p className="text-gray-700">Every solution is designed to save time, reduce costs, or increase revenue.</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-secondary-100 mb-4">
+                  <Shield className="w-8 h-8 text-secondary-700" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2 text-gray-900">Enterprise-Grade</h3>
+                <p className="text-gray-700">Fortune 500 infrastructure and security at small business prices.</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-4 rounded-full bg-green-100 mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-700" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2 text-gray-900">Fixed-Price</h3>
+                <p className="text-gray-700">Budget with confidence. No hourly billing surprises.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Pricing Tiers */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-              Choose Your Package
+              Choose Your Business Package
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              All packages include setup, implementation, testing, documentation, and post-launch support.
+              All packages include setup, implementation, testing, training, documentation, and post-launch support.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingTiers.map((tier, index) => (
+            {businessPricingTiers.map((tier, index) => (
               <PricingCard
                 key={tier.id}
                 name={tier.name}
@@ -54,7 +89,7 @@ export default function PricingPage() {
       </section>
 
       {/* Add-On Services */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
@@ -94,18 +129,18 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
-            Package Comparison
+            Business Package Comparison
           </h2>
 
           <div className="max-w-6xl mx-auto overflow-x-auto">
-            <table className="w-full bg-gray-50 rounded-lg shadow-lg">
+            <table className="w-full bg-white rounded-lg shadow-lg">
               <thead>
                 <tr className="border-b-2 border-gray-400">
                   <th className="p-4 text-left text-gray-900 font-bold">Feature</th>
-                  {pricingTiers.map((tier) => (
+                  {businessPricingTiers.map((tier) => (
                     <th
                       key={tier.id}
                       className={`p-4 text-center text-gray-900 font-bold ${
@@ -154,7 +189,7 @@ export default function PricingPage() {
                       <td
                         key={idx}
                         className={`p-4 text-center text-gray-700 ${
-                          pricingTiers[idx].highlighted ? 'bg-primary-50' : ''
+                          businessPricingTiers[idx].highlighted ? 'bg-primary-50' : ''
                         }`}
                       >
                         {value}
@@ -302,10 +337,31 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Need Personal Website? */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center bg-gray-50 p-8 rounded-lg shadow-md border-2 border-primary-200">
+            <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900">
+              Looking for a Personal Website Instead?
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Need a portfolio, blog, or personal brand site? Check out our personal website packages starting at just $599.
+            </p>
+            <Link
+              href="/pricing/personal"
+              className="inline-flex items-center px-8 py-4 border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white rounded-lg text-lg font-bold transition-colors shadow-lg hover:shadow-xl"
+            >
+              View Personal Pricing
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <CTA
-        title="Ready to Get Started?"
-        description="Book a free consultation to discuss your project. We'll provide a custom quote with transparent, fixed pricing—no obligation."
+        title="Ready to Scale Your Business?"
+        description="Book a free consultation to discuss your project. We'll provide a custom quote with transparent, fixed pricing and clear ROI projections."
         primaryButton={{ text: 'Get Free Quote', href: '/contact' }}
         secondaryButton={{ text: 'View All Services', href: '/services' }}
         variant="simple"

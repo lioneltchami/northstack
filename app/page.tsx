@@ -21,7 +21,11 @@ import {
   TrendingUp,
   Users,
   Award,
+  Building2,
+  User,
+  ArrowRight,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // Icon mapping for services
 const iconMap: Record<string, any> = {
@@ -313,12 +317,120 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Selector Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
+              Find the Right Pricing for You
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Whether you're a business or an individual, we have transparent, fixed-price solutions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Business Pricing Card */}
+            <Link href="/pricing" className="group">
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-gray-200 hover:border-primary-600 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors">
+                    <Building2 className="w-12 h-12 text-primary-700" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-4 text-center text-gray-900">
+                  Business Solutions
+                </h3>
+                <p className="text-gray-700 mb-6 text-center">
+                  Enterprise-grade infrastructure, automation, and DevOps for growing businesses.
+                </p>
+                <div className="mb-6">
+                  <div className="text-center mb-4">
+                    <span className="text-4xl font-bold text-primary-800">$1,500+</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>Cloud infrastructure & automation</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>CI/CD pipelines & DevOps</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>Enterprise security & compliance</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-primary-700 mr-2 flex-shrink-0" />
+                      <span>90 days - 6 months support</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <span className="inline-flex items-center text-primary-800 font-bold text-lg group-hover:text-primary-900">
+                    View Business Pricing
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Personal Pricing Card */}
+            <Link href="/pricing/personal" className="group">
+              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-gray-200 hover:border-secondary-600 h-full">
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 bg-secondary-100 rounded-full group-hover:bg-secondary-200 transition-colors">
+                    <User className="w-12 h-12 text-secondary-700" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-4 text-center text-gray-900">
+                  Personal Websites
+                </h3>
+                <p className="text-gray-700 mb-6 text-center">
+                  Beautiful, professional websites for individuals, freelancers, and creators.
+                </p>
+                <div className="mb-6">
+                  <div className="text-center mb-4">
+                    <span className="text-4xl font-bold text-secondary-800">$599+</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>Custom design & development</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>Portfolio, blog, or e-commerce</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>No monthly fees - own forever</span>
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-secondary-700 mr-2 flex-shrink-0" />
+                      <span>14-60 days support included</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <span className="inline-flex items-center text-secondary-800 font-bold text-lg group-hover:text-secondary-900">
+                    View Personal Pricing
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <CTA
         title="Ready to Transform Your IT Infrastructure?"
         description="Let's discuss how we can help your Canadian business scale efficiently with modern DevOps and automation solutions."
         primaryButton={{ text: 'Book Free Consultation', href: '/contact' }}
-        secondaryButton={{ text: 'View Pricing', href: '/pricing' }}
+        secondaryButton={{ text: 'View All Services', href: '/services' }}
         variant="gradient"
       />
     </>
