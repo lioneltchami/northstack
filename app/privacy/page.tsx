@@ -17,10 +17,10 @@ export default function PrivacyPage() {
         size="small"
       />
 
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-8">
+          <div className="prose prose-lg max-w-none">
+            <p className="text-sm text-gray-800 mb-8">
               <strong>Effective Date:</strong> January 1, 2025
               <br />
               <strong>Last Updated:</strong> January 1, 2025
@@ -222,7 +222,7 @@ export default function PrivacyPage() {
 
             <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
 
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-6">
               <p className="mb-2"><strong>NorthStack Solutions</strong></p>
               <p className="mb-2">Email: <a href="mailto:privacy@northstack.ca">privacy@northstack.ca</a></p>
               <p className="mb-2">Phone: +1 (403) 123-4567</p>
@@ -236,7 +236,7 @@ export default function PrivacyPage() {
               contact the Office of the Privacy Commissioner of Canada:
             </p>
 
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-6">
               <p className="mb-2"><strong>Office of the Privacy Commissioner of Canada</strong></p>
               <p className="mb-2">Toll-free: 1-800-282-1376</p>
               <p className="mb-2">Website: <a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a></p>
@@ -244,7 +244,7 @@ export default function PrivacyPage() {
 
             <hr className="my-8" />
 
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-sm text-gray-800">
               This Privacy Policy is governed by the laws of Alberta, Canada. By using our services, you consent
               to the collection and use of your information as described in this policy.
             </p>

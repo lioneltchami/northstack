@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
 
 const navLinks = [
   {
@@ -53,8 +52,8 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
-          : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          : 'bg-white/90 backdrop-blur-sm shadow-md'
       }`}
     >
       <div className="container-custom">
@@ -65,15 +64,15 @@ export default function Navigation() {
             className="flex items-center space-x-2 text-2xl font-bold font-heading group"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
-              <div className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-3 py-2 rounded-lg shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-secondary-700 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              <div className="relative bg-gradient-to-r from-primary-700 to-secondary-700 text-white px-3 py-2 rounded-lg shadow-lg">
                 NS
               </div>
             </div>
-            <span className="text-gray-900 dark:text-white font-extrabold">
+            <span className="text-gray-900 font-extrabold">
               NorthStack
             </span>
-            <span className="text-gray-700 dark:text-gray-200 hidden sm:inline">
+            <span className="text-gray-700 hidden sm:inline">
               Solutions
             </span>
           </Link>
@@ -87,8 +86,8 @@ export default function Navigation() {
                     <button
                       className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-1 ${
                         isActive(link.href)
-                          ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                          : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          ? 'text-primary-700 bg-primary-50'
+                          : 'text-gray-700 hover:text-primary-700 hover:bg-gray-100'
                       }`}
                       onMouseEnter={() => setOpenSubmenu(link.label)}
                     >
@@ -97,7 +96,7 @@ export default function Navigation() {
                     </button>
                     {openSubmenu === link.label && (
                       <div
-                        className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 animate-fade-in"
+                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-400 py-2 animate-fade-in"
                         onMouseLeave={() => setOpenSubmenu(null)}
                       >
                         {link.submenu.map((sublink) => (
@@ -106,8 +105,8 @@ export default function Navigation() {
                             href={sublink.href}
                             className={`block px-4 py-2 text-sm transition-colors ${
                               isActive(sublink.href)
-                                ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                                : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                ? 'text-primary-700 bg-primary-50'
+                                : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
                             }`}
                           >
                             {sublink.label}
@@ -121,8 +120,8 @@ export default function Navigation() {
                     href={link.href}
                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       isActive(link.href)
-                        ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                        : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        ? 'text-primary-700 bg-primary-50'
+                        : 'text-gray-700 hover:text-primary-700 hover:bg-gray-100'
                     }`}
                   >
                     {link.label}
@@ -134,7 +133,6 @@ export default function Navigation() {
 
           {/* Right side actions */}
           <div className="flex items-center space-x-4">
-            <ThemeToggle />
             <Link
               href="/contact"
               className="hidden md:block btn-primary text-sm"
@@ -145,7 +143,7 @@ export default function Navigation() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-ring"
+              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus-ring"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -169,8 +167,8 @@ export default function Navigation() {
                         }
                         className={`w-full text-left px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-between ${
                           isActive(link.href)
-                            ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                            : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                            ? 'text-primary-700 bg-primary-50'
+                            : 'text-gray-700 hover:text-primary-700 hover:bg-gray-100'
                         }`}
                       >
                         <span>{link.label}</span>
@@ -188,8 +186,8 @@ export default function Navigation() {
                               href={sublink.href}
                               className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
                                 isActive(sublink.href)
-                                  ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                                  : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                  ? 'text-primary-700 bg-primary-50'
+                                  : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
                               }`}
                             >
                               {sublink.label}
@@ -203,8 +201,8 @@ export default function Navigation() {
                       href={link.href}
                       className={`block px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                         isActive(link.href)
-                          ? 'text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/20'
-                          : 'text-gray-700 dark:text-gray-200 hover:text-primary-700 dark:hover:text-primary-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          ? 'text-primary-700 bg-primary-50'
+                          : 'text-gray-700 hover:text-primary-700 hover:bg-gray-100'
                       }`}
                     >
                       {link.label}

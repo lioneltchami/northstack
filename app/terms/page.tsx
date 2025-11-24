@@ -17,10 +17,10 @@ export default function TermsPage() {
         size="small"
       />
 
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-sm text-gray-600 dark:text-gray-300 mb-8">
+          <div className="prose prose-lg max-w-none">
+            <p className="text-sm text-gray-800 mb-8">
               <strong>Effective Date:</strong> January 1, 2025
               <br />
               <strong>Last Updated:</strong> January 1, 2025
@@ -283,7 +283,7 @@ export default function TermsPage() {
 
             <p>For questions about these Terms, please contact us:</p>
 
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-6">
               <p className="mb-2"><strong>NorthStack Solutions</strong></p>
               <p className="mb-2">Email: <a href="mailto:legal@northstack.ca">legal@northstack.ca</a></p>
               <p className="mb-2">Phone: +1 (403) 123-4567</p>
@@ -292,7 +292,7 @@ export default function TermsPage() {
 
             <hr className="my-8" />
 
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-sm text-gray-800">
               By using our services, you acknowledge that you have read, understood, and agree to be bound
               by these Terms of Service.
             </p>

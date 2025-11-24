@@ -43,19 +43,19 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
   return (
     <>
       {/* Reading Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 dark:bg-gray-800 z-50">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
         <div
-          className="h-full bg-primary-600 transition-all duration-150"
+          className="h-full bg-primary-700 transition-all duration-150"
           style={{ width: `${readingProgress}%` }}
         ></div>
       </div>
 
       {/* Back Button */}
-      <div className="section-padding bg-gray-50 dark:bg-gray-800 py-8">
+      <div className="section-padding bg-gray-50 py-8">
         <div className="container-custom max-w-4xl">
           <a
             href="/blog"
-            className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+            className="inline-flex items-center text-primary-700 hover:text-primary-700 transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Blog
@@ -64,45 +64,45 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       </div>
 
       {/* Article Header */}
-      <article className="section-padding bg-white dark:bg-gray-900">
+      <article className="section-padding bg-white">
         <div className="container-custom max-w-4xl">
           {/* Category Badge */}
           <div className="mb-4">
-            <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold">
+            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
               {post.category}
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 text-gray-900">
             {post.title}
           </h1>
 
           {/* Excerpt */}
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{post.excerpt}</p>
+          <p className="text-xl text-gray-800 mb-8">{post.excerpt}</p>
 
           {/* Meta Information */}
-          <div className="flex flex-wrap items-center gap-6 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+          <div className="flex flex-wrap items-center gap-6 mb-8 pb-8 border-b border-gray-400">
+            <div className="flex items-center gap-2 text-gray-800">
               <Calendar className="w-5 h-5" />
               <span>{post.date}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+            <div className="flex items-center gap-2 text-gray-800">
               <Clock className="w-5 h-5" />
               <span>{post.readTime}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+            <div className="flex items-center gap-2 text-gray-800">
               <span>By {post.author}</span>
             </div>
           </div>
 
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-3 mb-8">
-            <Tag className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+            <Tag className="w-5 h-5 text-gray-800" />
             {post.tags.map((tag, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
               >
                 {tag}
               </span>
@@ -110,8 +110,8 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </div>
 
           {/* Share Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-200 dark:border-gray-700">
-            <span className="text-gray-600 dark:text-gray-300 font-semibold flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-4 mb-12 pb-8 border-b border-gray-400">
+            <span className="text-gray-800 font-semibold flex items-center gap-2">
               <Share2 className="w-5 h-5" />
               Share:
             </span>
@@ -119,7 +119,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(shareUrl)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition-colors"
               aria-label="Share on Twitter"
             >
               <Twitter className="w-5 h-5" />
@@ -128,7 +128,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition-colors"
               aria-label="Share on LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
@@ -137,14 +137,14 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-600 transition-colors"
               aria-label="Share on Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
               href={`mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(shareUrl)}`}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors"
               aria-label="Share via Email"
             >
               <Mail className="w-5 h-5" />
@@ -152,17 +152,17 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <div className="prose prose-lg max-w-none">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
 
           {/* Author Info */}
-          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+          <div className="mt-12 pt-8 border-t border-gray-400">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                 About {post.author}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-800 mb-4">
                 NorthStack Solutions is a Calgary-based DevOps and automation consultancy specializing
                 in helping Canadian small businesses leverage modern technology for growth. With 7+ years
                 of enterprise experience from IBM Canada and major energy companies, we bring
@@ -170,7 +170,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
               </p>
               <a
                 href="/about"
-                className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold"
+                className="text-primary-700 hover:text-primary-700 font-semibold"
               >
                 Learn More About Us →
               </a>
@@ -181,7 +181,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="section-padding bg-gray-50 dark:bg-gray-800">
+        <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
               Related Articles
@@ -205,7 +205,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       )}
 
       {/* Newsletter CTA */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
@@ -223,7 +223,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
               />
               <button
                 type="submit"
-                className="px-8 py-4 bg-white text-primary-600 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap"
+                className="px-8 py-4 bg-white text-primary-700 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap"
               >
                 Subscribe Free
               </button>
@@ -236,26 +236,26 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       </section>
 
       {/* Contact CTA */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Need Help Implementing This?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-xl text-gray-800 mb-8">
               We can help you implement the strategies discussed in this article. Book a free consultation
               to discuss your specific needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300"
+                className="px-8 py-4 bg-primary-700 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300"
               >
                 Book Free Consultation
               </a>
               <a
                 href="/services"
-                className="px-8 py-4 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20 font-semibold rounded-lg transition-all duration-300"
+                className="px-8 py-4 border-2 border-primary-600 text-primary-700 hover:bg-primary-50 font-semibold rounded-lg transition-all duration-300"
               >
                 View Our Services
               </a>

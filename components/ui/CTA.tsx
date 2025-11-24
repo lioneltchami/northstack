@@ -30,7 +30,7 @@ export default function CTA({
       className={`section-padding ${
         variant === 'gradient'
           ? 'bg-gradient-to-r from-primary-700 to-secondary-700 text-white'
-          : 'bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white'
+          : 'bg-gray-50 text-gray-900'
       }`}
     >
       <div className="container-custom">
@@ -48,7 +48,7 @@ export default function CTA({
             className={`text-lg md:text-xl mb-8 ${
               variant === 'gradient'
                 ? 'text-white'
-                : 'text-gray-700 dark:text-gray-200'
+                : 'text-gray-700'
             }`}
           >
             {description}
@@ -73,7 +73,7 @@ export default function CTA({
                 className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                   variant === 'gradient'
                     ? 'bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 hover:border-white/60 backdrop-blur-sm focus:ring-white'
-                    : 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:border-primary-300 dark:hover:bg-primary-900/20 focus:ring-primary-500'
+                    : 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 focus:ring-primary-500'
                 }`}
               >
                 {secondaryButton.text}

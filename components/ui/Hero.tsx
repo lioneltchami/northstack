@@ -33,7 +33,7 @@ export default function Hero({
 
   const backgroundClasses = {
     gradient: 'animated-gradient text-white',
-    simple: 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white',
+    simple: 'bg-white text-gray-900',
     dark: 'bg-gray-900 text-white',
   };
 
@@ -59,7 +59,7 @@ export default function Hero({
               className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
                 variant === 'gradient'
                   ? 'bg-white/20 backdrop-blur-sm'
-                  : 'bg-primary-200 dark:bg-primary-900 text-primary-800 dark:text-primary-300'
+                  : 'bg-primary-200 text-primary-800'
               }`}
             >
               {subtitle}
@@ -71,7 +71,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading mb-6 leading-tight ${
-              variant === 'simple' ? 'text-gray-900 dark:text-white' : ''
+              variant === 'simple' ? 'text-gray-900' : ''
             }`}
           >
             {title}
@@ -85,7 +85,7 @@ export default function Hero({
               className={`text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto ${
                 variant === 'gradient'
                   ? 'text-white'
-                  : 'text-gray-700 dark:text-gray-200'
+                  : 'text-gray-700'
               }`}
             >
               {description}
@@ -117,7 +117,7 @@ export default function Hero({
                   className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                     variant === 'gradient'
                       ? 'bg-gray-900 hover:bg-gray-800 text-white border-2 border-gray-900 hover:border-gray-800 focus:ring-white'
-                      : 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:border-primary-300 dark:hover:bg-primary-900/20 focus:ring-primary-500'
+                      : 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 focus:ring-primary-500'
                   }`}
                 >
                   {cta.secondary.text}
@@ -132,7 +132,7 @@ export default function Hero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
               className={`mt-12 ${
-                variant === 'simple' ? 'text-gray-900 dark:text-white' : ''
+                variant === 'simple' ? 'text-gray-900' : ''
               }`}
             >
               {children}

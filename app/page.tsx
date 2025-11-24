@@ -73,13 +73,13 @@ export default function Home() {
       <TrustSignals />
 
       {/* Services Overview Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Our Services
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               From web development to cloud infrastructure, we offer comprehensive IT solutions
               tailored to your business needs.
             </p>
@@ -114,13 +114,13 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Why Choose NorthStack Solutions?
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Enterprise expertise with small business pricing. We bring years of experience
               from major companies to deliver personalized IT solutions for Canadian businesses.
             </p>
@@ -154,13 +154,13 @@ export default function Home() {
               },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex p-4 rounded-full bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-primary-200 mb-4">
+                <div className="inline-flex p-4 rounded-full bg-primary-200 text-primary-800 mb-4">
                   <item.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-200">{item.description}</p>
+                <p className="text-gray-700">{item.description}</p>
               </div>
             ))}
           </div>
@@ -168,13 +168,13 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               How We Work
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               A streamlined process designed to deliver results quickly and efficiently.
             </p>
           </div>
@@ -207,15 +207,15 @@ export default function Home() {
               },
             ].map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-6xl font-bold font-heading text-primary-100 dark:text-primary-900/30 mb-4" aria-hidden="true">
+                <div className="text-6xl font-bold font-heading text-primary-100 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-200">{step.description}</p>
+                <p className="text-gray-700">{step.description}</p>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent dark:from-primary-700"></div>
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent"></div>
                 )}
               </div>
             ))}
@@ -227,13 +227,13 @@ export default function Home() {
       <ClientLogos />
 
       {/* Testimonials Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Real results from real Canadian businesses.
             </p>
           </div>
@@ -276,13 +276,13 @@ export default function Home() {
       </section>
 
       {/* Latest Blog Posts */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-4">
               Latest Insights
             </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Technical guides, industry insights, and automation strategies.
             </p>
           </div>
@@ -305,7 +305,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/blog"
-              className="inline-flex items-center px-8 py-4 border-2 border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white dark:text-primary-300 dark:border-primary-300 dark:hover:bg-primary-700 font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              className="inline-flex items-center px-8 py-4 border-2 border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             >
               Read More Articles
             </a>

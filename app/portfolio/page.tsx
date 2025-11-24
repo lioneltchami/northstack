@@ -27,7 +27,7 @@ export default function PortfolioPage() {
       />
 
       {/* Category Filter */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             {portfolioCategories.map((category) => (
@@ -36,8 +36,8 @@ export default function PortfolioPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-primary-600 text-white shadow-lg scale-105'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'bg-primary-700 text-white shadow-lg scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 {category}
@@ -50,47 +50,47 @@ export default function PortfolioPage() {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                className="bg-gray-50 rounded-lg shadow-lg overflow-hidden"
               >
                 <div className="p-8 md:p-12">
                   {/* Header */}
                   <div className="mb-8">
-                    <div className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-2">
+                    <div className="text-sm font-semibold text-primary-700 mb-2">
                       {project.category}
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+                    <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900">
                       {project.title}
                     </h2>
-                    <p className="text-xl text-gray-700 dark:text-gray-300">{project.description}</p>
+                    <p className="text-xl text-gray-700">{project.description}</p>
                   </div>
 
                   {/* Challenge */}
                   <div className="mb-8">
-                    <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+                    <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900">
                       The Challenge
                     </h3>
-                    <p className="text-lg text-gray-700 dark:text-gray-300">{project.challenge}</p>
+                    <p className="text-lg text-gray-700">{project.challenge}</p>
                   </div>
 
                   {/* Solution */}
                   <div className="mb-8">
-                    <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+                    <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900">
                       The Solution
                     </h3>
-                    <p className="text-lg text-gray-700 dark:text-gray-300">{project.solution}</p>
+                    <p className="text-lg text-gray-700">{project.solution}</p>
                   </div>
 
                   {/* Results */}
                   <div className="mb-8">
-                    <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900 dark:text-white flex items-center gap-2">
-                      <TrendingUp className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                    <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900 flex items-center gap-2">
+                      <TrendingUp className="w-6 h-6 text-primary-700" />
                       Results & Impact
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {project.results.map((result, idx) => (
-                        <div key={idx} className="flex items-start gap-3 bg-white dark:bg-gray-900 p-4 rounded-lg">
-                          <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 dark:text-gray-300">{result}</span>
+                        <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-lg">
+                          <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{result}</span>
                         </div>
                       ))}
                     </div>
@@ -98,14 +98,14 @@ export default function PortfolioPage() {
 
                   {/* Technologies */}
                   <div className="mb-8">
-                    <h3 className="text-xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold font-heading mb-4 text-gray-900">
                       Technologies Used
                     </h3>
                     <div className="flex flex-wrap gap-3">
                       {project.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-semibold"
+                          className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold"
                         >
                           {tech}
                         </span>
@@ -115,11 +115,11 @@ export default function PortfolioPage() {
 
                   {/* Testimonial */}
                   {project.testimonial && (
-                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 p-6 rounded-lg border-l-4 border-primary-600">
-                      <p className="text-lg italic text-gray-800 dark:text-gray-200 mb-4">
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-6 rounded-lg border-l-4 border-primary-600">
+                      <p className="text-lg italic text-gray-800 mb-4">
                         "{project.testimonial.content}"
                       </p>
-                      <div className="font-semibold text-gray-900 dark:text-white">
+                      <div className="font-semibold text-gray-900">
                         — {project.testimonial.name}, {project.testimonial.role}
                       </div>
                     </div>
@@ -131,7 +131,7 @@ export default function PortfolioPage() {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-300">
+              <p className="text-xl text-gray-800">
                 No projects found in this category.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">

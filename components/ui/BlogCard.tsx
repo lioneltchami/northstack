@@ -35,7 +35,7 @@ export default function BlogCard({
       className="card card-hover overflow-hidden h-full flex flex-col"
     >
       {image && (
-        <div className="relative h-48 overflow-hidden bg-gray-200 dark:bg-gray-700">
+        <div className="relative h-48 overflow-hidden bg-gray-200">
           <Image
             src={image}
             alt={`${title} - ${category} blog post`}
@@ -53,7 +53,7 @@ export default function BlogCard({
       )}
 
       <div className="p-6 flex flex-col flex-grow">
-        <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-300 mb-3">
+        <div className="flex items-center space-x-4 text-sm text-gray-800 mb-3">
           <div className="flex items-center space-x-1">
             <Calendar className="w-4 h-4" />
             <span>{date}</span>
@@ -64,17 +64,17 @@ export default function BlogCard({
           </div>
         </div>
 
-        <h3 className="text-xl font-bold font-heading mb-3 text-gray-900 dark:text-white line-clamp-2">
+        <h3 className="text-xl font-bold font-heading mb-3 text-gray-900 line-clamp-2">
           {title}
         </h3>
 
-        <p className="text-gray-700 dark:text-gray-200 mb-4 line-clamp-3 flex-grow">
+        <p className="text-gray-700 mb-4 line-clamp-3 flex-grow">
           {excerpt}
         </p>
 
         <Link
           href={`/blog/${slug}`}
-          className="inline-flex items-center text-primary-700 dark:text-primary-300 font-semibold hover:gap-2 transition-all group mt-auto"
+          className="inline-flex items-center text-primary-700 font-semibold hover:gap-2 transition-all group mt-auto"
         >
           Read More
           <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />

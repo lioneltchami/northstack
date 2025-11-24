@@ -31,30 +31,30 @@ export default function AboutPage() {
       />
 
       {/* Story Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-center">
               From Farm to Enterprise Tech
             </h2>
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg text-gray-700 mb-4">
                 My journey into technology started in an unlikely place—a farm in rural Canada. Growing up,
                 I learned the value of hard work, problem-solving, and making things work with what you have.
                 Those lessons shaped how I approach technology today: practical, efficient, and always focused on results.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
+              <p className="text-lg text-gray-700 mb-4">
                 After pursuing computer science and diving deep into enterprise technology, I spent years working
                 as a contractor for <strong>IBM Canada</strong> and major energy companies across Western Canada.
                 I witnessed firsthand how large organizations leverage technology to scale operations, improve security,
                 and drive innovation.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
+              <p className="text-lg text-gray-700 mb-4">
                 But I also saw a gap: small and medium-sized Canadian businesses struggling to access the same
                 enterprise-level expertise. They needed modern DevOps practices, cloud infrastructure, and intelligent
                 automation—but couldn't afford the enterprise price tag or navigate complex corporate consultancies.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-200">
+              <p className="text-lg text-gray-700">
                 That's why I founded <strong>NorthStack Solutions</strong> in Calgary. To bring enterprise-grade
                 IT solutions to Canadian businesses in a way that's personal, affordable, and actually useful.
               </p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enterprise Experience Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
             Enterprise Experience You Can Trust
@@ -92,17 +92,17 @@ export default function AboutPage() {
                 description: 'From junior developer to senior DevOps engineer, with certifications and real-world battle scars from production incidents at scale.',
               },
             ].map((item, index) => (
-              <div key={index} className="flex gap-4 p-6 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div key={index} className="flex gap-4 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex-shrink-0">
-                  <div className="p-3 rounded-lg bg-primary-200 dark:bg-primary-800 text-primary-700 dark:text-primary-300">
+                  <div className="p-3 rounded-lg bg-primary-200 text-primary-700">
                     <item.icon className="w-8 h-8" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-200">{item.description}</p>
+                  <p className="text-gray-800">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* Technical Expertise Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
             Technical Expertise
@@ -152,14 +152,14 @@ export default function AboutPage() {
                 ],
               },
             ].map((section, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-bold font-heading mb-4 text-primary-700 dark:text-primary-300">
+              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold font-heading mb-4 text-primary-700">
                   {section.category}
                 </h3>
                 <ul className="space-y-2">
                   {section.skills.map((skill, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-200">
-                      <span className="text-primary-700 dark:text-primary-300 mt-1">✓</span>
+                    <li key={idx} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-primary-700 mt-1">✓</span>
                       <span>{skill}</span>
                     </li>
                   ))}
@@ -171,13 +171,13 @@ export default function AboutPage() {
       </section>
 
       {/* Career Timeline */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
             Career Journey
           </h2>
           <div className="max-w-4xl mx-auto">
-            <div className="relative border-l-2 border-primary-300 dark:border-primary-700 pl-8 space-y-8">
+            <div className="relative border-l-2 border-primary-300 pl-8 space-y-8">
               {[
                 {
                   year: '2024-Present',
@@ -201,15 +201,15 @@ export default function AboutPage() {
                 },
               ].map((milestone, index) => (
                 <div key={index} className="relative">
-                  <div className="absolute -left-10 mt-1.5 w-4 h-4 bg-primary-700 dark:bg-primary-400 rounded-full border-4 border-gray-50 dark:border-gray-800"></div>
-                  <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-                    <div className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-1">
+                  <div className="absolute -left-10 mt-1.5 w-4 h-4 bg-primary-700 rounded-full border-4 border-gray-50"></div>
+                  <div className="bg-white p-6 rounded-lg shadow-md">
+                    <div className="text-sm font-semibold text-primary-700 mb-1">
                       {milestone.year}
                     </div>
-                    <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                       {milestone.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-200">{milestone.description}</p>
+                    <p className="text-gray-800">{milestone.description}</p>
                   </div>
                 </div>
               ))}
@@ -219,7 +219,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
             My Approach to Technology
@@ -258,13 +258,13 @@ export default function AboutPage() {
               },
             ].map((principle, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex p-4 rounded-full bg-primary-200 dark:bg-primary-800 text-primary-700 dark:text-primary-300 mb-4">
+                <div className="inline-flex p-4 rounded-full bg-primary-200 text-primary-700 mb-4">
                   <principle.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
                   {principle.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-200">{principle.description}</p>
+                <p className="text-gray-800">{principle.description}</p>
               </div>
             ))}
           </div>
@@ -301,24 +301,24 @@ export default function AboutPage() {
       </section>
 
       {/* Personal Touch Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-center">
               Beyond the Code
             </h2>
-            <div className="prose prose-lg dark:prose-invert max-w-none text-center">
-              <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
+            <div className="prose prose-lg max-w-none text-center">
+              <p className="text-lg text-gray-700 mb-4">
                 When I'm not optimizing AWS bills or setting up automation workflows, you'll find me:
               </p>
-              <ul className="text-lg text-gray-700 dark:text-gray-200 space-y-2 text-left max-w-2xl mx-auto">
+              <ul className="text-lg text-gray-700 space-y-2 text-left max-w-2xl mx-auto">
                 <li>Exploring the Rocky Mountains (hiking and photography)</li>
                 <li>Tinkering with home lab setups (Proxmox, self-hosted everything)</li>
                 <li>Contributing to open-source projects</li>
                 <li>Reading about emerging technologies and DevOps trends</li>
                 <li>Helping local startups with technical mentorship</li>
               </ul>
-              <p className="text-lg text-gray-700 dark:text-gray-200 mt-6">
+              <p className="text-lg text-gray-700 mt-6">
                 I believe technology should enhance life, not complicate it. That philosophy guides everything
                 I build for my clients.
               </p>
@@ -328,13 +328,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               Let's Work Together
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-200 mb-8">
+            <p className="text-xl text-gray-700 mb-8">
               Whether you need a complete cloud migration, intelligent automation workflows, or just want
               to chat about your technology challenges, I'm here to help.
             </p>
@@ -347,7 +347,7 @@ export default function AboutPage() {
               </a>
               <a
                 href="/services"
-                className="px-8 py-4 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20 font-semibold rounded-lg transition-all duration-300"
+                className="px-8 py-4 border-2 border-primary-600 text-primary-700 hover:bg-primary-50 font-semibold rounded-lg transition-all duration-300"
               >
                 View Services
               </a>

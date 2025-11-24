@@ -39,19 +39,19 @@ export default function TestimonialCard({
               className={`w-5 h-5 ${
                 i < rating
                   ? 'text-yellow-400 fill-yellow-400'
-                  : 'text-gray-300 dark:text-gray-600'
+                  : 'text-gray-300'
               }`}
             />
           ))}
         </div>
-        <Quote className="w-8 h-8 text-primary-200 dark:text-primary-900" />
+        <Quote className="w-8 h-8 text-primary-200" />
       </div>
 
-      <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed flex-grow italic">
+      <p className="text-gray-700 mb-6 leading-relaxed flex-grow italic">
         &quot;{content}&quot;
       </p>
 
-      <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex items-center space-x-4 pt-4 border-t border-gray-400">
         {image ? (
           <div className="relative w-12 h-12 rounded-full overflow-hidden">
             <Image
@@ -72,8 +72,8 @@ export default function TestimonialCard({
           </div>
         )}
         <div>
-          <p className="font-semibold text-gray-900 dark:text-white">{name}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">
+          <p className="font-semibold text-gray-900">{name}</p>
+          <p className="text-sm text-gray-800">
             {role} at {company}
           </p>
         </div>

@@ -39,24 +39,24 @@ export default function BlogPage() {
 
       {/* Featured Post */}
       {featuredPost && (
-        <section className="section-padding bg-white dark:bg-gray-900">
+        <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="max-w-5xl mx-auto bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg p-8 md:p-12 shadow-lg">
-              <div className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-2">
+            <div className="max-w-5xl mx-auto bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-8 md:p-12 shadow-lg">
+              <div className="text-sm font-semibold text-primary-700 mb-2">
                 Featured Article
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900">
                 {featuredPost.title}
               </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
+              <p className="text-lg text-gray-700 mb-6">
                 {featuredPost.excerpt}
               </p>
-              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-200">
+              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-800">
                 <span>{featuredPost.date}</span>
                 <span>•</span>
                 <span>{featuredPost.readTime}</span>
                 <span>•</span>
-                <span className="px-3 py-1 bg-primary-200 dark:bg-primary-800 text-primary-700 dark:text-primary-300 rounded-full">
+                <span className="px-3 py-1 bg-primary-200 text-primary-700 rounded-full">
                   {featuredPost.category}
                 </span>
               </div>
@@ -72,18 +72,18 @@ export default function BlogPage() {
       )}
 
       {/* Search and Filter */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-8">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-primary-600 dark:focus:border-primary-400 focus:outline-none"
+                className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-gray-400 bg-white text-gray-900 focus:border-primary-600 focus:outline-none"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function BlogPage() {
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-primary-700 text-white shadow-lg scale-105'
-                    : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
                 }`}
               >
                 {category}
@@ -123,7 +123,7 @@ export default function BlogPage() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600 dark:text-gray-200">
+              <p className="text-xl text-gray-800">
                 No articles found. Try a different search or category.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function BlogPage() {
               />
               <button
                 type="submit"
-                className="px-8 py-4 bg-white text-primary-600 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap"
+                className="px-8 py-4 bg-white text-primary-700 hover:bg-gray-100 font-semibold rounded-lg transition-all duration-300 whitespace-nowrap"
               >
                 Subscribe Free
               </button>
@@ -164,7 +164,7 @@ export default function BlogPage() {
       </section>
 
       {/* Popular Topics */}
-      <section className="section-padding bg-white dark:bg-gray-900">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-12 text-center">
             Popular Topics
@@ -187,7 +187,7 @@ export default function BlogPage() {
               <button
                 key={index}
                 onClick={() => setSearchQuery(tag)}
-                className="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 rounded-full transition-all duration-300"
+                className="px-6 py-3 bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-700 rounded-full transition-all duration-300"
               >
                 {tag}
               </button>
