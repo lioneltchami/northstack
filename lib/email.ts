@@ -1,8 +1,21 @@
 import { Resend } from 'resend';
 import { ContactFormData } from '@/types';
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy-load Resend instance to avoid build-time errors
+// The instance is created only when actually sending emails
+let resendInstance: Resend | null = null;
+
+function getResendClient(): Resend {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+
+  if (!resendInstance) {
+    resendInstance = new Resend(process.env.RESEND_API_KEY);
+  }
+
+  return resendInstance;
+}
 
 // Email configuration
 const EMAIL_CONFIG = {
@@ -15,9 +28,7 @@ const EMAIL_CONFIG = {
  * Sends a contact form notification email to the business
  */
 export async function sendContactNotification(data: ContactFormData) {
-  if (!process.env.RESEND_API_KEY) {
-    throw new Error('RESEND_API_KEY is not configured');
-  }
+  const resend = getResendClient();
 
   const subject = `New Contact Form Submission from ${data.name}`;
   
@@ -93,6 +104,7 @@ export async function sendAutoResponse(data: ContactFormData) {
     return { success: true, id: 'skipped' };
   }
 
+  const resend = getResendClient();
   const subject = `Thank you for contacting NorthStack Solutions, ${data.name.split(' ')[0]}!`;
   
   const html = `
