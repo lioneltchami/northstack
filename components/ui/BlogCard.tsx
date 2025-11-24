@@ -45,7 +45,7 @@ export default function BlogCard({
             quality={85}
           />
           <div className="absolute top-4 left-4 z-10">
-            <span className="px-3 py-1 bg-primary-600 text-white text-xs font-semibold rounded-full shadow-lg">
+            <span className="px-3 py-1 bg-primary-700 text-white text-xs font-semibold rounded-full shadow-lg">
               {category}
             </span>
           </div>
@@ -53,7 +53,7 @@ export default function BlogCard({
       )}
 
       <div className="p-6 flex flex-col flex-grow">
-        <div className="flex items-center space-x-4 text-sm text-gray-700 dark:text-gray-300 mb-3">
+        <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-300 mb-3">
           <div className="flex items-center space-x-1">
             <Calendar className="w-4 h-4" />
             <span>{date}</span>
@@ -68,13 +68,13 @@ export default function BlogCard({
           {title}
         </h3>
 
-        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
+        <p className="text-gray-700 dark:text-gray-200 mb-4 line-clamp-3 flex-grow">
           {excerpt}
         </p>
 
         <Link
           href={`/blog/${slug}`}
-          className="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold hover:gap-2 transition-all group mt-auto"
+          className="inline-flex items-center text-primary-700 dark:text-primary-300 font-semibold hover:gap-2 transition-all group mt-auto"
         >
           Read More
           <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />

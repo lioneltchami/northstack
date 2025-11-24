@@ -29,7 +29,7 @@ export default function CTA({
     <section
       className={`section-padding ${
         variant === 'gradient'
-          ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white'
+          ? 'bg-gradient-to-r from-primary-700 to-secondary-700 text-white'
           : 'bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white'
       }`}
     >
@@ -47,8 +47,8 @@ export default function CTA({
           <p
             className={`text-lg md:text-xl mb-8 ${
               variant === 'gradient'
-                ? 'text-white/90'
-                : 'text-gray-700 dark:text-gray-300'
+                ? 'text-white'
+                : 'text-gray-700 dark:text-gray-200'
             }`}
           >
             {description}
@@ -57,10 +57,10 @@ export default function CTA({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={primaryButton.href}
-              className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
+              className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
                 variant === 'gradient'
-                  ? 'bg-primary-800 text-white hover:bg-primary-900 border-2 border-white/20 hover:border-white/30'
-                  : 'bg-primary-600 text-white hover:bg-primary-700'
+                  ? 'bg-primary-900 text-white hover:bg-primary-950 border-2 border-white/20 hover:border-white/30'
+                  : 'bg-primary-700 text-white hover:bg-primary-800 focus:ring-primary-500'
               }`}
             >
               {primaryButton.text}
@@ -70,10 +70,10 @@ export default function CTA({
             {secondaryButton && (
               <Link
                 href={secondaryButton.href}
-                className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl ${
+                className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                   variant === 'gradient'
-                    ? 'bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 backdrop-blur-sm'
-                    : 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:border-primary-400 dark:hover:bg-primary-900/20'
+                    ? 'bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 hover:border-white/60 backdrop-blur-sm focus:ring-white'
+                    : 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:border-primary-300 dark:hover:bg-primary-900/20 focus:ring-primary-500'
                 }`}
               >
                 {secondaryButton.text}

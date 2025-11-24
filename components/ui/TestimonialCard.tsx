@@ -47,7 +47,7 @@ export default function TestimonialCard({
         <Quote className="w-8 h-8 text-primary-200 dark:text-primary-900" />
       </div>
 
-      <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed flex-grow italic">
+      <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed flex-grow italic">
         &quot;{content}&quot;
       </p>
 
@@ -64,7 +64,7 @@ export default function TestimonialCard({
             />
           </div>
         ) : (
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center text-white font-bold text-sm">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-700 to-secondary-700 flex items-center justify-center text-white font-bold text-sm">
             {name
               .split(' ')
               .map((n) => n[0])
@@ -73,7 +73,7 @@ export default function TestimonialCard({
         )}
         <div>
           <p className="font-semibold text-gray-900 dark:text-white">{name}</p>
-          <p className="text-sm text-gray-700 dark:text-gray-300">
+          <p className="text-sm text-gray-600 dark:text-gray-300">
             {role} at {company}
           </p>
         </div>
