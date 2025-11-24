@@ -72,7 +72,7 @@ export default function CTA({
                 href={secondaryButton.href}
                 className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                   variant === 'gradient'
-                    ? 'bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 hover:border-white/60 backdrop-blur-sm focus:ring-white'
+                    ? 'bg-white text-primary-700 hover:bg-gray-100 border-2 border-white hover:border-gray-200 focus:ring-white'
                     : 'border-2 border-primary-700 text-primary-700 hover:bg-primary-50 focus:ring-primary-500'
                 }`}
               >

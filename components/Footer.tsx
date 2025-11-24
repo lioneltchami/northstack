@@ -188,7 +188,7 @@ export default function Footer() {
               </p>
               <Link
                 href="/blog"
-                className="inline-flex items-center px-4 py-2 bg-primary-700 hover:bg-primary-800 text-white rounded-lg text-sm font-bold transition-colors shadow-md hover:shadow-lg"
+                className="inline-flex items-center px-4 py-2 bg-primary-800 hover:bg-primary-900 text-white rounded-lg text-sm font-bold transition-colors shadow-md hover:shadow-lg border-2 border-primary-900"
               >
                 Read Our Blog
               </Link>
