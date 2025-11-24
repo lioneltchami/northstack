@@ -105,7 +105,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/services"
-              className="inline-flex items-center px-10 py-5 bg-primary-900 hover:bg-black text-white font-black text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] focus:outline-none focus:ring-4 focus:ring-primary-400 border-4 border-primary-950"
+              className="inline-flex items-center px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white font-bold text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] focus:outline-none focus:ring-4 focus:ring-primary-400 border-2 border-primary-900"
             >
               View All Services
             </a>
@@ -265,10 +265,10 @@ export default function Home() {
               { number: '24/7', label: 'Support Available' },
             ].map((stat, index) => (
               <div key={index} className="text-center p-6 rounded-xl bg-black/20 backdrop-blur-sm border-2 border-white/20">
-                <div className="text-6xl md:text-7xl font-black font-heading mb-3 text-white" style={{textShadow: '0 4px 8px rgba(0,0,0,0.5)'}}>
+                <div className="text-5xl md:text-6xl font-extrabold font-heading mb-3 text-white" style={{textShadow: '0 2px 4px rgba(0,0,0,0.2)'}}>
                   {stat.number}
                 </div>
-                <div className="text-white text-lg md:text-xl font-bold" style={{textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>{stat.label}</div>
+                <div className="text-white text-lg md:text-xl font-semibold" style={{textShadow: '0 2px 4px rgba(0,0,0,0.2)'}}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -305,7 +305,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/blog"
-              className="inline-flex items-center px-10 py-5 border-4 border-primary-900 text-primary-900 bg-white hover:bg-primary-900 hover:text-white font-black text-lg rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-primary-400 focus:ring-offset-2"
+              className="inline-flex items-center px-8 py-4 border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-primary-400 focus:ring-offset-2"
             >
               Read More Articles
             </a>

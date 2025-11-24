@@ -58,7 +58,7 @@ export default function Footer() {
                 {siteName}
               </span>
             </Link>
-            <p className="text-gray-700 mb-6 max-w-md font-medium">
+            <p className="text-gray-800 mb-6 max-w-md font-normal">
               Enterprise-Grade DevOps & Automation for Canadian Businesses.
               Bringing 7+ years of enterprise experience to personalized service.
             </p>
@@ -67,13 +67,13 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-5 h-5 text-primary-700" />
-                <span className="text-gray-800 font-medium">{businessLocation}</span>
+                <span className="text-gray-900 font-medium">{businessLocation}</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="w-5 h-5 text-primary-700" />
                 <a
                   href={`mailto:${contactEmail}`}
-                  className="text-gray-800 hover:text-primary-700 transition-colors font-medium"
+                  className="text-gray-900 hover:text-primary-900 transition-colors font-medium"
                 >
                   {contactEmail}
                 </a>
@@ -82,7 +82,7 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-primary-700" />
                 <a
                   href={`tel:${contactPhone.replace(/\s/g, '')}`}
-                  className="text-gray-800 hover:text-primary-700 transition-colors font-medium"
+                  className="text-gray-900 hover:text-primary-900 transition-colors font-medium"
                 >
                   {contactPhone}
                 </a>
@@ -96,7 +96,7 @@ export default function Footer() {
                   href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white border-2 border-gray-300 rounded-lg hover:border-primary-700 hover:bg-primary-700 hover:text-white transition-all shadow-sm"
+                  className="p-3 bg-white border-2 border-gray-400 rounded-lg hover:border-primary-900 hover:bg-primary-900 hover:text-white transition-all shadow-sm"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -107,7 +107,7 @@ export default function Footer() {
                   href={process.env.NEXT_PUBLIC_GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white border-2 border-gray-300 rounded-lg hover:border-primary-700 hover:bg-primary-700 hover:text-white transition-all shadow-sm"
+                  className="p-3 bg-white border-2 border-gray-400 rounded-lg hover:border-primary-900 hover:bg-primary-900 hover:text-white transition-all shadow-sm"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function Footer() {
                   href={process.env.NEXT_PUBLIC_TWITTER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white border-2 border-gray-300 rounded-lg hover:border-primary-700 hover:bg-primary-700 hover:text-white transition-all shadow-sm"
+                  className="p-3 bg-white border-2 border-gray-400 rounded-lg hover:border-primary-900 hover:bg-primary-900 hover:text-white transition-all shadow-sm"
                   aria-label="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
@@ -135,7 +135,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 hover:text-primary-700 transition-colors flex items-center space-x-1 group font-medium"
+                    className="text-gray-900 hover:text-primary-900 transition-colors flex items-center space-x-1 group font-semibold"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -153,7 +153,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 hover:text-primary-700 transition-colors flex items-center space-x-1 group font-medium"
+                    className="text-gray-900 hover:text-primary-900 transition-colors flex items-center space-x-1 group font-semibold"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -171,7 +171,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-700 hover:text-primary-700 transition-colors flex items-center space-x-1 group font-medium"
+                    className="text-gray-900 hover:text-primary-900 transition-colors flex items-center space-x-1 group font-semibold"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -183,12 +183,12 @@ export default function Footer() {
             {/* Stay Connected */}
             <div className="mt-6">
               <h4 className="text-gray-900 font-bold mb-2">Stay Updated</h4>
-              <p className="text-sm text-gray-700 mb-3 font-medium">
+              <p className="text-sm text-gray-800 mb-3 font-normal">
                 Follow our latest insights and automation tips.
               </p>
               <Link
                 href="/blog"
-                className="inline-flex items-center px-6 py-3 bg-primary-900 hover:bg-black text-white rounded-lg text-base font-black transition-colors shadow-xl hover:shadow-2xl border-4 border-primary-950"
+                className="inline-flex items-center px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white rounded-lg text-lg font-bold transition-colors shadow-xl hover:shadow-2xl border-2 border-primary-900"
               >
                 Read Our Blog
               </Link>
@@ -201,21 +201,21 @@ export default function Footer() {
       <div className="border-t-2 border-gray-300 bg-white">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-800 text-center md:text-left font-medium">
+            <p className="text-sm text-gray-900 text-center md:text-left font-medium">
               © {currentYear} NorthStack Solutions. Operated by{' '}
-              <span className="text-primary-700 font-bold">Apoti Tech Inc.</span> All
+              <span className="text-primary-800 font-bold">Apoti Tech Inc.</span> All
               rights reserved.
             </p>
-            <div className="flex items-center space-x-6 text-sm font-medium">
+            <div className="flex items-center space-x-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-800 hover:text-primary-700 transition-colors"
+                className="text-gray-900 hover:text-primary-900 transition-colors font-semibold"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-800 hover:text-primary-700 transition-colors"
+                className="text-gray-900 hover:text-primary-900 transition-colors font-semibold"
               >
                 Terms
               </Link>

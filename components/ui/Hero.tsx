@@ -102,10 +102,10 @@ export default function Hero({
               {cta.primary && (
                 <a
                   href={cta.primary.href}
-                  className={`px-10 py-5 rounded-lg font-black text-xl transition-all duration-200 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-4 focus:ring-offset-2 ${
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                     variant === 'gradient'
-                      ? 'bg-white text-primary-900 hover:bg-gray-100 border-4 border-white focus:ring-white'
-                      : 'bg-primary-900 text-white hover:bg-black border-4 border-primary-950'
+                      ? 'bg-white text-primary-900 hover:bg-gray-100 border-3 border-white focus:ring-white'
+                      : 'bg-primary-800 text-white hover:bg-primary-900 border-2 border-primary-900'
                   }`}
                 >
                   {cta.primary.text}
@@ -114,10 +114,10 @@ export default function Hero({
               {cta.secondary && (
                 <a
                   href={cta.secondary.href}
-                  className={`px-10 py-5 rounded-lg font-black text-xl transition-all duration-200 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-offset-2 ${
+                  className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                     variant === 'gradient'
-                      ? 'bg-black/30 hover:bg-black/50 text-white border-4 border-white backdrop-blur-md focus:ring-white'
-                      : 'border-4 border-primary-900 text-primary-900 bg-white hover:bg-primary-900 hover:text-white'
+                      ? 'bg-white/10 hover:bg-white/20 text-white border-2 border-white/80 hover:border-white backdrop-blur-md focus:ring-white'
+                      : 'border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white'
                   }`}
                 >
                   {cta.secondary.text}
