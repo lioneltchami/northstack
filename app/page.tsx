@@ -105,7 +105,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/services"
-              className="inline-flex items-center px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              className="inline-flex items-center px-8 py-4 bg-primary-800 hover:bg-primary-900 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-primary-300 border-2 border-primary-900"
             >
               View All Services
             </a>
