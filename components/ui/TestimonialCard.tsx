@@ -39,12 +39,12 @@ export default function TestimonialCard({
               className={`w-5 h-5 ${
                 i < rating
                   ? 'text-yellow-400 fill-yellow-400'
-                  : 'text-gray-300'
+                  : 'text-gray-400'
               }`}
             />
           ))}
         </div>
-        <Quote className="w-8 h-8 text-primary-200" />
+        <Quote className="w-8 h-8 text-primary-300" />
       </div>
 
       <p className="text-gray-700 mb-6 leading-relaxed flex-grow italic">

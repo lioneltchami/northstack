@@ -207,7 +207,7 @@ export default function Home() {
               },
             ].map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-6xl font-bold font-heading text-primary-100 mb-4" aria-hidden="true">
+                <div className="text-6xl font-bold font-heading text-gray-200 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
@@ -264,11 +264,11 @@ export default function Home() {
               { number: '98%', label: 'Client Satisfaction' },
               { number: '24/7', label: 'Support Available' },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold font-heading mb-2 text-white drop-shadow-lg">
+              <div key={index} className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
+                <div className="text-5xl md:text-6xl font-extrabold font-heading mb-2 text-white drop-shadow-2xl">
                   {stat.number}
                 </div>
-                <div className="text-white text-sm md:text-base drop-shadow-md">{stat.label}</div>
+                <div className="text-white text-base md:text-lg font-semibold drop-shadow-xl">{stat.label}</div>
               </div>
             ))}
           </div>

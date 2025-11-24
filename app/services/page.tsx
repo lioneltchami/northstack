@@ -187,7 +187,7 @@ export default function ServicesPage() {
               },
             ].map((step, index) => (
               <div key={index} className="relative">
-                <div className="text-6xl font-bold font-heading text-primary-100 mb-4" aria-hidden="true">
+                <div className="text-6xl font-bold font-heading text-gray-200 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">

@@ -516,7 +516,7 @@ export default function AutomationPage() {
               },
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl font-bold font-heading text-primary-100 mb-4">
+                <div className="text-5xl font-bold font-heading text-gray-200 mb-4">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
