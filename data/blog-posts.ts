@@ -714,11 +714,11 @@ def analyze_compute_spend(days_back=90):
 
     # Calculate average monthly spend per instance type
     months = len(response['ResultsByTime'])
-    print(f"\\n{'='*80}")
-    print(f"Compute Spend Analysis - Last {days_back} days ({months} months)")
-    print(f"{'='*80}\\n")
-    print(f"{'Instance Type':<25} {'Avg Monthly Cost':<20} {'Recommended Action'}")
-    print(f"{'-'*80}")
+    print(f"\\n{{'='*80}}")
+    print(f"Compute Spend Analysis - Last {{days_back}} days ({{months}} months)")
+    print(f"{{'='*80}}\\n")
+    print(f"{{'Instance Type':<25}} {{'Avg Monthly Cost':<20}} {{'Recommended Action'}}")
+    print(f"{{'-'*80}}")
 
     total_monthly_avg = 0
     commitment_candidate_cost = 0
@@ -738,23 +738,23 @@ def analyze_compute_spend(days_back=90):
         else:
             recommendation = "○ Keep On-Demand"
 
-        print(f"{instance_type:<25} ${avg_monthly:>8.2f}           {recommendation}")
+        print(f"{{instance_type:<25}} ${{avg_monthly:>8.2f}}           {{recommendation}}")
 
-    print(f"{'-'*80}")
-    print(f"{'Total Monthly Compute':<25} ${total_monthly_avg:>8.2f}")
-    print(f"{'Commitment Candidates':<25} ${commitment_candidate_cost:>8.2f}")
-    print(f"\\n{'='*80}")
+    print(f"{{'-'*80}}")
+    print(f"{{'Total Monthly Compute':<25}} ${{total_monthly_avg:>8.2f}}")
+    print(f"{{'Commitment Candidates':<25}} ${{commitment_candidate_cost:>8.2f}}")
+    print(f"\\n{{'='*80}}")
 
     # Calculate potential savings
     # Compute Savings Plans typically offer 40-50% discount
     potential_annual_savings = commitment_candidate_cost * 12 * 0.45
 
     print(f"\\nPOTENTIAL ANNUAL SAVINGS (with Compute Savings Plan):")
-    print(f"  Baseline: ${commitment_candidate_cost:.2f}/month")
-    print(f"  With 45% discount: ${commitment_candidate_cost * 0.55:.2f}/month")
-    print(f"  Monthly savings: ${commitment_candidate_cost * 0.45:.2f}")
-    print(f"  ANNUAL SAVINGS: ${potential_annual_savings:,.2f}")
-    print(f"\\n{'='*80}\\n")
+    print(f"  Baseline: ${{commitment_candidate_cost:.2f}}/month")
+    print(f"  With 45% discount: ${{commitment_candidate_cost * 0.55:.2f}}/month")
+    print(f"  Monthly savings: ${{commitment_candidate_cost * 0.45:.2f}}")
+    print(f"  ANNUAL SAVINGS: ${{potential_annual_savings:,.2f}}")
+    print(f"\\n{{'='*80}}\\n")
 
     return {
         'total_monthly': total_monthly_avg,
@@ -1410,7 +1410,7 @@ def generate_cost_report():
     tag_dimensions = ['Environment', 'Product', 'Team', 'CostCenter']
 
     for tag_key in tag_dimensions:
-        print(f"\\n{tag_key} Breakdown:")
+        print(f"\\n{{tag_key}} Breakdown:")
         print("-" * 60)
 
         costs = get_costs_by_tag(tag_key)
@@ -1419,10 +1419,10 @@ def generate_cost_report():
         # Sort by cost descending
         for tag_value, cost in sorted(costs.items(), key=lambda x: x[1], reverse=True):
             percentage = (cost / total * 100) if total > 0 else 0
-            print(f"  {tag_value:<30} ${cost:>10.2f}  ({percentage:>5.1f}%)")
+            print(f"  {{tag_value:<30}} ${{cost:>10.2f}}  ({{percentage:>5.1f}}%)")
 
-        print(f"  {'':<30} {'─'*11}  {'─'*8}")
-        print(f"  {'TOTAL':<30} ${total:>10.2f}")
+        print(f"  {{'':<30}} {{'─'*11}}  {{'─'*8}}")
+        print(f"  {{'TOTAL':<30}} ${{total:>10.2f}}")
 
     # Export to CSV
     with open('aws-cost-report.csv', 'w', newline='') as csvfile:
