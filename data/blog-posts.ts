@@ -1139,7 +1139,7 @@ resource "aws_iam_role_policy" "lambda_s3" {
           "s3:GetObject",
           "s3:PutObject"
         ]
-        Resource = "${aws_s3_bucket.app_data.arn}/*"
+        Resource = "\${aws_s3_bucket.app_data.arn}/*"
       }
     ]
   })
