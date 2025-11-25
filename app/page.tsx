@@ -183,7 +183,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {[
               {
                 step: '01',
@@ -210,7 +210,7 @@ export default function Home() {
                   'Smooth deployment with training, documentation, and ongoing support.',
               },
             ].map((step, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative z-10">
                 <div className="text-6xl font-bold font-heading text-gray-200 mb-4" aria-hidden="true">
                   {step.step}
                 </div>
@@ -219,7 +219,7 @@ export default function Home() {
                 </h3>
                 <p className="text-gray-700">{step.description}</p>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent"></div>
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent z-0"></div>
                 )}
               </div>
             ))}
