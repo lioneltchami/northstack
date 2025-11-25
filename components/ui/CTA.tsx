@@ -38,7 +38,7 @@ export default function CTA({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6" style={{textShadow: variant === 'gradient' ? '0 2px 4px rgba(0,0,0,0.2)' : 'none'}}>
@@ -57,7 +57,7 @@ export default function CTA({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={primaryButton.href}
-              className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-2 ${
+              className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-500 md:duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-2 ${
                 variant === 'gradient'
                   ? 'bg-white text-primary-900 hover:bg-gray-100 border-2 border-white'
                   : 'bg-primary-800 text-white hover:bg-primary-900 border-2 border-primary-900'
@@ -70,7 +70,7 @@ export default function CTA({
             {secondaryButton && (
               <Link
                 href={secondaryButton.href}
-                className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-offset-2 ${
+                className={`inline-flex items-center px-8 py-4 rounded-lg font-bold text-lg transition-all duration-500 md:duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                   variant === 'gradient'
                     ? 'bg-white/10 text-white hover:bg-white/20 border-2 border-white/80 hover:border-white backdrop-blur-md focus:ring-white'
                     : 'border-2 border-primary-800 text-primary-900 bg-white hover:bg-primary-800 hover:text-white'
