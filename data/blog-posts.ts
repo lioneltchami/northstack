@@ -563,7 +563,7 @@ while IFS=$'\\t' read -r INSTANCE_ID INSTANCE_TYPE INSTANCE_NAME; do
     --output text | awk '{if($1>max){max=$1}} END {print max}')
 
   printf "%s | %s | %s | %.2f%% | %.2f%%\\n" \\
-    "$INSTANCE_ID" "$INSTANCE_TYPE" "${INSTANCE_NAME:-N/A}" \\
+    "$INSTANCE_ID" "$INSTANCE_TYPE" "\${INSTANCE_NAME:-N/A}" \\
     "$AVG_CPU" "$MAX_CPU"
 done <<< "$INSTANCES"
 \`\`\`
