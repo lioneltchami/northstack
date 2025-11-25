@@ -3188,7 +3188,7 @@ Maybe you tried self-hosting and it's not for you. That's okay.
 **Phase 1: Organize (Week 1)**
 
 1. **Clean up your data:**
-   - Delete duplicates (use tools like `fdupes`)
+   - Delete duplicates (use tools like \`fdupes\`)
    - Archive old files
    - Compress large folders
 
