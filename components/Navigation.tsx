@@ -11,8 +11,11 @@ const navLinks = [
     href: '/services',
     submenu: [
       { label: 'All Services', href: '/services' },
-      { label: 'Automation Solutions', href: '/automation' },
-      { label: 'Home Server Setup', href: '/home-server' },
+      { label: 'Cloud Optimization', href: '/services#cloud-optimization', description: 'Cut AWS costs by 20-40%' },
+      { label: 'Automation & DevOps', href: '/automation', description: 'Eliminate manual tasks' },
+      { label: 'Home Server Setup', href: '/home-server', description: 'Personal cloud infrastructure' },
+      { label: 'Security & Compliance', href: '/services#security', description: 'Protect your infrastructure' },
+      { label: 'Emergency Support', href: '/services#emergency', description: '24/7 critical issue resolution' },
     ],
   },
   {
@@ -26,7 +29,16 @@ const navLinks = [
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Resources', href: '/resources' },
+  {
+    label: 'Resources',
+    href: '/resources',
+    submenu: [
+      { label: 'Free AWS Audit', href: '/tools/aws-audit', description: 'Get personalized cost report' },
+      { label: 'Automation Checklist', href: '/resources/automation-checklist', description: 'Download our 25-point guide' },
+      { label: 'Cost Calculator', href: '/tools/cost-calculator', description: 'Calculate your savings' },
+      { label: 'Blog & Guides', href: '/blog', description: 'DevOps tips and tutorials' },
+    ],
+  },
 ];
 
 export default function Navigation() {
@@ -103,20 +115,23 @@ export default function Navigation() {
                     </button>
                     {openSubmenu === link.label && (
                       <div
-                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-400 py-2 animate-fade-in"
+                        className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-400 py-2 animate-fade-in"
                         onMouseLeave={() => setOpenSubmenu(null)}
                       >
-                        {link.submenu.map((sublink) => (
+                        {link.submenu.map((sublink: any) => (
                           <Link
                             key={sublink.href}
                             href={sublink.href}
-                            className={`block px-4 py-2 text-sm transition-colors ${
+                            className={`block px-4 py-3 transition-colors ${
                               isActive(sublink.href)
                                 ? 'text-primary-700 bg-primary-50'
                                 : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
                             }`}
                           >
-                            {sublink.label}
+                            <div className="font-medium text-sm">{sublink.label}</div>
+                            {sublink.description && (
+                              <div className="text-xs text-gray-600 mt-0.5">{sublink.description}</div>
+                            )}
                           </Link>
                         ))}
                       </div>
@@ -187,17 +202,20 @@ export default function Navigation() {
                       </button>
                       {openSubmenu === link.label && (
                         <div className="ml-4 mt-2 space-y-2">
-                          {link.submenu.map((sublink) => (
+                          {link.submenu.map((sublink: any) => (
                             <Link
                               key={sublink.href}
                               href={sublink.href}
-                              className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                              className={`block px-4 py-2 rounded-lg transition-colors ${
                                 isActive(sublink.href)
                                   ? 'text-primary-700 bg-primary-50'
                                   : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
                               }`}
                             >
-                              {sublink.label}
+                              <div className="text-sm font-medium">{sublink.label}</div>
+                              {sublink.description && (
+                                <div className="text-xs text-gray-600 mt-0.5">{sublink.description}</div>
+                              )}
                             </Link>
                           ))}
                         </div>

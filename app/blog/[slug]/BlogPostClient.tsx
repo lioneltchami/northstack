@@ -15,9 +15,12 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import BlogCard from '@/components/ui/BlogCard';
+import TableOfContents from '@/components/ui/TableOfContents';
 import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
 import { getAuthor } from '@/data/authors';
 import { calculateReadingTime } from '@/data/blog-posts';
+import 'highlight.js/styles/github-dark.css';
 
 interface BlogPostClientProps {
   post: BlogPost;
@@ -76,7 +79,10 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
 
       {/* Article Header */}
       <article className="section-padding bg-white">
-        <div className="container-custom max-w-4xl">
+        <div className="container-custom max-w-7xl">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-8">
           {/* Category Badge */}
           <div className="mb-4">
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
@@ -163,8 +169,9 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </div>
 
           {/* Article Content */}
-          <div className="prose prose-lg prose-primary max-w-none prose-headings:font-heading prose-headings:font-bold prose-h1:text-4xl prose-h1:mb-6 prose-h1:mt-8 prose-h2:text-3xl prose-h2:mb-4 prose-h2:mt-8 prose-h3:text-2xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-a:text-primary-700 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-strong:font-semibold prose-code:text-primary-700 prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-ul:my-4 prose-ul:list-disc prose-ul:pl-6 prose-ol:my-4 prose-ol:list-decimal prose-ol:pl-6 prose-li:my-2 prose-li:text-gray-700 prose-blockquote:border-l-4 prose-blockquote:border-primary-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-700 prose-img:rounded-lg prose-img:shadow-lg prose-hr:my-8 prose-hr:border-gray-300">
+          <div className="blog-article-content prose prose-lg prose-primary max-w-none prose-headings:font-heading prose-headings:font-bold prose-h1:text-4xl prose-h1:mb-6 prose-h1:mt-8 prose-h2:text-3xl prose-h2:mb-4 prose-h2:mt-8 prose-h3:text-2xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-a:text-primary-700 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-strong:font-semibold prose-code:text-primary-700 prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-ul:my-4 prose-ul:list-disc prose-ul:pl-6 prose-ol:my-4 prose-ol:list-decimal prose-ol:pl-6 prose-li:my-2 prose-li:text-gray-700 prose-blockquote:border-l-4 prose-blockquote:border-primary-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-700 prose-img:rounded-lg prose-img:shadow-lg prose-hr:my-8 prose-hr:border-gray-300">
             <ReactMarkdown
+              rehypePlugins={[rehypeHighlight]}
               components={{
                 h1: ({ children }) => (
                   <h1 className="text-4xl font-bold font-heading mb-6 mt-8 text-gray-900">
@@ -309,6 +316,13 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+            </div>
+
+            {/* Table of Contents Sidebar */}
+            <div className="lg:col-span-4">
+              <TableOfContents content={post.content} />
             </div>
           </div>
         </div>
