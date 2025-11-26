@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { BlogPost } from '@/types';
 import {
   Calendar,
@@ -307,10 +308,12 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex items-start gap-4">
                 {author.image && (
-                  <img
+                  <Image
                     src={author.image}
                     alt={author.name}
-                    className="w-16 h-16 rounded-full object-cover"
+                    width={64}
+                    height={64}
+                    className="rounded-full object-cover"
                   />
                 )}
                 <div className="flex-1">

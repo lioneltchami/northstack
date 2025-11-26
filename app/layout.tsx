@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import StructuredData from '@/components/StructuredData';
 import Analytics from '@/components/Analytics';
+import MicrosoftClarity from '@/components/MicrosoftClarity';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import LazyMotionProvider from '@/components/ui/LazyMotion';
 import SafariOptimizations from '@/components/SafariOptimizations';
@@ -87,6 +88,11 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
+  alternates: {
+    types: {
+      'application/rss+xml': `${siteUrl}/blog/rss.xml`,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -105,6 +111,7 @@ export default function RootLayout({
 
         <StructuredData />
         <Analytics />
+        <MicrosoftClarity />
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider>
