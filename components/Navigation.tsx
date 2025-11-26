@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Search } from 'lucide-react';
+import SearchModal from './ui/SearchModal';
 
 const navLinks = [
   {
@@ -45,6 +46,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -61,6 +63,19 @@ export default function Navigation() {
     setIsOpen(false);
     setOpenSubmenu(null);
   }, [pathname]);
+
+  // Global search keyboard shortcut (Cmd+K or Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -155,6 +170,17 @@ export default function Navigation() {
 
           {/* Right side actions */}
           <div className="flex items-center space-x-4">
+            {/* Search Button */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors border border-gray-300"
+              aria-label="Search"
+            >
+              <Search className="w-4 h-4" />
+              <span className="text-sm hidden lg:inline">Search</span>
+              <kbd className="hidden lg:inline text-xs bg-gray-200 px-1.5 py-0.5 rounded">⌘K</kbd>
+            </button>
+
             <Link
               href="/contact"
               className="hidden md:block btn-primary text-sm"
@@ -235,6 +261,13 @@ export default function Navigation() {
                   )}
                 </div>
               ))}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="w-full text-left px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-primary-700 hover:bg-gray-100 transition-all duration-200 flex items-center gap-2"
+              >
+                <Search className="w-5 h-5" />
+                Search
+              </button>
               <Link href="/contact" className="btn-primary text-center mt-4">
                 Free Consultation
               </Link>
@@ -242,6 +275,9 @@ export default function Navigation() {
           </div>
         )}
       </div>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </nav>
   );
 }

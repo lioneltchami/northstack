@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import BlogCard from '@/components/ui/BlogCard';
 import TableOfContents from '@/components/ui/TableOfContents';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import { getAuthor } from '@/data/authors';
@@ -64,9 +65,18 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
         </div>
       </div>
 
-      {/* Back Button */}
+      {/* Breadcrumbs & Back Button */}
       <div className="section-padding bg-gray-50 py-8">
-        <div className="container-custom max-w-4xl">
+        <div className="container-custom max-w-7xl">
+          <div className="mb-4">
+            <Breadcrumbs
+              items={[
+                { label: 'Blog', href: '/blog' },
+                { label: post.category, href: `/blog?category=${post.category}` },
+                { label: post.title },
+              ]}
+            />
+          </div>
           <a
             href="/blog"
             className="inline-flex items-center text-primary-700 hover:text-primary-700 transition-colors"
