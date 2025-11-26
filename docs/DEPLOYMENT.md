@@ -46,8 +46,8 @@ NEXT_PUBLIC_SITE_URL=https://northstack.solutions
 
 # Email Service (SendGrid example)
 SENDGRID_API_KEY=your_sendgrid_api_key
-EMAIL_FROM=info@northstack.solutions
-EMAIL_TO=info@northstack.solutions
+EMAIL_FROM=info@northstack.ca
+EMAIL_TO=info@northstack.ca
 
 # Google Analytics
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX

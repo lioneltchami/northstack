@@ -19,9 +19,9 @@ function getResendClient(): Resend {
 
 // Email configuration
 const EMAIL_CONFIG = {
-  from: 'NorthStack Solutions <noreply@northstack.solutions>',
-  to: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'hello@northstack.ca',
-  replyTo: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca',
+  from: 'NorthStack Solutions <noreply@northstack.ca>',
+  to: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.ca',
+  replyTo: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@northstack.ca',
 } as const;
 
 /**

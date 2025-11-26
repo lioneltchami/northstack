@@ -94,10 +94,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Email</h3>
                     <a
-                      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}`}
+                      href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@northstack.ca'}`}
                       className="text-gray-800 hover:text-primary-700"
                     >
-                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}
+                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@northstack.ca'}
                     </a>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                 {submitStatus === 'error' && (
                   <div className="mb-6 p-4 bg-red-100 border border-red-500 rounded-lg">
                     <p className="text-red-800">
-                      Oops! Something went wrong. Please try again or email us directly at {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}
+                      Oops! Something went wrong. Please try again or email us directly at {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@northstack.ca'}
                     </p>
                   </div>
                 )}

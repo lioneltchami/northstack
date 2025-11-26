@@ -139,7 +139,7 @@ export default class ErrorBoundary extends Component<Props, State> {
               <p className="text-sm text-gray-800">
                 If this problem persists, please contact{' '}
                 <a
-                  href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'support@northstack.solutions'}?subject=Error Report&body=Error ID: ${this.state.errorId}`}
+                  href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.ca'}?subject=Error Report&body=Error ID: ${this.state.errorId}`}
                   className="text-primary-700 hover:underline font-semibold"
                 >
                   our support team

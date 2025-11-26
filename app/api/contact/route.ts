@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: `We're experiencing technical difficulties. Please try again or email us directly at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca'}`,
+        message: `We're experiencing technical difficulties. Please try again or email us directly at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@northstack.ca'}`,
       },
       { status: 500 }
     );

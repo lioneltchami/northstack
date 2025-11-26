@@ -26,10 +26,10 @@ export const BUSINESS_INFO = {
   location: process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta, Canada',
 
   /** Primary contact email */
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@northstack.ca',
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@northstack.ca',
 
   /** Support/inquiry email */
-  supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.solutions',
+  supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.ca',
 
   /** Contact phone number */
   phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567',

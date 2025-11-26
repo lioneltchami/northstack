@@ -268,8 +268,8 @@ Create `.env.local` for environment-specific settings:
 ```bash
 # Email Service (for contact form)
 EMAIL_SERVICE_API_KEY=your_sendgrid_api_key
-EMAIL_FROM=info@northstack.solutions
-EMAIL_TO=info@northstack.solutions
+EMAIL_FROM=info@northstack.ca
+EMAIL_TO=info@northstack.ca
 
 # Analytics
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
@@ -343,7 +343,7 @@ Operated by Apoti Tech Inc.
 Calgary, Alberta, Canada
 
 - Website: [https://northstack.solutions](https://northstack.solutions)
-- Email: info@northstack.solutions
+- Email: info@northstack.ca
 - Phone: (403) 123-4567
 
 ---

@@ -241,7 +241,7 @@ public/images/
 - [ ] Add real images (see IMAGE_REQUIREMENTS.md)
   - Priority: Founder photo, 2-3 portfolio screenshots
 - [ ] Update contact details
-  - Email: info@northstack.solutions
+  - Email: info@northstack.ca
   - Phone: (403) xxx-xxxx
 - [ ] Configure email backend for contact form
 - [ ] Add Google Analytics tracking ID
