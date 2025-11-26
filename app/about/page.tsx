@@ -303,24 +303,65 @@ export default function AboutPage() {
       {/* Personal Touch Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-center">
               Beyond the Code
             </h2>
-            <div className="prose prose-lg max-w-none text-center">
-              <p className="text-lg text-gray-700 mb-4">
-                When I'm not optimizing AWS bills or setting up automation workflows, you'll find me:
+            <p className="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+              Technology is what I do, but it's not all I am. Here's what drives my curiosity when the terminal windows close.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: '🏔️',
+                  title: 'Mountain Explorer',
+                  description: 'Living in Calgary means the Rockies are my backyard. I spend weekends hiking, photographing alpine lakes, and occasionally getting humbled by the elevation. My home lab runs on the same resilience I need at 3,000 meters.',
+                },
+                {
+                  icon: '🔧',
+                  title: 'Homelab Enthusiast',
+                  description: 'My garage hosts a Proxmox cluster that would make enterprise IT envious (or concerned). Self-hosted Nextcloud, automated backups, network monitoring—if it can run on a server, I\'ve probably tried it. My wife calls it "the server closet that eats electricity."',
+                },
+                {
+                  icon: '💻',
+                  title: 'Open Source Contributor',
+                  description: 'I contribute to tools I actually use—documentation improvements, bug fixes, and occasionally features. Tech community gave me my career; giving back is the least I can do.',
+                },
+                {
+                  icon: '📚',
+                  title: 'Perpetual Learner',
+                  description: 'Currently deep-diving into eBPF and observability tools. Also reading about platform engineering patterns and how companies actually implement DevOps at scale (spoiler: it\'s messy everywhere).',
+                },
+                {
+                  icon: '🚀',
+                  title: 'Startup Mentor',
+                  description: 'I volunteer with Calgary\'s tech community, helping early-stage startups avoid the infrastructure mistakes I made (and still make). Free office hours every month—because everyone deserves a second opinion on their AWS architecture.',
+                },
+                {
+                  icon: '🎮',
+                  title: 'Retro Computing Nerd',
+                  description: 'I restore old computers and game systems. There\'s something satisfying about bringing a 1990s Thinkpad back to life. Plus, debugging hardware from an era before Stack Overflow builds character.',
+                },
+              ].map((interest, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg border-2 border-gray-200 hover:border-primary-300 transition-all">
+                  <div className="text-4xl mb-3">{interest.icon}</div>
+                  <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
+                    {interest.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">{interest.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 p-6 bg-primary-50 rounded-lg border-l-4 border-primary-700">
+              <p className="text-lg text-gray-800 italic">
+                "I believe technology should enhance life, not complicate it. Whether I'm optimizing your AWS bill
+                or configuring my own overkill home network, that philosophy guides every decision.
+                The best solution is the one you'll actually maintain—not the one that looks impressive in a diagram."
               </p>
-              <ul className="text-lg text-gray-700 space-y-2 text-left max-w-2xl mx-auto">
-                <li>Exploring the Rocky Mountains (hiking and photography)</li>
-                <li>Tinkering with home lab setups (Proxmox, self-hosted everything)</li>
-                <li>Contributing to open-source projects</li>
-                <li>Reading about emerging technologies and DevOps trends</li>
-                <li>Helping local startups with technical mentorship</li>
-              </ul>
-              <p className="text-lg text-gray-700 mt-6">
-                I believe technology should enhance life, not complicate it. That philosophy guides everything
-                I build for my clients.
+              <p className="text-sm text-gray-600 mt-4 font-semibold">
+                — Lionel, probably after fixing something that "worked fine yesterday"
               </p>
             </div>
           </div>
