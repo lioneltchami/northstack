@@ -33,16 +33,35 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
   const author = getAuthor(post.authorId);
   const dynamicReadTime = calculateReadingTime(post.content);
 
+  // Helper function to generate IDs from heading text
+  const generateId = (text: any): string => {
+    const textString = typeof text === 'string' ? text : String(text);
+    return textString
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+  };
+
   useEffect(() => {
     const handleScroll = () => {
+      const articleContent = document.querySelector('.blog-article-content');
+      if (!articleContent) return;
+
+      const articleTop = articleContent.getBoundingClientRect().top + window.scrollY;
+      const articleHeight = articleContent.clientHeight;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
-      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      // Calculate progress based on article content only
+      const scrolledIntoArticle = Math.max(0, scrollTop - articleTop + windowHeight);
+      const progress = (scrolledIntoArticle / articleHeight) * 100;
       setReadingProgress(Math.min(Math.round(progress), 100));
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial calculation
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -54,15 +73,9 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
         <div
-          className="h-full bg-primary-700 transition-all duration-150 relative"
+          className="h-full bg-primary-700 transition-all duration-150"
           style={{ width: `${readingProgress}%` }}
-        >
-          {readingProgress > 0 && (
-            <div className="absolute right-2 -bottom-8 bg-primary-700 text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
-              {readingProgress}% complete
-            </div>
-          )}
-        </div>
+        />
       </div>
 
       {/* Breadcrumbs & Back Button */}
@@ -188,16 +201,22 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
                     {children}
                   </h1>
                 ),
-                h2: ({ children }) => (
-                  <h2 className="text-3xl font-bold font-heading mb-4 mt-8 text-gray-900 border-b-2 border-primary-200 pb-2">
-                    {children}
-                  </h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-2xl font-bold font-heading mb-3 mt-6 text-gray-900">
-                    {children}
-                  </h3>
-                ),
+                h2: ({ children }) => {
+                  const id = generateId(children);
+                  return (
+                    <h2 id={id} className="text-3xl font-bold font-heading mb-4 mt-8 text-gray-900 border-b-2 border-primary-200 pb-2">
+                      {children}
+                    </h2>
+                  );
+                },
+                h3: ({ children }) => {
+                  const id = generateId(children);
+                  return (
+                    <h3 id={id} className="text-2xl font-bold font-heading mb-3 mt-6 text-gray-900">
+                      {children}
+                    </h3>
+                  );
+                },
                 h4: ({ children }) => (
                   <h4 className="text-xl font-semibold font-heading mb-2 mt-4 text-gray-900">
                     {children}

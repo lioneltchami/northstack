@@ -41,23 +41,6 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   }, [content]);
 
   useEffect(() => {
-    // Add IDs to actual headings in the DOM
-    const timer = setTimeout(() => {
-      const articleContent = document.querySelector('.blog-article-content');
-      if (!articleContent) return;
-
-      const domHeadings = articleContent.querySelectorAll('h2, h3');
-      domHeadings.forEach((heading, index) => {
-        if (headings[index]) {
-          heading.id = headings[index].id;
-        }
-      });
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [headings]);
-
-  useEffect(() => {
     // Track scroll position to highlight active heading
     const handleScroll = () => {
       const headingElements = headings.map(h => document.getElementById(h.id)).filter(Boolean);
