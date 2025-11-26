@@ -4,11 +4,11 @@ import { BlogPost } from '@/types';
 import BlogPostClient from './BlogPostClient';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function BlogPostPage({ params }: Props) {
-  const { slug } = params;
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
 
   const post = blogPosts.find((p) => p.slug === slug);
 
