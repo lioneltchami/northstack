@@ -324,6 +324,11 @@ export default function AboutPage() {
                   description: 'My garage hosts a Proxmox cluster that would make enterprise IT envious (or concerned). Self-hosted Nextcloud, automated backups, network monitoring—if it can run on a server, I\'ve probably tried it. My wife calls it "the server closet that eats electricity."',
                 },
                 {
+                  icon: '✝️',
+                  title: 'Faith & Purpose',
+                  description: 'My faith in Jesus Christ shapes how I approach both work and life—with integrity, service, and a commitment to doing things right. It reminds me that technology is a tool to serve people, and every client interaction is an opportunity to reflect those values.',
+                },
+                {
                   icon: '💻',
                   title: 'Open Source Contributor',
                   description: 'I contribute to tools I actually use—documentation improvements, bug fixes, and occasionally features. Tech community gave me my career; giving back is the least I can do.',
@@ -338,11 +343,6 @@ export default function AboutPage() {
                   title: 'Startup Mentor',
                   description: 'I volunteer with Calgary\'s tech community, helping early-stage startups avoid the infrastructure mistakes I made (and still make). Free office hours every month—because everyone deserves a second opinion on their AWS architecture.',
                 },
-                {
-                  icon: '🎮',
-                  title: 'Retro Computing Nerd',
-                  description: 'I restore old computers and game systems. There\'s something satisfying about bringing a 1990s Thinkpad back to life. Plus, debugging hardware from an era before Stack Overflow builds character.',
-                },
               ].map((interest, index) => (
                 <div key={index} className="bg-gray-50 p-6 rounded-lg border-2 border-gray-200 hover:border-primary-300 transition-all">
                   <div className="text-4xl mb-3">{interest.icon}</div>
@@ -356,9 +356,10 @@ export default function AboutPage() {
 
             <div className="mt-12 p-6 bg-primary-50 rounded-lg border-l-4 border-primary-700">
               <p className="text-lg text-gray-800 italic">
-                "I believe technology should enhance life, not complicate it. Whether I'm optimizing your AWS bill
-                or configuring my own overkill home network, that philosophy guides every decision.
-                The best solution is the one you'll actually maintain—not the one that looks impressive in a diagram."
+                "I believe technology should enhance life, not complicate it. My faith reminds me that work
+                is ultimately about serving others well. Whether I'm optimizing your AWS bill or configuring my
+                own overkill home network, those values guide every decision. The best solution is the one you'll
+                actually maintain—not the one that looks impressive in a diagram."
               </p>
               <p className="text-sm text-gray-600 mt-4 font-semibold">
                 — Lionel, probably after fixing something that "worked fine yesterday"
