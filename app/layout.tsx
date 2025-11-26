@@ -7,6 +7,8 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import StructuredData from '@/components/StructuredData';
 import Analytics from '@/components/Analytics';
 import MicrosoftClarity from '@/components/MicrosoftClarity';
+import CrispChat from '@/components/CrispChat';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import LazyMotionProvider from '@/components/ui/LazyMotion';
 import SafariOptimizations from '@/components/SafariOptimizations';
@@ -112,6 +114,7 @@ export default function RootLayout({
         <StructuredData />
         <Analytics />
         <MicrosoftClarity />
+        <CrispChat />
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider>
@@ -127,6 +130,7 @@ export default function RootLayout({
                 </main>
                 <Footer />
               </div>
+              <ExitIntentPopup />
             </ErrorBoundary>
           </LazyMotionProvider>
         </ThemeProvider>
