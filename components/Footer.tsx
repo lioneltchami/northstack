@@ -35,7 +35,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'NorthStack Solutions';
   const contactEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.ca';
-  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '(403) 123-4567';
+  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '(587) 432-0753';
   const businessLocation = process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta, Canada';
 
   return (

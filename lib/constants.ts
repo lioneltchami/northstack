@@ -32,7 +32,7 @@ export const BUSINESS_INFO = {
   supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.ca',
 
   /** Contact phone number */
-  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567',
+  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (587) 432-0753',
 
   /** Calendly booking URL */
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/northstack',

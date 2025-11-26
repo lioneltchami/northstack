@@ -344,7 +344,7 @@ Calgary, Alberta, Canada
 
 - Website: [https://northstack.solutions](https://northstack.solutions)
 - Email: info@northstack.ca
-- Phone: (403) 123-4567
+- Phone: (587) 432-0753
 
 ---
 

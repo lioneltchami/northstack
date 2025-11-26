@@ -3,7 +3,7 @@ export default function StructuredData() {
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'NorthStack Solutions';
   const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME || 'Apoti Tech Inc.';
   const contactEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'info@northstack.ca';
-  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1-403-123-4567';
+  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1-587-432-0753';
   const businessLocation = process.env.NEXT_PUBLIC_BUSINESS_LOCATION || 'Calgary, Alberta';
 
   const organizationSchema = {

@@ -646,7 +646,7 @@ export default function TermsPage() {
               </a>
             </p>
             <p className="text-gray-800 mb-3">
-              <span className="font-semibold">Phone:</span> +1 (403) 123-4567
+              <span className="font-semibold">Phone:</span> +1 (587) 432-0753
             </p>
             <p className="text-gray-800">
               <span className="font-semibold">Address:</span> Calgary, Alberta, Canada

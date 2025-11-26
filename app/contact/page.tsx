@@ -110,10 +110,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Phone</h3>
                     <a
-                      href={`tel:${(process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567').replace(/\s/g, '')}`}
+                      href={`tel:${(process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (587) 432-0753').replace(/\s/g, '')}`}
                       className="text-gray-800 hover:text-primary-700"
                     >
-                      {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (403) 123-4567'}
+                      {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+1 (587) 432-0753'}
                     </a>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                         type="tel"
                         {...register('phone')}
                         className="w-full px-4 py-3 rounded-lg border-2 border-gray-400 bg-white text-gray-900 placeholder:text-gray-700 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-                        placeholder="(403) 123-4567"
+                        placeholder="(587) 432-0753"
                       />
                     </div>
                   </div>
