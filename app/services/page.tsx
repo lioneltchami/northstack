@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Hero from '@/components/ui/Hero';
 import ServiceCard from '@/components/ui/ServiceCard';
 import CTA from '@/components/ui/CTA';
+import FAQSchema from '@/components/FAQSchema';
 import { services, serviceCategories } from '@/data/services';
 import {
   Globe,
@@ -28,6 +29,40 @@ const iconMap: Record<string, any> = {
   Code,
 };
 
+// Service FAQs for schema markup
+const serviceFAQs = [
+  {
+    question: 'Do you work with clients outside of Calgary?',
+    answer:
+      'Absolutely! While we\'re based in Calgary, we serve clients across all of Canada. Most projects are completed remotely with video calls, screen sharing, and comprehensive documentation.',
+  },
+  {
+    question: 'What if I need changes after the project is complete?',
+    answer:
+      'All projects include a post-launch support period (30-180 days depending on package). After that, we offer monthly maintenance packages or hourly consulting rates for ongoing changes and support.',
+  },
+  {
+    question: 'Can you integrate with our existing tools and systems?',
+    answer:
+      'Yes! Integration is one of our specialties. We work with most major platforms (Shopify, WordPress, Salesforce, HubSpot, etc.) and can build custom integrations using APIs and automation tools.',
+  },
+  {
+    question: 'How long does a typical project take?',
+    answer:
+      'Timeline varies by project: simple websites or automation workflows take 1-2 weeks, comprehensive web applications take 2-4 weeks, and complex cloud migrations can take 4-8 weeks. We provide a detailed timeline in every proposal.',
+  },
+  {
+    question: 'Do you offer payment plans?',
+    answer:
+      'Yes, for projects over $5,000 we offer split payments (50% upfront, 50% on completion). For larger enterprise projects, we can arrange milestone-based payments. Payment plans can be discussed during consultation.',
+  },
+  {
+    question: 'What makes you different from other IT consultants?',
+    answer:
+      'Three things: (1) Enterprise experience at small business prices, (2) Fixed-price projects with no surprise costs, and (3) Education-focused approach—we teach you how systems work so you\'re never dependent on us.',
+  },
+];
+
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -38,6 +73,7 @@ export default function ServicesPage() {
 
   return (
     <>
+      <FAQSchema faqs={serviceFAQs} />
       <Hero
         title="Comprehensive IT Solutions for Modern Businesses"
         subtitle="Our Services"
@@ -334,38 +370,7 @@ export default function ServicesPage() {
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
-              {[
-                {
-                  question: 'Do you work with clients outside of Calgary?',
-                  answer:
-                    'Absolutely! While we\'re based in Calgary, we serve clients across all of Canada. Most projects are completed remotely with video calls, screen sharing, and comprehensive documentation.',
-                },
-                {
-                  question: 'What if I need changes after the project is complete?',
-                  answer:
-                    'All projects include a post-launch support period (30-180 days depending on package). After that, we offer monthly maintenance packages or hourly consulting rates for ongoing changes and support.',
-                },
-                {
-                  question: 'Can you integrate with our existing tools and systems?',
-                  answer:
-                    'Yes! Integration is one of our specialties. We work with most major platforms (Shopify, WordPress, Salesforce, HubSpot, etc.) and can build custom integrations using APIs and automation tools.',
-                },
-                {
-                  question: 'How long does a typical project take?',
-                  answer:
-                    'Timeline varies by project: simple websites or automation workflows take 1-2 weeks, comprehensive web applications take 2-4 weeks, and complex cloud migrations can take 4-8 weeks. We provide a detailed timeline in every proposal.',
-                },
-                {
-                  question: 'Do you offer payment plans?',
-                  answer:
-                    'Yes, for projects over $5,000 we offer split payments (50% upfront, 50% on completion). For larger enterprise projects, we can arrange milestone-based payments. Payment plans can be discussed during consultation.',
-                },
-                {
-                  question: 'What makes you different from other IT consultants?',
-                  answer:
-                    'Three things: (1) Enterprise experience at small business prices, (2) Fixed-price projects with no surprise costs, and (3) Education-focused approach—we teach you how systems work so you\'re never dependent on us.',
-                },
-              ].map((faq, index) => (
+              {serviceFAQs.map((faq, index) => (
                 <div key={index} className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-bold font-heading mb-3 text-gray-900">
                     {faq.question}

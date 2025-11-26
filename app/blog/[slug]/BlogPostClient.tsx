@@ -18,6 +18,7 @@ import {
 import BlogCard from '@/components/ui/BlogCard';
 import TableOfContents from '@/components/ui/TableOfContents';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import RelatedServices from '@/components/ui/RelatedServices';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import { getAuthor } from '@/data/authors';
@@ -384,6 +385,9 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           </div>
         </section>
       )}
+
+      {/* Related Services - Internal Linking */}
+      <RelatedServices post={post} />
 
       {/* Newsletter CTA */}
       <section className="section-padding bg-gradient-to-r from-primary-700 to-secondary-700 text-white">

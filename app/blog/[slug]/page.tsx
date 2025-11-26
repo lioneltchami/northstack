@@ -1,11 +1,71 @@
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
 import { BlogPost } from '@/types';
+import { getAuthor } from '@/data/authors';
 import BlogPostClient from './BlogPostClient';
+import ArticleSchema from '@/components/ArticleSchema';
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://northstack.solutions';
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'NorthStack Solutions';
+
+// Generate metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  if (!post || !post.published) {
+    return {
+      title: 'Article Not Found',
+    };
+  }
+
+  const author = getAuthor(post.authorId);
+  const imageUrl = post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-image.jpg`;
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.tags,
+    authors: [{ name: author.name }],
+    creator: author.name,
+    publisher: siteName,
+    openGraph: {
+      type: 'article',
+      locale: 'en_CA',
+      url: `${siteUrl}/blog/${post.slug}`,
+      title: post.title,
+      description: post.excerpt,
+      siteName,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: [author.name],
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [imageUrl],
+      creator: author.twitter || '@northstackca',
+    },
+    alternates: {
+      canonical: `${siteUrl}/blog/${post.slug}`,
+    },
+  };
+}
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
@@ -45,7 +105,12 @@ export default async function BlogPostPage({ params }: Props) {
     .slice(0, 3)
     .map((item) => item.post);
 
-  return <BlogPostClient post={post} relatedPosts={relatedPosts} />;
+  return (
+    <>
+      <ArticleSchema post={post} />
+      <BlogPostClient post={post} relatedPosts={relatedPosts} />
+    </>
+  );
 }
 
 // Generate static params for all blog posts
