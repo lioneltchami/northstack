@@ -52,7 +52,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   content: string;
-  author: string;
+  authorId: string;
   date: string;
   readTime: string;
   category: string;

@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { useState } from 'react';
 import Hero from '@/components/ui/Hero';
 import BlogCard from '@/components/ui/BlogCard';
-import { blogPosts, blogCategories } from '@/data/blog-posts';
+import { blogPosts, blogCategories, calculateReadingTime } from '@/data/blog-posts';
 import { Search } from 'lucide-react';
 
 export default function BlogPage() {
@@ -54,7 +54,7 @@ export default function BlogPage() {
               <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-800">
                 <span>{featuredPost.date}</span>
                 <span>•</span>
-                <span>{featuredPost.readTime}</span>
+                <span>{calculateReadingTime(featuredPost.content)}</span>
                 <span>•</span>
                 <span className="px-3 py-1 bg-primary-200 text-primary-700 rounded-full">
                   {featuredPost.category}
@@ -114,7 +114,7 @@ export default function BlogPage() {
                 excerpt={post.excerpt}
                 slug={post.slug}
                 date={post.date}
-                readTime={post.readTime}
+                readTime={calculateReadingTime(post.content)}
                 category={post.category}
                 delay={index * 0.1}
               />

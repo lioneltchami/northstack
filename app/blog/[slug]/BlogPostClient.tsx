@@ -12,9 +12,12 @@ import {
   Facebook,
   Mail,
   ArrowLeft,
+  ExternalLink,
 } from 'lucide-react';
 import BlogCard from '@/components/ui/BlogCard';
 import ReactMarkdown from 'react-markdown';
+import { getAuthor } from '@/data/authors';
+import { calculateReadingTime } from '@/data/blog-posts';
 
 interface BlogPostClientProps {
   post: BlogPost;
@@ -23,6 +26,8 @@ interface BlogPostClientProps {
 
 export default function BlogPostClient({ post, relatedPosts }: BlogPostClientProps) {
   const [readingProgress, setReadingProgress] = useState(0);
+  const author = getAuthor(post.authorId);
+  const dynamicReadTime = calculateReadingTime(post.content);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +35,7 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
       const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setReadingProgress(progress);
+      setReadingProgress(Math.min(Math.round(progress), 100));
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,9 +50,15 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
         <div
-          className="h-full bg-primary-700 transition-all duration-150"
+          className="h-full bg-primary-700 transition-all duration-150 relative"
           style={{ width: `${readingProgress}%` }}
-        ></div>
+        >
+          {readingProgress > 0 && (
+            <div className="absolute right-2 -bottom-8 bg-primary-700 text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
+              {readingProgress}% complete
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Back Button */}
@@ -89,10 +100,10 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
             </div>
             <div className="flex items-center gap-2 text-gray-800">
               <Clock className="w-5 h-5" />
-              <span>{post.readTime}</span>
+              <span>{dynamicReadTime}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-800">
-              <span>By {post.author}</span>
+              <span>By {author.name}</span>
             </div>
           </div>
 
@@ -258,21 +269,46 @@ export default function BlogPostClient({ post, relatedPosts }: BlogPostClientPro
           {/* Author Info */}
           <div className="mt-12 pt-8 border-t border-gray-400">
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">
-                About {post.author}
-              </h3>
-              <p className="text-gray-800 mb-4">
-                NorthStack Solutions is a Calgary-based DevOps and automation consultancy specializing
-                in helping Canadian small businesses leverage modern technology for growth. With 7+ years
-                of enterprise experience from IBM Canada and major energy companies, we bring
-                enterprise-level expertise at small business prices.
-              </p>
-              <a
-                href="/about"
-                className="text-primary-700 hover:text-primary-700 font-semibold"
-              >
-                Learn More About Us →
-              </a>
+              <div className="flex items-start gap-4">
+                {author.image && (
+                  <img
+                    src={author.image}
+                    alt={author.name}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                )}
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold font-heading mb-1 text-gray-900">
+                    {author.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">{author.role}</p>
+                  <p className="text-gray-800 mb-4">{author.bio}</p>
+                  <div className="flex gap-4">
+                    {author.linkedin && (
+                      <a
+                        href={author.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-primary-700 hover:text-primary-800 font-semibold"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                      </a>
+                    )}
+                    {author.website && (
+                      <a
+                        href={author.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-primary-700 hover:text-primary-800 font-semibold"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Website
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,13 @@
 import { BlogPost } from '@/types';
 
+// Helper function to calculate dynamic reading time
+export function calculateReadingTime(content: string): string {
+  const wordsPerMinute = 200;
+  const wordCount = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  return `${minutes} min read`;
+}
+
 export const blogPosts: BlogPost[] = [
   {
     slug: 'email-automation-canadian-small-business-2025',
@@ -166,7 +174,7 @@ Whether you're running a product-based business, a service company, or serving c
 ---
 
 *About the Author: This article was written by the team at NorthStack Solutions, a Calgary-based DevOps and automation consultancy specializing in helping Canadian small businesses leverage technology for growth.*`,
-    author: 'NorthStack Solutions Team',
+    authorId: 'lionel-tchami',
     date: '2025-01-15',
     readTime: '8 min read',
     category: 'Automation',
@@ -479,7 +487,7 @@ Let's take back control of your data together.
 ---
 
 *This guide was created by NorthStack Solutions, a Calgary-based IT automation and DevOps consultancy specializing in self-hosted solutions for Canadian homes and businesses.*`,
-    author: 'NorthStack Solutions Team',
+    authorId: 'lionel-tchami',
     date: '2025-01-10',
     readTime: '12 min read',
     category: 'Home Server',
@@ -1603,7 +1611,7 @@ That's the real ROI of cloud optimization: it's not just saving money, it's free
 ---
 
 *This guide was written by the team at NorthStack Solutions, a Calgary-based DevOps consultancy specializing in cloud optimization for Canadian businesses. We've helped dozens of companies reduce AWS spending by 40-60% while improving performance and reliability.*`,
-    author: 'NorthStack Solutions Team',
+    authorId: 'lionel-tchami',
     date: '2025-01-05',
     readTime: '10 min read',
     category: 'Cloud',
@@ -2592,7 +2600,7 @@ That's what changes businesses.
 ---
 
 *This article was written (and published!) by the team at NorthStack Solutions, a Calgary-based DevOps and automation consultancy. Yes, it went through our automated publishing workflow. Meta, right?*`,
-    author: 'NorthStack Solutions Team',
+    authorId: 'lionel-tchami',
     date: '2024-12-28',
     readTime: '9 min read',
     category: 'Automation',
@@ -3318,7 +3326,7 @@ I don't sell hardware or have cloud affiliate deals—I just help you make the r
 ---
 
 *This article was written by the team at NorthStack Solutions, a Calgary-based DevOps and IT automation consultancy. We help Canadian families and businesses make smart technology decisions. We're not sponsored by any cloud or hardware companies—these are our honest recommendations.*`,
-    author: 'NorthStack Solutions Team',
+    authorId: 'lionel-tchami',
     date: '2024-12-20',
     readTime: '11 min read',
     category: 'Home Server',
